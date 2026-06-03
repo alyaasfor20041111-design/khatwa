@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en" class="dark" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الأسعار</title>
+  <link rel="stylesheet" href="./src/output.css" />
+  <link rel="icon" type="" href="./src/images/logo/icon.png" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+    rel="stylesheet" />
+  <!-- icons font owesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header class="sticky top-0 left-0 w-full z-[100] font-primary">
+    <!-- الشريط العلوي (Top Bar) -->
+    <div
+      class="hidden md:flex bg-primaryHeading dark:bg-[#0f2420] px-12 py-1.5 justify-between items-center transition-all duration-200 border-b dark:border-white/5">
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2 group cursor-pointer">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-button opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-button"></span>
+          </span>
+          <span class="text-card dark:text-button text-[10px] font-bold tracking-widest uppercase">منصة
+            التوظيف الأولى</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 text-[10px] font-bold text-card">
+        <a href="./policy.html" class="hover:text-button transition-colors dark:text-white/70">السياسة والخصوصية</a>
+        <span class="opacity-20">|</span>
+        <a href="#" class="hover:text-button transition-colors dark:text-white/70">صاحب عمل</a>
+        <span class="opacity-20">|</span>
+        <a href="./contact.html" class="hover:text-button transition-colors dark:text-white/70">التواصل معنا</a>
+        <span class="opacity-20">|</span>
+        <a href="./help-center.html" class="hover:text-button transition-colors dark:text-white/70">مركز المساعدة</a>
+      </div>
+    </div>
+
+    <!-- شريط التنقل الرئيسي (Navbar) -->
+    <nav
+      class="bg-card/70 dark:bg-[#122d28]/90 backdrop-blur-md border-b border-border/20 dark:border-white/5 px-6 md:px-12 py-3 transition-colors duration-500">
+      <div class="max-w-[1500px] mx-auto flex items-center justify-between">
+
+        <!-- اللوغو -->
+        <div class="flex items-center">
+          <a href="/" class="transition-transform duration-300">
+            <img src="./src/images/logo/logo.png" alt="لوغو خطوة" class="w-20 md:w-25 brightness-110" />
+          </a>
+        </div>
+
+        <!-- الروابط للشاشات الكبيرة -->
+        <ul class="hidden lg:flex items-center gap-1">
+          <li><a href="./index.html" class="px-6 py-2 text-button font-bold text-sm">الرئيسية</a></li>
+          <li><a href="#"
+              class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">البحث
+              عن وظيفة</a></li>
+          <li><a href="#"
+              class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">الشركات</a>
+          </li>
+          <li><a href="./Resume.html"
+              class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">إنشاء
+              سيرة ذاتية</a></li>
+          <li><a href="./perc.html"
+              class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">
+              الأسعار</a></li>
+        </ul>
+
+        <!-- الأزرار اليمنى -->
+        <div class="flex items-center gap-2 md:gap-6">
+          <!-- زر الوضع الليلي -->
+          <button id="theme-toggle" type="button"
+            class="flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 dark:bg-white/10 text-button border border-white/10 cursor-pointer transition-all active:scale-90">
+            <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
+              </path>
+            </svg>
+          </button>
+
+          <div class="hidden md:flex items-center gap-4">
+            <a href="./login.html" class="text-primaryHeading dark:text-white font-bold text-sm px-4">تسجيل
+              الدخول</a>
+            <a href="./signup.html"
+              class="bg-button text-[#173630] px-4 py-2 rounded-xl font-bold text-sm active:scale-95 transition-all">إنشاء
+              حساب</a>
+          </div>
+
+          <!-- زر القائمة للجوال -->
+          <button id="mobile-menu-button"
+            class="lg:hidden flex items-center justify-center w-8 h-8 text-primaryHeading dark:text-white cursor-pointer">
+            <i class="fa-solid fa-bars-staggered text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar القائمة الجانبية -->
+    <div id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[110] opacity-0 pointer-events-none transition-all duration-300">
+    </div>
+
+    <aside id="mobile-sidebar"
+      class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-[#0f2420] z-[120] translate-x-full transition-transform duration-300 ease-in-out shadow-2xl border-l dark:border-white/5">
+      <div class="p-6 flex flex-col h-full">
+        <div class="flex items-center justify-between mb-8">
+          <span class="text-primaryHeading dark:text-button font-bold">القائمة</span>
+          <button id="close-sidebar"
+            class="text-text-muted dark:text-white/60 hover:text-red-500 transition-colors cursor-pointer">
+            <i class="fa-solid fa-xmark text-2xl"></i>
+          </button>
+        </div>
+
+        <ul class="flex flex-col gap-4 mb-auto">
+          <li><a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-button/10 text-button font-bold"><i
+                class="fa-solid fa-house"></i> الرئيسية</a></li>
+          <li><a href="#"
+              class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i
+                class="fa-solid fa-magnifying-glass"></i> البحث عن وظيفة</a></li>
+          <li><a href="#"
+              class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i
+                class="fa-solid fa-building"></i> الشركات</a></li>
+          <li><a href="./Resume.html"
+              class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i
+                class="fa-solid fa-file-invoice"></i> إنشاء سيرة ذاتية</a></li>
+        </ul>
+
+        <div class="flex flex-col gap-3 pt-6 border-t dark:border-white/10">
+          <a href="./login.html"
+            class="w-full py-3 text-center rounded-xl border border-border dark:border-white/10 text-primaryHeading dark:text-white font-bold">تسجيل
+            الدخول</a>
+          <a href="./signup.html" class="w-full py-3 text-center rounded-xl bg-button text-[#173630] font-bold">إنشاء
+            حساب</a>
+        </div>
+      </div>
+    </aside>
+</header>
+  <section class="py-16 md:py-24 bg-input dark:bg-bg-dark transition-colors duration-500 font-primary text-right"
+    dir="rtl">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- الهيدر -->
+      <div class="text-center space-y-4 mb-16">
+        <h1 class="text-primaryHeading dark:text-dark-heading text-4xl sm:text-5xl md:text-7xl font-black leading-tight">
+                لوحات <span class="text-button relative inline-block">
+                    التوظيف التقني
+                    <svg class="absolute -bottom-2 left-0 w-full h-3 text-button/30" viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <path d="M0 5 Q 25 0 50 5 T 100 5" stroke="currentColor" stroke-width="4" fill="none" />
+                    </svg>
+                </span>
+            </h1>
+        <p
+          class="text-lg md:text-xl font-medium text-text-muted dark:text-text-muted-dark opacity-80 max-w-2xl mx-auto">
+          خطط مرنة مصممة خصيصاً لاحتياجات التوظيف الخاصة بك</p>
+      </div>
+<div class="flex justify-center items-center w-full my-12">
+  <div class="inline-flex p-1.5 bg-surface dark:bg-card-dark border border-card dark:border-border-dark rounded-2xl shadow-sm">
+    
+    <button onclick="switchTab('frdi')" id="btn-frdi"
+      class="tab-link px-8 py-3 rounded-xl text-lg font-black transition-all duration-300 bg-button text-white shadow-lg">
+      شهري
+    </button>
+    
+    <button onclick="switchTab('cama')" id="btn-cama"
+      class="tab-link px-8 py-3 rounded-xl text-lg font-black transition-all duration-300 text-gray-500 dark:text-gray-400">
+      سنوي
+    </button>
+
+  </div>
+</div>
+
+<script>
+  function switchTab(tabId) {
+    // 1. إخفاء جميع المحتويات
+    document.querySelectorAll('.tab-pane').forEach(pane => {
+      pane.classList.add('hidden');
+    });
+    const target = document.getElementById(tabId);
+    if (target) target.classList.remove('hidden');
+
+    // 2. إعادة ضبط جميع الأزرار (إزالة التأثيرات)
+    document.querySelectorAll('.tab-link').forEach(btn => {
+      btn.classList.remove('bg-button', 'text-white', 'shadow-lg');
+      btn.classList.add('text-gray-500', 'dark:text-gray-400');
+    });
+
+    // 3. تطبيق التأثير على الزر المختار فقط
+    const activeBtn = document.getElementById('btn-' + tabId);
+    if (activeBtn) {
+      activeBtn.classList.remove('text-gray-500', 'dark:text-gray-400');
+      activeBtn.classList.add('bg-button', 'text-white', 'shadow-lg');
+    }
+  }
+</script>
+
+      <!-- محتوى التبويب -->
+      <div class="mt-8">
+
+        <!-- قسم الخطط الشهرية -->
+        <div id="frdi"
+          class="tab-pane grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-500">
+          <!-- بطاقة: المبتدئ شهري -->
+          <div
+            class="flex flex-col p-8 bg-surface dark:bg-card-dark border border-card dark:border-border-dark rounded-[2.5rem] shadow-xl hover:border-button/40 transition-all group">
+            <h5 class="text-2xl font-black text-primaryHeading dark:text-dark-heading mb-4">المبتدئ</h5>
+            <div class="flex items-baseline text-primaryHeading dark:text-white mb-8">
+              <span class="text-5xl font-black text-button">$149</span>
+              <span class="ms-2 font-bold text-text-muted dark:text-text-muted-dark">/شهرياً</span>
+            </div>
+            <ul class="space-y-4 flex-grow mb-10">
+              <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-button"></i><span
+                  class="text-primaryHeading dark:text-white/80 font-bold">2 صفحة وظائف نشطة</span></li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-button"></i><span
+                  class="text-primaryHeading dark:text-white/80 font-bold">ترويج أوسع للوظائف</span></li>
+            </ul>
+            <button
+              class="w-full py-4 bg-primaryHeading dark:bg-button text-white dark:text-button-text-dark rounded-2xl font-black text-lg hover:scale-[1.02] transition-all">اشترك
+              الآن</button>
+          </div>
+
+          <!-- بطاقة: القياسي شهري -->
+          <div
+            class="flex flex-col p-8 bg-surface dark:bg-card-dark border-2 border-button rounded-[2.5rem] shadow-2xl relative group">
+            <div
+              class="absolute -top-4 right-1/2 translate-x-1/2 bg-button text-white dark:text-button-text-dark px-6 py-1 rounded-full text-sm font-black shadow-lg">
+              الأكثر شراءً</div>
+            <h5 class="text-2xl font-black text-primaryHeading dark:text-dark-heading mb-4">قياسي</h5>
+            <div class="flex items-baseline text-primaryHeading dark:text-white mb-8">
+              <span class="text-5xl font-black text-button">$189</span>
+              <span class="ms-2 font-bold text-text-muted dark:text-text-muted-dark">/شهرياً</span>
+            </div>
+            <ul class="space-y-4 flex-grow mb-10">
+              <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-button"></i><span
+                  class="text-primaryHeading dark:text-white/80 font-bold">5 صفحة وظائف نشطة</span></li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-button"></i><span
+                  class="text-primaryHeading dark:text-white/80 font-bold">150 مشاهدة للمرشحين</span></li>
+            </ul>
+            <a href="./checkout.html"
+              class="w-full py-4 bg-button text-white dark:text-button-text-dark text-center rounded-2xl font-black text-lg hover:scale-[1.02] transition-all">اشترك
+              الآن</a>
+          </div>
+
+          <!-- بطاقة: مجاني -->
+          <div
+            class="flex flex-col p-8 bg-surface dark:bg-card-dark border border-card dark:border-border-dark rounded-[2.5rem] shadow-xl hover:border-button/40 transition-all">
+            <h5 class="text-2xl font-black text-primaryHeading dark:text-dark-heading mb-4">مجاني</h5>
+            <div class="flex items-baseline text-primaryHeading dark:text-white mb-8">
+              <span class="text-5xl font-black text-button">$0</span>
+            </div>
+            <ul class="space-y-4 flex-grow mb-10">
+              <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-button"></i><span
+                  class="text-primaryHeading dark:text-white/80 font-bold">نشر وظيفة واحدة</span></li>
+            </ul>
+            <button
+              class="w-full py-4 border-2 border-button text-button rounded-2xl font-black text-lg hover:bg-button hover:text-white transition-all">ابدأ
+              مجاناً</button>
+          </div>
+        </div>
+
+        <!-- قسم الخطط السنوية -->
+        <div id="cama"
+          class="tab-pane hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-500">
+          <!-- بطاقة: سنتين -->
+          <div
+            class="flex flex-col p-8 bg-surface dark:bg-card-dark border border-card dark:border-border-dark rounded-[2.5rem] shadow-xl hover:border-button/40 transition-all group">
+            <h5 class="text-2xl font-black text-primaryHeading dark:text-dark-heading mb-4">سنتين</h5>
+            <div class="flex items-baseline text-primaryHeading dark:text-white mb-8">
+              <span class="text-5xl font-black text-button">$449</span>
+              <span class="ms-2 font-bold text-text-muted dark:text-text-muted-dark">/سنوياً</span>
+            </div>
+            <ul class="space-y-4 flex-grow mb-10">
+              <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-button"></i><span
+                  class="text-primaryHeading dark:text-white/80 font-bold">50 صفحة وظائف</span></li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-button"></i><span
+                  class="text-primaryHeading dark:text-white/80 font-bold">دعم فني VIP كامل</span></li>
+            </ul>
+            <button
+              class="w-full py-4 bg-primaryHeading dark:bg-button text-white dark:text-button-text-dark rounded-2xl font-black text-lg hover:scale-[1.02] transition-all">اشترك
+              الآن</button>
+          </div>
+
+          <!-- بطاقة: 3 سنوات -->
+          <div
+            class="flex flex-col p-8 bg-surface dark:bg-card-dark border-2 border-button rounded-[2.5rem] shadow-2xl relative group">
+            <div
+              class="absolute -top-4 right-1/2 translate-x-1/2 bg-button text-white dark:text-button-text-dark px-6 py-1 rounded-full text-sm font-black shadow-lg">
+              الأكثر توفيراً</div>
+            <h5 class="text-2xl font-black text-primaryHeading dark:text-dark-heading mb-4">3 سنوات</h5>
+            <div class="flex items-baseline text-primaryHeading dark:text-white mb-8">
+              <span class="text-5xl font-black text-button">$359</span>
+              <span class="ms-2 font-bold text-text-muted dark:text-text-muted-dark">/سنوياً</span>
+            </div>
+            <ul class="space-y-4 flex-grow mb-10">
+              <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-button"></i><span
+                  class="text-primaryHeading dark:text-white/80 font-bold">100 صفحة وظائف</span></li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-button"></i><span
+                  class="text-primaryHeading dark:text-white/80 font-bold">ربط أنظمة ATS</span></li>
+            </ul>
+            <button
+              class="w-full py-4 bg-button text-white dark:text-button-text-dark rounded-2xl font-black text-lg hover:scale-[1.02] transition-all shadow-lg shadow-button/20">اشترك
+              الآن</button>
+          </div>
+
+          <!-- بطاقة: 5 سنوات -->
+          <div
+            class="flex flex-col p-8 bg-surface dark:bg-card-dark border border-card dark:border-border-dark rounded-[2.5rem] shadow-xl hover:border-button/40 transition-all group">
+            <h5 class="text-2xl font-black text-primaryHeading dark:text-dark-heading mb-4">5 سنوات</h5>
+            <div class="flex items-baseline text-primaryHeading dark:text-white mb-8">
+              <span class="text-5xl font-black text-button">$449</span>
+              <span class="ms-2 font-bold text-text-muted dark:text-text-muted-dark">/سنوياً</span>
+            </div>
+            <ul class="space-y-4 flex-grow mb-10">
+              <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-button"></i><span
+                  class="text-primaryHeading dark:text-white/80 font-bold">250 صفحة وظائف</span></li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-button"></i><span
+                  class="text-primaryHeading dark:text-white/80 font-bold">تحليلات متقدمة</span></li>
+            </ul>
+            <button
+              class="w-full py-4 bg-primaryHeading dark:bg-button text-white dark:text-button-text-dark rounded-2xl font-black text-lg hover:scale-[1.02] transition-all">اشترك
+              الآن</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+<!-- قسم الأسئلة الشائعة -->
+<section class="py-16 md:py-24 bg-input dark:bg-bg-dark transition-colors duration-500 font-primary text-right" dir="rtl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- الهيدر -->
+        <div class="text-center space-y-4 mb-16">
+            <h2 class="text-4xl md:text-5xl font-black text-primaryHeading dark:text-dark-heading leading-tight">
+                الأسئلة الشائعة حول الأسعار
+            </h2>
+            <p class="text-lg md:text-xl font-medium text-text-muted dark:text-text-muted-dark opacity-80">
+                كل ما تحتاج إلى معرفته حول خططنا، والمدفوعات، والسياسات.
+            </p>
+        </div>
+
+        <!-- حاوية الأسئلة -->
+        <div class="space-y-4">
+            
+            <!-- السؤال الأول -->
+            <div class="accordion-item bg-surface dark:bg-card-dark border border-card dark:border-border-dark rounded-[2rem] overflow-hidden transition-all duration-300">
+                <button type="button" 
+                        class="flex items-center justify-between w-full p-6 md:p-8 text-right focus:outline-none group"
+                        onclick="toggleAccordion(this)">
+                    <span class="text-xl font-black text-primaryHeading dark:text-dark-heading group-hover:text-button transition-colors">
+                        هل يمكنني ترقية خطتي أو خفضها في أي وقت؟
+                    </span>
+                    <i class="fa-solid fa-chevron-down text-button transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content hidden px-6 md:px-8 pb-8">
+                    <p class="text-lg text-text-muted dark:text-text-muted-dark leading-relaxed font-medium border-t border-card dark:border-border-dark pt-4">
+                        نعم، يمكنك تغيير خطتك في أي وقت لتناسب احتياجاتك المتغيرة، ولكن يجب التواصل مع الكادر التقني لضمان انتقال سلس لبياناتك.
+                    </p>
+                </div>
+            </div>
+
+            <!-- السؤال الثاني -->
+            <div class="accordion-item bg-surface dark:bg-card-dark border border-card dark:border-border-dark rounded-[2rem] overflow-hidden transition-all duration-300">
+                <button type="button" 
+                        class="flex items-center justify-between w-full p-6 md:p-8 text-right focus:outline-none group"
+                        onclick="toggleAccordion(this)">
+                    <span class="text-xl font-black text-primaryHeading dark:text-dark-heading group-hover:text-button transition-colors">
+                        هل يمكنني تجربة الخطط قبل الشراء؟
+                    </span>
+                    <i class="fa-solid fa-chevron-down text-button transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content hidden px-6 md:px-8 pb-8">
+                    <p class="text-lg text-text-muted dark:text-text-muted-dark leading-relaxed font-medium border-t border-card dark:border-border-dark pt-4">
+                        نعم! نحن نقدم فترة تجربة مجانية تتيح لك استكشاف جميع ميزات الخطة التي اخترتها قبل الالتزام. لا توجد أي رسوم خفية ويمكنك الإلغاء في أي وقت.
+                    </p>
+                </div>
+            </div>
+
+            <!-- السؤال الثالث -->
+            <div class="accordion-item bg-surface dark:bg-card-dark border border-card dark:border-border-dark rounded-[2rem] overflow-hidden transition-all duration-300">
+                <button type="button" 
+                        class="flex items-center justify-between w-full p-6 md:p-8 text-right focus:outline-none group"
+                        onclick="toggleAccordion(this)">
+                    <span class="text-xl font-black text-primaryHeading dark:text-dark-heading group-hover:text-button transition-colors">
+                        هل الضرائب مشمولة في الأسعار؟
+                    </span>
+                    <i class="fa-solid fa-chevron-down text-button transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content hidden px-6 md:px-8 pb-8">
+                    <p class="text-lg text-text-muted dark:text-text-muted-dark leading-relaxed font-medium border-t border-card dark:border-border-dark pt-4">
+                        نعم وبكل تأكيد، الأسعار المعلنة نهائية وتشمل كافة الضرائب والرسوم الإضافية.
+                    </p>
+                </div>
+            </div>
+
+            <!-- السؤال الرابع -->
+            <div class="accordion-item bg-surface dark:bg-card-dark border border-card dark:border-border-dark rounded-[2rem] overflow-hidden transition-all duration-300">
+                <button type="button" 
+                        class="flex items-center justify-between w-full p-6 md:p-8 text-right focus:outline-none group"
+                        onclick="toggleAccordion(this)">
+                    <span class="text-xl font-black text-primaryHeading dark:text-dark-heading group-hover:text-button transition-colors">
+                        هل تقدمون استرداداً للأموال؟
+                    </span>
+                    <i class="fa-solid fa-chevron-down text-button transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content hidden px-6 md:px-8 pb-8">
+                    <p class="text-lg text-text-muted dark:text-text-muted-dark leading-relaxed font-medium border-t border-card dark:border-border-dark pt-4">
+                        نعم، نحن نضمن رضا عملائنا. إذا لم تكن راضياً عن الخدمة خلال أول 14 يوماً، يمكنك طلب استرداد كامل المبلغ.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- كود الـ JavaScript للتحكم بالفتح والإغلاق بسلاسة -->
+<script>
+function toggleAccordion(button) {
+    const item = button.parentElement;
+    const content = item.querySelector('.accordion-content');
+    const icon = button.querySelector('i');
+    
+    // إغلاق أي سؤال آخر مفتوح (اختياري)
+    document.querySelectorAll('.accordion-content').forEach(el => {
+        if (el !== content) {
+            el.classList.add('hidden');
+            el.parentElement.querySelector('i').classList.remove('rotate-180');
+            el.parentElement.classList.remove('border-button');
+        }
+    });
+
+    // تبديل حالة السؤال الحالي
+    content.classList.toggle('hidden');
+    icon.classList.toggle('rotate-180');
+    
+    // إضافة لون حدود مميز عند الفتح
+    if (!content.classList.contains('hidden')) {
+        item.classList.add('border-button');
+    } else {
+        item.classList.remove('border-button');
+    }
+}
+</script>
+<!-- قسم المراجعات - متجاوب (Desktop: 3, iPad: 2, Mobile: 1) -->
+<section class="py-16 md:py-24 bg-input dark:bg-bg-dark font-primary transition-colors duration-500 overflow-hidden" dir="rtl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- الهيدر -->
+        <div class="text-center mb-16 space-y-4">
+            <h2 class="text-3xl md:text-5xl font-black text-primaryHeading dark:text-dark-heading leading-tight">
+                ماذا يقول عملائنا؟
+            </h2>
+            <div class="h-1.5 w-24 bg-button mx-auto rounded-full"></div>
+        </div>
+
+        <!-- حاوية البطاقات -->
+        <!-- التعديل هنا: md:grid-cols-2 تجعلهم 2 بجانب بعض، و lg:grid-cols-3 تعيدهم 3 في الديسكتوب -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch justify-items-center">
+            
+            <!-- بطاقة 1 -->
+            <div class="flex flex-col bg-surface dark:bg-card-dark border border-card dark:border-border-dark rounded-[2.5rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-300 w-full">
+                <div class="flex justify-between items-start mb-8 h-16 sm:h-20">
+                    <div class="flex items-center gap-4">
+                        <img class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl border-2 border-button object-cover aspect-square shadow-md" 
+                             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150" alt="User">
+                        <div>
+                            <h4 class="font-black text-primaryHeading dark:text-dark-heading text-base sm:text-lg">ماريا خطاب</h4>
+                            <p class="text-xs sm:text-sm font-bold text-button">محاسبة مالية</p>
+                        </div>
+                    </div>
+                    <div class="bg-amber-50 dark:bg-amber-900/20 text-amber-500 px-3 py-1 rounded-xl flex items-center gap-1 shrink-0">
+                        <span class="font-black text-sm">2.5</span>
+                        <i class="fa-solid fa-star text-xs"></i>
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <p class="text-text-muted dark:text-text-muted-dark leading-relaxed font-medium text-base sm:text-[17px] italic">
+                        "واجهت بعض التحديات في البداية مع سرعة الرد، لكن جودة الوظائف المعروضة ممتازة."
+                    </p>
+                </div>
+                <div class="mt-8 pt-6 border-t border-card dark:border-border-dark flex items-center gap-6">
+                    <div class="flex items-center gap-2 group cursor-pointer">
+                        <i class="fa-regular fa-thumbs-up text-button text-xl"></i>
+                        <span class="font-bold dark:text-white">152</span>
+                    </div>
+                    <div class="flex items-center gap-2 group cursor-pointer opacity-40 hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-thumbs-down text-xl"></i>
+                        <span class="font-bold dark:text-white">32</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بطاقة 2 (المميزة) -->
+            <div class="flex flex-col bg-surface dark:bg-card-dark border-2 border-button rounded-[2.5rem] p-8 shadow-2xl transition-all duration-300 lg:scale-105 z-10 relative overflow-hidden w-full">
+                <div class="absolute top-0 left-0 bg-button text-white px-4 py-1 text-xs font-black rounded-bl-2xl">الأكثر تفاعلاً</div>
+                <div class="flex justify-between items-start mb-8 h-16 sm:h-20">
+                    <div class="flex items-center gap-4">
+                        <img class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl border-2 border-button object-cover aspect-square shadow-md" 
+                             src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150" alt="User">
+                        <div>
+                            <h4 class="font-black text-primaryHeading dark:text-dark-heading text-base sm:text-lg">ابراهيم عيسى</h4>
+                            <p class="text-xs sm:text-sm font-bold text-button">مهندس تقني</p>
+                        </div>
+                    </div>
+                    <div class="bg-amber-50 dark:bg-amber-900/20 text-amber-500 px-3 py-1 rounded-xl flex items-center gap-1 shrink-0">
+                        <span class="font-black text-sm">4.3</span>
+                        <i class="fa-solid fa-star text-xs"></i>
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <p class="text-text-muted dark:text-text-muted-dark leading-relaxed font-medium text-base sm:text-[17px] italic">
+                        "المنصّة جيدة جداً، استطعت من خلالها بناء شبكة علاقات مهنية قوية."
+                    </p>
+                </div>
+                <div class="mt-8 pt-6 border-t border-card dark:border-border-dark flex items-center gap-6">
+                    <div class="flex items-center gap-2 group cursor-pointer">
+                        <i class="fa-regular fa-thumbs-up text-button text-xl"></i>
+                        <span class="font-bold dark:text-white">102</span>
+                    </div>
+                    <div class="flex items-center gap-2 group cursor-pointer opacity-40 hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-thumbs-down text-xl"></i>
+                        <span class="font-bold dark:text-white">82</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بطاقة 3 -->
+            <!-- هنا قمنا بإزالة col-span-2 لتبقى البطاقة بحجمها الطبيعي -->
+            <div class="flex flex-col bg-surface dark:bg-card-dark border border-card dark:border-border-dark rounded-[2.5rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-300 w-full">
+                <div class="flex justify-between items-start mb-8 h-16 sm:h-20">
+                    <div class="flex items-center gap-4">
+                        <img class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl border-2 border-button object-cover aspect-square shadow-md" 
+                             src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150" alt="User">
+                        <div>
+                            <h4 class="font-black text-primaryHeading dark:text-dark-heading text-base sm:text-lg">أحمد إبراهيم</h4>
+                            <p class="text-xs sm:text-sm font-bold text-button">مبرمج برمجيات</p>
+                        </div>
+                    </div>
+                    <div class="bg-amber-50 dark:bg-amber-900/20 text-amber-500 px-3 py-1 rounded-xl flex items-center gap-1 shrink-0">
+                        <span class="font-black text-sm">4.5</span>
+                        <i class="fa-solid fa-star text-xs"></i>
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <p class="text-text-muted dark:text-text-muted-dark leading-relaxed font-medium text-base sm:text-[17px] italic">
+                        "أفضل تجربة بحث عن عمل خضتها حتى الآن. واجهة المستخدم سلسة."
+                    </p>
+                </div>
+                <div class="mt-8 pt-6 border-t border-card dark:border-border-dark flex items-center gap-6">
+                    <div class="flex items-center gap-2 group cursor-pointer">
+                        <i class="fa-regular fa-thumbs-up text-button text-xl"></i>
+                        <span class="font-bold dark:text-white">255</span>
+                    </div>
+                    <div class="flex items-center gap-2 group cursor-pointer opacity-40 hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-thumbs-down text-xl"></i>
+                        <span class="font-bold dark:text-white">52</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<footer class="font-primary transition-all duration-700 bg-white dark:bg-[#0a1614] relative overflow-hidden">
+
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-button/50 to-transparent">
+    </div>
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-button/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-[1500px] mx-auto px-6 pt-24 pb-16">
+      <div class="grid lg:grid-cols-2 gap-16 items-center border-b border-primaryHeading/5 dark:border-white/5 pb-20">
+        <div>
+          <h2 class="text-5xl md:text-6xl font-black text-primaryHeading dark:text-white leading-tight mb-6">
+            انضم إلى مستقبل <br>
+            <span class="text-button inline-block relative">
+              التوظيف التقني
+              <svg class="absolute -bottom-2 left-0 w-full h-2 text-button/30" viewBox="0 0 100 10"
+                preserveAspectRatio="none">
+                <path d="M0 5 Q 25 0 50 5 T 100 5" fill="none" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </span>
+          </h2>
+          <p class="text-lg text-text-muted dark:text-text-muted-dark max-w-md font-medium opacity-80">
+            أكثر من 50,000 متخصص تقني يطورون مسارهم المهني عبر خطوة. هل أنت مستعد للخطوة القادمة؟
+          </p>
+        </div>
+
+        <div class="relative group">
+          <div
+            class="absolute inset-0 bg-button/20 blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-500">
+          </div>
+          <div
+            class="relative bg-[#F4FAF9] dark:bg-[#173630]/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-button/20 shadow-2xl">
+            <h3 class="text-xl font-black text-primaryHeading dark:text-white mb-4">اشترك في النشرة المهنية</h3>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input type="email" placeholder="بريدك الإلكتروني..."
+                class="flex-1 bg-white dark:bg-[#0a1614] border border-button/10 rounded-2xl px-6 py-4 text-sm focus:outline-none focus:border-button transition-all dark:text-white">
+              <button
+                class="bg-button text-[#173630] px-8 py-4 rounded-2xl font-black text-sm hover:shadow-[0_10px_25px_rgba(33,234,200,0.4)] transition-all active:scale-95">
+                انضم الآن
+              </button>
+            </div>
+            <p
+              class="text-[10px] text-text-muted dark:text-white/40 mt-4 text-center font-bold uppercase tracking-widest">
+              لا نقوم بإرسال رسائل مزعجة إطلاقاً</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 py-20" dir="rtl">
+
+        <div class="col-span-2 space-y-8">
+          <img src="./src/images/logo/logo.png" alt="logo" class="w-32 dark:brightness-125">
+          <p class="text-sm text-text-muted dark:text-text-muted-dark leading-relaxed font-bold">
+            منصة "خطوة" هي بوابتك الرقمية للوصول إلى الوظائف التقنية الأكثر طلباً في الخليج والوطن العربي. نحن نبني
+            الجسور بين الموهبة والفرصة.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+              title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+              title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+              title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+              title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+              title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+              title="Discord"><i class="fa-brands fa-discord"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-primaryHeading dark:text-white font-black mb-8">الشركة</h4>
+          <ul class="space-y-4 text-sm font-bold text-text-muted dark:text-text-muted-dark">
+            <li><a href="#" class="hover:text-button transition-colors">عن خطوة</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">فريق العمل</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">الوظائف المتاحة</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">الصحافة</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-primaryHeading dark:text-white font-black mb-8">الخدمات</h4>
+          <ul class="space-y-4 text-sm font-bold text-text-muted dark:text-text-muted-dark">
+            <li><a href="#" class="hover:text-button transition-colors">البحث عن وظيفة</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">بناء سيرة ذاتية</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">تحليل الملف الشخصي</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">لأصحاب الشركات</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-primaryHeading dark:text-white font-black mb-8">الدعم</h4>
+          <ul class="space-y-4 text-sm font-bold text-text-muted dark:text-text-muted-dark">
+            <li><a href="#" class="hover:text-button transition-colors">مركز المساعدة</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">تواصل معنا</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">الأسئلة الشائعة</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">المجتمع</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-6">
+          <h4 class="text-primaryHeading dark:text-white font-black mb-8">تواصل سريع</h4>
+          <a href="https://wa.me/yournumber"
+            class="flex items-center gap-3 p-3 rounded-2xl bg-green-500/10 text-green-600 dark:text-green-400 font-black text-xs hover:bg-green-500 hover:text-white transition-all">
+            <i class="fa-brands fa-whatsapp text-lg"></i> واتساب الدعم
+          </a>
+          <a href="https://t.me/yourusername"
+            class="flex items-center gap-3 p-3 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 font-black text-xs hover:bg-blue-500 hover:text-white transition-all">
+            <i class="fa-brands fa-telegram text-lg"></i> قناة التليجرام
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="pt-10 border-t border-primaryHeading/5 dark:border-white/5 flex flex-col lg:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2 px-3 py-1 bg-button/10 rounded-full">
+            <span class="w-2 h-2 bg-button rounded-full animate-pulse"></span>
+            <span class="text-[10px] font-black text-button uppercase tracking-tighter">Status: All Systems
+              Operational</span>
+          </div>
+          <p class="text-[11px] font-bold text-text-muted dark:text-white/30 tracking-widest uppercase">© 2026 KHOTWAH
+            PLATFORM. MADE IN SAUDI ARABIA.</p>
+        </div>
+
+        <div class="flex gap-8 text-[11px] font-black text-text-muted dark:text-white/40 uppercase tracking-widest">
+          <a href="#" class="hover:text-button transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-button transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-button transition-colors">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+
+  <script src="./src/js/script.js"></script>
+</body>
+
+</html>

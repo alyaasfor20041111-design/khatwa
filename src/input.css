@@ -1,0 +1,307 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+
+/* حل جذري لكل العناصر */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    /* لمنع التمرير المطاطي في آيفون */
+    touch-action: pan-y;
+    scroll-behavior: smooth;
+}
+
+/* @theme {
+ 
+  --color-primaryHeading: #2D534C;
+  --color-dark-heading: #FFFFFF;
+  
+
+
+  --color-background: #ffffff;
+  --color-bg-dark:#173630;
+  --color-card: #DEEDEB;
+
+  
+  --color-button: #21EAC8;
+  --color-button-hover: #14D1B1;
+  --color-button-title: #476B65;
+
+  
+  --color-icon: #21EAC8;
+  --color-input: #F4FAF9;
+
+   
+  --font-primary: 'Tajawal';
+  --font-secondary: 'Almarai';
+
+
+  --text-primary: 30px;
+  --text-secondary: 12px;
+ 
+} */
+@theme {
+    
+    --color-primaryHeading: #2D534C;
+    --color-dark-heading: #FFFFFF;
+    --color-text-main: #2D534C;
+    
+    --color-text-muted: #476B65;
+
+    --color-text-muted-dark: #DEEDEB;
+    
+
+   
+    --color-background: #ffffff;
+    --color-bg-dark: #173630;
+    --color-card: #DEEDEB;
+    --color-card-dark: #2D534C;
+    
+    --color-surface: #ffffff;
+  
+    --color-surface-dark: #20453E;
+    
+
+    
+    --color-button: #21EAC8;
+    --color-button-hover: #14D1B1;
+    --color-button-title: #476B65;
+    --color-button-text-dark: #173630;
+   
+
+    --color-icon: #21EAC8;
+    --color-input: #F4FAF9;
+    --color-input-dark: #1A3D36;
+    /* خلفية البحث في الوضع الليلي */
+
+    /* --- الحدود والظلال (Borders & Shadows) --- */
+    --color-border: #E5E7EB;
+    --color-border-dark: #2D534C;
+
+    /* --- الخطوط (Typography) --- */
+    --font-primary: 'Tajawal';
+    --font-secondary: 'Almarai';
+
+    /* --- أحجام النصوص --- */
+    --text-primary: 30px;
+    --text-secondary: 12px;
+
+}
+
+/* تخصيص حدود Tagify لتطابق لون مشروعك */
+.tagify {
+    border-color: #14D1B1 !important;
+    /* لون مشروعك التركوازي */
+    border-radius: 0.75rem;
+    /* rounded-xl */
+    padding: 0.5rem;
+    --tags-border-color: #14D1B1;
+    --tags-hover-border-color: #14D1B1;
+    --tags-focus-border-color: #14D1B1;
+}
+
+/* إخفاء الحدود عند التركيز لعدم حدوث تداخل */
+.tagify.tagify--focus {
+    border-color: #14D1B1 !important;
+    box-shadow: 0 0 0 1px rgba(20, 209, 177, 0.1);
+}
+
+/* تنسيق حقل الإدخال */
+.tagify__input {
+    margin: 5px;
+    font-weight: bold;
+    font-size: 0.875rem;
+}
+
+/* تحسين شكل التمرير (Scrollbar) ليتناسب مع ألوانك */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #DEEDEB;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #21EAC8;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+
+/* التبويب النشط */
+.active-tab {
+    color: #2D534C !important;
+    /* لون الزر النشط */
+}
+
+/* إنشاء الخط السفلي للتبويب النشط */
+.active-tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #21EAC8;
+    transition: all 0.3s ease;
+}
+
+/* تأثير الهوفر على التبويبات */
+.tab-button-custom:hover {
+    color: #14D1B1 !important;
+    /* لون الهوفر */
+}
+
+/* إخفاء الخط في التبويبات غير النشطة */
+.inactive-tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+
+/* إضافة مسافة تمرير لتجنب تغطية الهيدر الثابت للمحتوى */
+.scroll-mt-32 {
+    scroll-margin-top: 8rem;
+}
+
+.animate-bounce-slow {
+    animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(-5%);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* تصميم الصور العائم */
+.avatar-node {
+    position: absolute;
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border-radius: 50%;
+    cursor: pointer;
+    background: white;
+    padding: 5px;
+}
+
+.avatar-node img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+}
+
+/* الصورة النشطة: تتقدم للأمام وتكبر */
+.node-active {
+    width: 140px;
+    height: 140px;
+    z-index: 100;
+    transform: translate(0, 0) scale(1.1);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.12);
+    border: 2px solid #14D1B1
+        /* لون براند خطوة */
+}
+
+/* الصور الجانبية: تتراجع للخلف وتصغر */
+.node-side {
+    width: 85px;
+    height: 85px;
+    z-index: 10;
+    opacity: 0.3;
+    filter: grayscale(100%);
+    transform: scale(0.9);
+}
+
+/* توزيع المسافات برمجياً */
+.node-L1 {
+    transform: translate(-200px, 15px);
+}
+
+.node-R1 {
+    transform: translate(200px, 15px);
+}
+
+.node-L2 {
+    transform: translate(-360px, 30px) scale(0.7);
+    opacity: 0.1;
+}
+
+.node-R2 {
+    transform: translate(360px, 30px) scale(0.7);
+    opacity: 0.1;
+}
+
+
+/* شكل المنحنى المميز */
+.wavy-clip {
+    clip-path: polygon(0% 12%, 20% 16%, 45% 10%, 75% 6%, 100% 11%, 100% 88%, 80% 93%, 50% 89%, 25% 84%, 0% 89%);
+}
+
+/* تحسين ملمس الصورة مع المنحنى */
+.wavy-clip img {
+    mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+}

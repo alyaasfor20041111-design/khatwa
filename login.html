@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" class="dark" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تسحيل  الدخول </title>
+  <link rel="stylesheet" href="./src/output.css" />
+  <link rel="icon" type="" href="./src/images/logo/icon.png" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+    rel="stylesheet" />
+  <!-- icons font owesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+<main class="min-h-screen flex items-center justify-center bg-background p-4 sm:p-8">
+  
+  <div class="flex flex-col md:flex-row  rounded-lg overflow-hidden shadow-md max-w-6xl w-full ">
+    
+ <section class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center" >
+  <div class="text-center mb-8">
+    <div class="flex justify-center mb-4">
+      <img src="./src/images/logo/logo.png" class="w-25" alt="شعار خطوة" />
+    </div>
+    
+    <p class="text-secondary text-gray-500 font-secondary mt-2">
+      هل أنت صاحب عمل؟ <a href="#" class="text-button font-bold hover:text-button-hover transition duration-200">اضغط هنا</a>
+    </p>
+  </div>
+
+  <form class="space-y-4">
+    <div>
+      <label class="block text-sm font-bold text-primaryHeading mb-1 font-primary">البريد الإلكتروني <span class="text-red-500">*</span></label>
+      <input type="email" id="login-email" placeholder="ادخل بريدك الإلكتروني" 
+        class="text-sm w-full px-4 py-3 rounded-xl border border-gray-100 bg-input focus:ring-2 focus:ring-icon/10 focus:border-icon outline-none transition-all placeholder:text-gray-300">
+    </div>
+    
+
+    <div class="relative">
+      <label class="block text-sm font-bold text-primaryHeading mb-1 font-primary">كلمة المرور <span class="text-red-500">*</span></label>
+      <div class="relative">
+        <input type="password" id="login-password" placeholder="ادخل كلمة المرور" 
+          class="text-sm w-full px-4 py-3 rounded-xl border border-gray-100 bg-input focus:ring-2 focus:ring-icon/10 focus:border-icon outline-none transition-all placeholder:text-gray-300">
+        <i class="fa-regular fa-eye-slash absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer"></i>
+      </div>
+    </div>
+
+    <div class="flex justify-between items-center text-[12px] font-secondary">
+      <label class="flex items-center text-gray-400 cursor-pointer">
+        <input type="checkbox" class="ml-2 rounded border-gray-300 text-button focus:ring-button"> تذكرني
+      </label>
+      <a href="./ForgotPassword.html" class="text-button font-medium hover:text-button-hover transition duration-200">نسيت كلمة المرور؟</a>
+    </div>
+
+    <button type="button" onclick="handleLogin()" class="w-full py-3 bg-button hover:bg-button-hover text-white font-bold rounded-xl transition duration-200 font-primary cursor-pointer">
+      تسجيل الدخول
+    </button>
+
+     <div id="footer-elements">
+          <div class="relative flex py-4 items-center ">
+            <div class="flex-grow border-t border-gray-100"></div>
+            <span class="flex-shrink mx-4 text-gray-300 text-sm">أو</span>
+            <div class="flex-grow border-t border-gray-100"></div>
+          </div>
+
+    <button type="button" class="font-primary font-bold w-full py-3 border border-gray-200 rounded-xl flex items-center justify-center gap-2 hover:bg-gray-50 transition duration-200 cursor-pointer text-primaryHeading ">
+      <img src="./src/images/login-signup/google.svg" class="w-5 h-5" alt="Google">
+      الدخول بواسطة جوجل
+    </button>
+  </form>
+
+  <p class="text-center mt-8 text-secondary text-gray-500 font-secondary">
+    ليس لديك حساب؟ <a href="./signup.html" class="text-button font-bold hover:text-button-hover transition duration-200">سجل الآن</a>
+  </p>
+</section>
+
+    <section class="hidden md:block w-1/2 p-4 ">
+      <div class="h-full w-full rounded-xl overflow-hidden relative group">
+        <img src="./src/images/login-signup/login.jpg" 
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Job">
+        
+        <div class="absolute inset-0 bg-black/10"></div>
+
+        <div class="absolute bottom-8 right-8 left-8 bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-2xl" dir="rtl">
+  <div class="flex items-center gap-3 mb-3">
+    <img src="./src/images/resume/profile.png" class="w-10 h-10 rounded-full border-2 border-white" alt="مهند العمر">
+    
+    <div>
+      <h4 class="font-bold text-gray-900 text-sm font-primary">مهند العمر</h4>
+      <p class="text-[10px] text-gray-500 uppercase tracking-wider font-secondary">باحث عن عمل</p>
+    </div>
+  </div>
+
+  <p class="text-gray-600 text-[13px] leading-relaxed font-secondary">
+    "أكثر ما لفت انتباهي خلال عملية التقديم هو الاهتمام بالتفاصيل في كل خطوة. كان التواصل مدروساً ومهنياً للغاية."
+  </p>
+
+  <div class="flex gap-1.5 mt-4 flex-row-reverse justify-end">
+    
+    <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+    <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+    <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+    <span class="w-1.5 h-1.5 rounded-full bg-gray-800"></span>
+  </div>
+</div>
+      </div>
+    </section>
+
+  </div>
+</main>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+  <script src="./src/js/login&signup.js"></script>
+  <script src="./src/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en" class="dark" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الرسائل</title>
+  <link rel="stylesheet" href="./src/output.css" />
+  <link rel="icon" type="" href="./src/images/logo/icon.png" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+    rel="stylesheet" />
+  <!-- icons font owesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="flex min-h-screen bg-background font-primary">
+
+    <aside id="sidebar"
+      class="fixed top-0 right-0 z-40 w-64 h-screen transition-transform translate-x-0 border-l border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#173630]"
+      aria-label="Sidebar">
+
+      <button onclick="toggleSidebar()"
+        class="absolute -left-3 top-10 bg-white dark:bg-[#20453E] border border-gray-100 dark:border-[#2D534C] rounded-full w-6 h-6 flex items-center justify-center text-gray-400 dark:text-[#21EAC8] hover:text-icon shadow-sm z-50 cursor-pointer">
+        <i id="toggleIcon" class="fa-solid fa-chevron-right text-[10px]"></i>
+      </button>
+
+      <div class="h-full px-4 py-6 overflow-y-auto flex flex-col justify-between">
+        <div>
+          <div class="flex flex-col items-center justify-center mb-8">
+            <div class="mb-5">
+              <img src="./src/images/logo/logo.png" class="w-25" alt="شعار خطوة" />
+            </div>
+            <div class="w-full px-2">
+              <div class="h-[1px] bg-gray-100 dark:bg-[#2D534C] w-full opacity-70"></div>
+            </div>
+          </div>
+
+          <p class="text-secondary font-bold text-gray-400 dark:text-[#DEEDEB]/60 px-4 mb-4 uppercase">الرئيسية</p>
+
+          <ul class="space-y-1 font-medium" id="sidebar-nav">
+            <li>
+              <a href="dashboard.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-border-all text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">لوحة التحكم</span>
+              </a>
+            </li>
+            <li>
+              <a href="post-jop.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-briefcase text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">نشر وظيفة</span>
+              </a>
+            </li>
+            <li>
+              <a href="Resume.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-user text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">ملفي الشخصي</span>
+              </a>
+            </li>
+            <li>
+              <a href="Notification.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-bell text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">الإشعارات</span>
+                <span
+                  class="ms-auto bg-red-500 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">3</span>
+              </a>
+            </li>
+            <li>
+              <a href="Messages.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-comment-dots text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">الرسائل</span>
+                <span
+                  class="ms-auto bg-red-500 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">5</span>
+              </a>
+            </li>
+            <li>
+              <a href="Accountsetting.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-sliders text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">إعدادات الحساب</span>
+              </a>
+            </li>
+            <li>
+              <a href="activity.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-chart-line text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">النشاط</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-1">
+          <a href="./index.html"
+            class="flex items-center px-4 py-3 text-red-500 rounded-xl hover:bg-red-50 dark:hover:bg-red-500/10 transition-all duration-200 group">
+            <div class="w-6 flex justify-center text-red-400"><i
+                class="fa-solid fa-arrow-right-from-bracket text-sm"></i></div>
+            <span class="ms-3 text-sm font-medium">تسجيل الخروج</span>
+          </a>
+          <a href="#"
+            class="flex items-center px-4 py-3 text-gray-400 dark:text-[#DEEDEB]/60 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-200 group">
+            <div class="w-6 flex justify-center text-gray-300 dark:text-white/20"><i
+                class="fa-solid fa-circle-question text-sm"></i></div>
+            <span class="ms-3 text-sm font-medium">المساعدة</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+    <main id="mainContent"
+      class="sm:mr-64 w-full min-h-screen transition-all duration-300 bg-[#F8FBFB] dark:bg-[#173630]">
+      <header
+        class="border-b border-gray-100 dark:border-[#2D534C] py-4 px-4 md:px-6 lg:px-10 flex items-center justify-between sticky top-0 z-30 bg-white/80 dark:bg-[#20453E]/90 backdrop-blur-md transition-all">
+
+        <!-- القسم الأيمن: العناوين -->
+        <div class="flex flex-col text-right shrink-0">
+          <h1 class="text-[15px] lg:text-primary font-bold text-primaryHeading dark:text-button leading-tight">الرسائل
+          </h1>
+          <p class="hidden xl:block text-[10px] text-gray-400 dark:text-[#DEEDEB]/50 mt-0.5 font-medium">تحديث معلوماتك
+            سيمنحك الوصول لمحتوى أكثر صلة</p>
+        </div>
+
+        <!-- القسم الأوسط: البحث (محسن ليتناسب مع حجم iPad) -->
+        <div
+          class="relative flex-1 mx-2 sm:mx-4 max-w-[120px] sm:max-w-[250px] md:max-w-[350px] lg:max-w-[400px] hidden md:block">
+          <input type="text"
+            class="bg-[#F4FAF9] dark:bg-[#1A3D36] border border-gray-100 dark:border-[#2D534C] text-gray-700 dark:text-[#DEEDEB] text-xs rounded-xl focus:ring-2 focus:ring-[#21EAC8]/10 focus:border-[#21EAC8] block w-full pr-9 pl-4 py-2 transition-all outline-none placeholder:text-gray-300 dark:placeholder:text-white/20 "
+            placeholder="بحث">
+          <span
+            class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400 dark:text-[#21EAC8]/60">
+            <i class="fa-solid fa-magnifying-glass text-[12px]"></i>
+          </span>
+        </div>
+
+        <!-- القسم الأيسر: الأزرار والبروفايل -->
+        <div class="flex items-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 shrink-0">
+
+          <!-- زر الوضع الليلي -->
+          <button id="theme-toggle" type="button"
+            class="flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 dark:bg-white/10 text-button border border-white/10 dark:border-[#2D534C] cursor-pointer transition-all active:scale-90 shadow-sm">
+            <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
+              </path>
+            </svg>
+          </button>
+
+          <!-- التنبيهات -->
+          <button
+            class="relative w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-gray-400 dark:text-[#DEEDEB]/60 hover:text-[#21EAC8] transition-all">
+            <i class="fa-regular fa-bell text-lg sm:text-xl"></i>
+            <span
+              class="absolute top-0.5 right-0.5 bg-red-600 text-white text-[7px] sm:text-[8px] font-bold w-4 h-4 flex items-center justify-center rounded-full border-2 border-white dark:border-[#20453E]">
+              30
+            </span>
+          </button>
+
+          <!-- الملف الشخصي -->
+          <div class="flex items-center gap-2 cursor-pointer group">
+            <div class="hidden lg:flex flex-col text-right">
+              <span
+                class="text-xs font-bold text-[#2D534C] dark:text-[#DEEDEB] group-hover:text-[#21EAC8] transition-colors">أحمد
+                العلي</span>
+              <span class="text-[9px] text-gray-400 dark:text-[#DEEDEB]/40">ahmedalali@gmail.com</span>
+            </div>
+            <div
+              class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl border border-gray-100 dark:border-[#2D534C] overflow-hidden transform transition-all group-hover:scale-105 shadow-sm hidden sm:block">
+              <img src="./src/images/resume/profile.png" alt="User" class="w-full h-full object-cover">
+            </div>
+          </div>
+
+        </div>
+      </header>
+      <div
+        class="flex flex-1 h-[calc(100vh-80px)] border border-gray-100 dark:border-[#2D534C]/20 overflow-hidden relative transition-colors duration-300">
+
+        <div
+          class="w-full md:w-1/3 min-w-[320px] border-l border-gray-50 dark:border-[#2D534C]/20 flex flex-col h-full bg-white dark:bg-[#1A3A34] transition-all">
+
+          <div class="p-5 border-b border-gray-50 dark:border-[#2D534C]/20 bg-white/50 dark:bg-[#1A3A34]/50">
+            <div class="relative">
+              <input type="text"
+                class="w-full bg-input dark:bg-[#214a42]/40 border border-gray-50 dark:border-[#2D534C]/30 text-sm rounded-xl pr-10 pl-4 p-2.5 outline-none focus:ring-2 focus:ring-icon/10 focus:border-icon transition-all placeholder:text-gray-300 dark:placeholder:text-[#DEEDEB]/30 text-primaryHeading dark:text-white font-['Tajawal']"
+                placeholder="البحث عن محادثة...">
+              <i
+                class="fa-solid fa-magnifying-glass absolute right-3 top-3.5 text-gray-300 dark:text-[#DEEDEB]/30 text-xs"></i>
+            </div>
+          </div>
+
+          <div class="flex-1 overflow-y-auto custom-scrollbar">
+
+            <div
+              class="flex items-center gap-3 p-4 bg-card/50 dark:bg-[#214a42]/30 border-r-4 border-button cursor-pointer transition-all border-b border-gray-50/50 dark:border-[#2D534C]/10">
+              <div class="relative min-w-[48px] shrink-0">
+                <img src="./src/images/chats/chat1.jpg"
+                  class="w-12 h-12 rounded-full object-contain bg-white dark:bg-[#DEEDEB] border-2 border-white dark:border-[#2D534C] shadow-sm">
+                <span
+                  class="absolute bottom-0 left-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-[#1A3A34] rounded-full"></span>
+              </div>
+              <div class="flex-1 overflow-hidden text-right font-primary">
+                <div class="flex justify-between items-center mb-1">
+                  <h3 class="text-primaryHeading dark:text-white font-bold text-sm truncate">Schlumberger</h3>
+                  <span class="text-[9px] text-gray-400 dark:text-[#DEEDEB]/40 font-medium shrink-0">منذ دقيقة</span>
+                </div>
+                <p class="text-[11px] text-button-title dark:text-[#DEEDEB]/60 truncate font-medium">تم تحديث طلبك
+                  لوظيفة 'Business Analyst'...</p>
+              </div>
+              <span
+                class="bg-red-500 text-white text-[9px] font-bold w-5 h-5 flex items-center justify-center rounded-full shrink-0 shadow-lg">4</span>
+            </div>
+
+            <div
+              class="flex items-center gap-3 p-4 hover:bg-input/50 dark:hover:bg-[#214a42]/20 border-r-4 border-transparent cursor-pointer transition-all border-b border-gray-50/50 dark:border-[#2D534C]/10">
+              <div class="relative min-w-[48px] shrink-0">
+                <img src="./src/images/chats/chat2.jpg"
+                  class="w-12 h-12 rounded-full object-contain bg-white dark:bg-[#DEEDEB] shadow-sm">
+                <span
+                  class="absolute bottom-0 left-0 w-3 h-3 bg-gray-300 dark:bg-gray-600 border-2 border-white dark:border-[#1A3A34] rounded-full"></span>
+              </div>
+              <div class="flex-1 overflow-hidden text-right font-primary">
+                <div class="flex justify-between items-center mb-1">
+                  <h3 class="text-primaryHeading dark:text-white font-bold text-sm truncate">Woodplc</h3>
+                  <span class="text-[9px] text-gray-400 dark:text-[#DEEDEB]/40 shrink-0">8 دقائق</span>
+                </div>
+                <p class="text-[11px] text-gray-400 dark:text-[#DEEDEB]/40 truncate">نود المتابعة بخصوص طلبك المقدم لـ
+                  'Product Man...'</p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center gap-3 p-4 hover:bg-input/50 dark:hover:bg-[#214a42]/20 border-r-4 border-transparent cursor-pointer transition-all border-b border-gray-50/50 dark:border-[#2D534C]/10">
+              <div class="relative min-w-[48px] shrink-0">
+                <img src="./src/images/chats/chat4.webp"
+                  class="w-12 h-12 rounded-full object-contain bg-white dark:bg-[#DEEDEB] shadow-sm">
+                <span
+                  class="absolute bottom-0 left-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-[#1A3A34] rounded-full"></span>
+              </div>
+              <div class="flex-1 overflow-hidden text-right font-primary">
+                <div class="flex justify-between items-center mb-1">
+                  <h3 class="text-primaryHeading dark:text-white font-bold text-sm truncate">أرامكو السعودية</h3>
+                  <span class="text-[9px] text-gray-400 dark:text-[#DEEDEB]/40 shrink-0">15 دقيقة</span>
+                </div>
+                <p class="text-[11px] text-button dark:text-icon truncate font-bold">وصلتك رسالة جديدة من منسق التوظيف
+                </p>
+              </div>
+              <span
+                class="bg-red-500 text-white text-[9px] font-bold w-5 h-5 flex items-center justify-center rounded-full shrink-0">5</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-4 bg-card/50 dark:bg-[#214a42]/30 border-r-4 border-button cursor-pointer transition-all border-b border-gray-50/50 dark:border-[#2D534C]/10">
+              <div class="relative min-w-[48px] shrink-0">
+                <img src="./src/images/chats/chat1.jpg"
+                  class="w-12 h-12 rounded-full object-contain bg-white dark:bg-[#DEEDEB] border-2 border-white dark:border-[#2D534C] shadow-sm">
+                <span
+                  class="absolute bottom-0 left-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-[#1A3A34] rounded-full"></span>
+              </div>
+              <div class="flex-1 overflow-hidden text-right font-primary">
+                <div class="flex justify-between items-center mb-1">
+                  <h3 class="text-primaryHeading dark:text-white font-bold text-sm truncate">Schlumberger</h3>
+                  <span class="text-[9px] text-gray-400 dark:text-[#DEEDEB]/40 font-medium shrink-0">منذ دقيقة</span>
+                </div>
+                <p class="text-[11px] text-button-title dark:text-[#DEEDEB]/60 truncate font-medium">تم تحديث طلبك
+                  لوظيفة 'Business Analyst'...</p>
+              </div>
+              <span
+                class="bg-red-500 text-white text-[9px] font-bold w-5 h-5 flex items-center justify-center rounded-full shrink-0 shadow-lg">4</span>
+            </div>
+
+            <div
+              class="flex items-center gap-3 p-4 hover:bg-input/50 dark:hover:bg-[#214a42]/20 border-r-4 border-transparent cursor-pointer transition-all border-b border-gray-50/50 dark:border-[#2D534C]/10">
+              <div class="relative min-w-[48px] shrink-0">
+                <img src="./src/images/chats/chat2.jpg"
+                  class="w-12 h-12 rounded-full object-contain bg-white dark:bg-[#DEEDEB] shadow-sm">
+                <span
+                  class="absolute bottom-0 left-0 w-3 h-3 bg-gray-300 dark:bg-gray-600 border-2 border-white dark:border-[#1A3A34] rounded-full"></span>
+              </div>
+              <div class="flex-1 overflow-hidden text-right font-primary">
+                <div class="flex justify-between items-center mb-1">
+                  <h3 class="text-primaryHeading dark:text-white font-bold text-sm truncate">Woodplc</h3>
+                  <span class="text-[9px] text-gray-400 dark:text-[#DEEDEB]/40 shrink-0">8 دقائق</span>
+                </div>
+                <p class="text-[11px] text-gray-400 dark:text-[#DEEDEB]/40 truncate">نود المتابعة بخصوص طلبك المقدم لـ
+                  'Product Man...'</p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center gap-3 p-4 hover:bg-input/50 dark:hover:bg-[#214a42]/20 border-r-4 border-transparent cursor-pointer transition-all border-b border-gray-50/50 dark:border-[#2D534C]/10">
+              <div class="relative min-w-[48px] shrink-0">
+                <img src="./src/images/chats/chat4.webp"
+                  class="w-12 h-12 rounded-full object-contain bg-white dark:bg-[#DEEDEB] shadow-sm">
+                <span
+                  class="absolute bottom-0 left-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-[#1A3A34] rounded-full"></span>
+              </div>
+              <div class="flex-1 overflow-hidden text-right font-primary">
+                <div class="flex justify-between items-center mb-1">
+                  <h3 class="text-primaryHeading dark:text-white font-bold text-sm truncate">أرامكو السعودية</h3>
+                  <span class="text-[9px] text-gray-400 dark:text-[#DEEDEB]/40 shrink-0">15 دقيقة</span>
+                </div>
+                <p class="text-[11px] text-button dark:text-icon truncate font-bold">وصلتك رسالة جديدة من منسق التوظيف
+                </p>
+              </div>
+              <span
+                class="bg-red-500 text-white text-[9px] font-bold w-5 h-5 flex items-center justify-center rounded-full shrink-0">5</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-4 bg-card/50 dark:bg-[#214a42]/30 border-r-4 border-button cursor-pointer transition-all border-b border-gray-50/50 dark:border-[#2D534C]/10">
+              <div class="relative min-w-[48px] shrink-0">
+                <img src="./src/images/chats/chat1.jpg"
+                  class="w-12 h-12 rounded-full object-contain bg-white dark:bg-[#DEEDEB] border-2 border-white dark:border-[#2D534C] shadow-sm">
+                <span
+                  class="absolute bottom-0 left-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-[#1A3A34] rounded-full"></span>
+              </div>
+              <div class="flex-1 overflow-hidden text-right font-primary">
+                <div class="flex justify-between items-center mb-1">
+                  <h3 class="text-primaryHeading dark:text-white font-bold text-sm truncate">Schlumberger</h3>
+                  <span class="text-[9px] text-gray-400 dark:text-[#DEEDEB]/40 font-medium shrink-0">منذ دقيقة</span>
+                </div>
+                <p class="text-[11px] text-button-title dark:text-[#DEEDEB]/60 truncate font-medium">تم تحديث طلبك
+                  لوظيفة 'Business Analyst'...</p>
+              </div>
+              <span
+                class="bg-red-500 text-white text-[9px] font-bold w-5 h-5 flex items-center justify-center rounded-full shrink-0 shadow-lg">4</span>
+            </div>
+
+            <div
+              class="flex items-center gap-3 p-4 hover:bg-input/50 dark:hover:bg-[#214a42]/20 border-r-4 border-transparent cursor-pointer transition-all border-b border-gray-50/50 dark:border-[#2D534C]/10">
+              <div class="relative min-w-[48px] shrink-0">
+                <img src="./src/images/chats/chat2.jpg"
+                  class="w-12 h-12 rounded-full object-contain bg-white dark:bg-[#DEEDEB] shadow-sm">
+                <span
+                  class="absolute bottom-0 left-0 w-3 h-3 bg-gray-300 dark:bg-gray-600 border-2 border-white dark:border-[#1A3A34] rounded-full"></span>
+              </div>
+              <div class="flex-1 overflow-hidden text-right font-primary">
+                <div class="flex justify-between items-center mb-1">
+                  <h3 class="text-primaryHeading dark:text-white font-bold text-sm truncate">Woodplc</h3>
+                  <span class="text-[9px] text-gray-400 dark:text-[#DEEDEB]/40 shrink-0">8 دقائق</span>
+                </div>
+                <p class="text-[11px] text-gray-400 dark:text-[#DEEDEB]/40 truncate">نود المتابعة بخصوص طلبك المقدم لـ
+                  'Product Man...'</p>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-3 p-4 hover:bg-input/50 dark:hover:bg-[#214a42]/20 border-r-4 border-transparent cursor-pointer transition-all border-b border-gray-50/50 dark:border-[#2D534C]/10">
+              <div class="relative min-w-[48px] shrink-0">
+                <img src="./src/images/chats/chat4.webp"
+                  class="w-12 h-12 rounded-full object-contain bg-white dark:bg-[#DEEDEB] shadow-sm">
+                <span
+                  class="absolute bottom-0 left-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-[#1A3A34] rounded-full"></span>
+              </div>
+              <div class="flex-1 overflow-hidden text-right font-primary">
+                <div class="flex justify-between items-center mb-1">
+                  <h3 class="text-primaryHeading dark:text-white font-bold text-sm truncate">أرامكو السعودية</h3>
+                  <span class="text-[9px] text-gray-400 dark:text-[#DEEDEB]/40 shrink-0">15 دقيقة</span>
+                </div>
+                <p class="text-[11px] text-button dark:text-icon truncate font-bold">وصلتك رسالة جديدة من منسق التوظيف
+                </p>
+              </div>
+              <span
+                class="bg-red-500 text-white text-[9px] font-bold w-5 h-5 flex items-center justify-center rounded-full shrink-0">5</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="hidden md:flex flex-1 flex-col bg-white dark:bg-[#132d28] border-r border-gray-50 dark:border-[#2D534C]/20 transition-colors">
+          <div class="flex-1 flex flex-col items-center justify-center p-6 lg:p-12 text-center">
+            <div
+              class="w-24 h-24 md:w-32 md:h-32 bg-input dark:bg-[#214a42]/40 rounded-full flex items-center justify-center mb-6 animate-pulse">
+              <i class="fa-solid fa-comments text-4xl md:text-5xl text-button/30 dark:text-icon/20"></i>
+            </div>
+            <h2 class="text-lg md:text-xl font-bold text-primaryHeading dark:text-white mb-2">ابدأ محادثاتك المهنية</h2>
+            <p class="text-button-title dark:text-[#DEEDEB]/60 text-xs md:text-sm max-w-sm leading-relaxed">
+              اختر شركة من القائمة اليمنى لعرض الرسائل ومتابعة حالة طلبات التوظيف الخاصة بك.
+            </p>
+            <div class="mt-8 flex gap-2">
+              <span class="w-2 h-2 bg-button/20 dark:bg-icon/20 rounded-full"></span>
+              <span class="w-2 h-2 bg-button/40 dark:bg-icon/40 rounded-full"></span>
+              <span class="w-2 h-2 bg-button/20 dark:bg-icon/20 rounded-full"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+  <script src="./src/js/messages.js"></script>
+  <script src="./src/js/script.js"></script>
+</body>
+
+</html>

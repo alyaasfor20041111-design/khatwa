@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en" class="dark" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>البحث عن وظيفة</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="icon" type="" href="./src/images/logo/icon.png" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet" />
+    <!-- icons font owesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="sticky top-0 left-0 w-full z-[100] font-primary">
+        <!-- الشريط العلوي (Top Bar) -->
+        <div
+            class="hidden md:flex bg-primaryHeading dark:bg-[#0f2420] px-12 py-1.5 justify-between items-center transition-all duration-200 border-b dark:border-white/5">
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2 group cursor-pointer">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-button opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-button"></span>
+                    </span>
+                    <span class="text-card dark:text-button text-[10px] font-bold tracking-widest uppercase">منصة
+                        التوظيف الأولى</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 text-[10px] font-bold text-card">
+                <a href="./policy.html" class="hover:text-button transition-colors dark:text-white/70">السياسة
+                    والخصوصية</a>
+                <span class="opacity-20">|</span>
+                <a href="#" class="hover:text-button transition-colors dark:text-white/70">صاحب عمل</a>
+                <span class="opacity-20">|</span>
+                <a href="./contact.html" class="hover:text-button transition-colors dark:text-white/70">التواصل معنا</a>
+                <span class="opacity-20">|</span>
+                <a href="./help-center.html" class="hover:text-button transition-colors dark:text-white/70">مركز
+                    المساعدة</a>
+            </div>
+        </div>
+
+        <!-- شريط التنقل الرئيسي (Navbar) -->
+        <nav
+            class="bg-card/70 dark:bg-[#122d28]/90 backdrop-blur-md border-b border-border/20 dark:border-white/5 px-6 md:px-12 py-3 transition-colors duration-500">
+            <div class="max-w-[1500px] mx-auto flex items-center justify-between">
+
+                <!-- اللوغو -->
+                <div class="flex items-center">
+                    <a href="/" class="transition-transform duration-300">
+                        <img src="./src/images/logo/logo.png" alt="لوغو خطوة" class="w-20 md:w-25 brightness-110" />
+                    </a>
+                </div>
+
+                <!-- الروابط للشاشات الكبيرة -->
+                <ul class="hidden lg:flex items-center gap-1">
+                    <li><a href="./index.html" class="px-6 py-2 text-button font-bold text-sm">الرئيسية</a></li>
+                    <li><a href="#"
+                            class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">البحث
+                            عن وظيفة</a></li>
+                    <li><a href="#"
+                            class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">الشركات</a>
+                    </li>
+                    <li><a href="./Resume.html"
+                            class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">إنشاء
+                            سيرة ذاتية</a></li>
+                    <li><a href="./perc.html"
+                            class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">
+                            الأسعار</a></li>
+                </ul>
+
+                <!-- الأزرار اليمنى -->
+                <div class="flex items-center gap-2 md:gap-6">
+                    <!-- زر الوضع الليلي -->
+                    <button id="theme-toggle" type="button"
+                        class="flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 dark:bg-white/10 text-button border border-white/10 cursor-pointer transition-all active:scale-90">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <div class="hidden md:flex items-center gap-4">
+                        <a href="./login.html" class="text-primaryHeading dark:text-white font-bold text-sm px-4">تسجيل
+                            الدخول</a>
+                        <a href="./signup.html"
+                            class="bg-button text-[#173630] px-4 py-2 rounded-xl font-bold text-sm active:scale-95 transition-all">إنشاء
+                            حساب</a>
+                    </div>
+
+                    <!-- زر القائمة للجوال -->
+                    <button id="mobile-menu-button"
+                        class="lg:hidden flex items-center justify-center w-8 h-8 text-primaryHeading dark:text-white cursor-pointer">
+                        <i class="fa-solid fa-bars-staggered text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sidebar القائمة الجانبية -->
+        <div id="sidebar-overlay"
+            class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[110] opacity-0 pointer-events-none transition-all duration-300">
+        </div>
+
+        <aside id="mobile-sidebar"
+            class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-[#0f2420] z-[120] translate-x-full transition-transform duration-300 ease-in-out shadow-2xl border-l dark:border-white/5">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center justify-between mb-8">
+                    <span class="text-primaryHeading dark:text-button font-bold">القائمة</span>
+                    <button id="close-sidebar"
+                        class="text-text-muted dark:text-white/60 hover:text-red-500 transition-colors cursor-pointer">
+                        <i class="fa-solid fa-xmark text-2xl"></i>
+                    </button>
+                </div>
+
+                <ul class="flex flex-col gap-4 mb-auto">
+                    <li><a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-button/10 text-button font-bold"><i
+                                class="fa-solid fa-house"></i> الرئيسية</a></li>
+                    <li><a href="#"
+                            class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i
+                                class="fa-solid fa-magnifying-glass"></i> البحث عن وظيفة</a></li>
+                    <li><a href="#"
+                            class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i
+                                class="fa-solid fa-building"></i> الشركات</a></li>
+                    <li><a href="./Resume.html"
+                            class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i
+                                class="fa-solid fa-file-invoice"></i> إنشاء سيرة ذاتية</a></li>
+                </ul>
+
+                <div class="flex flex-col gap-3 pt-6 border-t dark:border-white/10">
+                    <a href="./login.html"
+                        class="w-full py-3 text-center rounded-xl border border-border dark:border-white/10 text-primaryHeading dark:text-white font-bold">تسجيل
+                        الدخول</a>
+                    <a href="./signup.html"
+                        class="w-full py-3 text-center rounded-xl bg-button text-[#173630] font-bold">إنشاء
+                        حساب</a>
+                </div>
+            </div>
+        </aside>
+    </header>
+    <main
+        class="min-h-screen bg-input dark:bg-bg-dark py-8 md:py-16 px-4 sm:px-6 lg:px-8 font-primary text-right selection:bg-button/30 transition-colors duration-500">
+        <div class="max-w-6xl mx-auto w-full space-y-8 md:space-y-12">
+
+            <!-- قسم الهيرو (البحث الرئيسي) -->
+            <header
+                class="relative bg-surface dark:bg-surface-dark rounded-[2.5rem] md:rounded-[4rem] p-8 md:p-20 shadow-xl border border-card dark:border-border-dark overflow-hidden transition-all duration-500">
+                <!-- خلفيات ضبابية جمالية -->
+                <div
+                    class="absolute top-0 left-0 w-64 h-64 bg-button/10 dark:bg-button/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl">
+                </div>
+                <div
+                    class="absolute bottom-0 right-0 w-48 h-48 bg-primaryHeading/5 dark:bg-button/10 rounded-full translate-x-1/4 translate-y-1/4 blur-2xl">
+                </div>
+
+                <div class="relative z-10 text-center space-y-6">
+                    <!-- شارة التنبيه النشطة -->
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-1.5 bg-card dark:bg-card-dark text-primaryHeading dark:text-button text-xs md:text-sm font-bold rounded-full border border-button/20 dark:border-button/40">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-button opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-button"></span>
+                        </span>
+                        ابحث عن فرصتك المستقبلية
+                    </div>
+
+                    <!-- العنوان الرئيسي -->
+                    <h1
+                        class="text-primaryHeading dark:text-dark-heading text-3xl sm:text-5xl md:text-6xl font-black leading-[1.15]">
+                        اكتشف أفضل الوظائف على <br>
+                        <span class="text-button-hover dark:text-button relative inline-block">
+                            منصة خطوة
+                            <svg class="absolute -bottom-2 left-0 w-full h-3 text-button/30" viewBox="0 0 100 10"
+                                preserveAspectRatio="none">
+                                <path d="M0 5 Q 25 0 50 5 T 100 5" stroke="currentColor" stroke-width="4" fill="none" />
+                            </svg>
+                        </span>
+                    </h1>
+
+                    <!-- شريط البحث الذكي (Job Search Bar) -->
+                    <div class="mx-auto mt-8 w-full max-w-4xl px-0">
+                        <form class="relative w-full group">
+                            <div
+                                class="grid w-full grid-cols-1 items-stretch overflow-hidden rounded-[2rem] border border-card dark:border-border-dark bg-white dark:bg-input-dark shadow-md md:grid-cols-[1fr_auto_1fr_auto] md:rounded-3xl focus-within:ring-2 focus-within:ring-button focus-within:border-button transition-all duration-300">
+
+                                <!-- حقل البحث عن المسمى الوظيفي -->
+                                <div
+                                    class="flex min-h-14 items-center gap-3 border-b border-card dark:border-border-dark px-5 focus-within:bg-input/10 dark:focus-within:bg-input-dark/20 md:border-b-0">
+                                    <svg class="h-5 w-5 shrink-0 text-primaryHeading dark:text-button" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m21 21-4.3-4.3m0 0A7.5 7.5 0 1 0 6 6a7.5 7.5 0 0 0 10.7 10.7Z" />
+                                    </svg>
+                                    <input id="job-search-desktop" type="search" data-job-search
+                                        placeholder="المسمى الوظيفي أو الكلمات المفتاحية..." autocomplete="off"
+                                        class="h-full w-full bg-transparent py-4 text-sm md:text-base text-primaryHeading dark:text-dark-heading placeholder:text-text-muted outline-none border-none focus:ring-0" />
+                                </div>
+
+                                <!-- الفاصل العمودي -->
+                                <div class="hidden w-px shrink-0 self-center bg-card dark:bg-border-dark md:block md:h-8"
+                                    aria-hidden="true"></div>
+
+                                <!-- قائمة اختيار الموقع/المدينة -->
+                                <div
+                                    class="flex min-h-14 items-center gap-3 border-b border-card dark:border-border-dark px-5 focus-within:bg-input/10 dark:focus-within:bg-input-dark/20 md:border-b-0">
+                                    <svg class="h-5 w-5 shrink-0 text-primaryHeading dark:text-button" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 11.5c0 7-7.5 11-7.5 11s-7.5-4-7.5-11a7.5 7.5 0 1 1 15 0Z" />
+                                    </svg>
+                                    <select id="job-location-desktop"
+                                        class="w-full bg-transparent py-4 text-sm md:text-base text-primaryHeading dark:text-dark-heading cursor-pointer outline-none border-none focus:ring-0 appearance-none">
+                                        <option value="" class="dark:bg-input-dark">كل المواقع</option>
+                                        <option value="الرياض" class="dark:bg-input-dark">الرياض</option>
+                                        <option value="جدة" class="dark:bg-input-dark">جدة</option>
+                                        <option value="الدمام" class="dark:bg-input-dark">الدمام</option>
+                                        <option value="القاهرة" class="dark:bg-input-dark">القاهرة</option>
+                                        <option value="أبوظبي" class="dark:bg-input-dark">أبوظبي</option>
+                                        <option value="عمّان" class="dark:bg-input-dark">عمّان</option>
+                                    </select>
+                                </div>
+
+                                <!-- زر البحث الرئيسي -->
+                                <button id="job-search-submit-desktop" type="button"
+                                    class="inline-flex min-h-14 w-full md:w-auto items-center justify-center gap-2 bg-primaryHeading dark:bg-button px-10 text-base font-bold text-white dark:text-button-text-dark hover:scale-[1.02] md:hover:scale-105 active:scale-95 transition-all shadow-lg md:rounded-e-2xl">
+                                    <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m21 21-4.3-4.3m0 0A7.5 7.5 0 1 0 6 6a7.5 7.5 0 0 0 10.7 10.7Z" />
+                                    </svg>
+                                    <span>بحث</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </header>
+
+            <!-- العنوان الفرعي وأدوات الترتيب المتقدمة للوظائف -->
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-5 pb-2">
+                <h2 class="text-2xl font-black text-primaryHeading dark:text-dark-heading md:text-3xl">نتائج الوظائف
+                    المتاحة</h2>
+
+                <div
+                    class="inline-flex items-center overflow-hidden rounded-xl border border-card dark:border-border-dark bg-white dark:bg-input-dark shadow-sm transition-all focus-within:ring-2 focus-within:ring-button">
+                    <span
+                        class="bg-input dark:bg-card-dark px-4 py-2.5 text-xs md:text-sm font-bold text-primaryHeading dark:text-button border-e border-card dark:border-border-dark"
+                        id="job-sort-label">ترتيب حسب</span>
+                    <select id="job-sort"
+                        class="cursor-pointer bg-transparent px-4 py-2 text-xs md:text-sm font-bold text-primaryHeading dark:text-dark-heading outline-none border-none focus:ring-0 appearance-none min-w-[10rem]"
+                        aria-labelledby="job-sort-label">
+                        <option value="recent" class="dark:bg-input-dark">الأحدث تاريخاً</option>
+                        <option value="salary" class="dark:bg-input-dark">الأعلى راتباً</option>
+                        <option value="title" class="dark:bg-input-dark">الاسم أبجدياً</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- الجزء السفلي: الفلاتر الجانبية + شبكة عرض بطاقات الوظائف -->
+            <div class="flex flex-col lg:grid lg:grid-cols-[280px_1fr] gap-6 md:gap-8 items-start">
+
+                <!-- شريط الفلاتر الجانبي (Aside) -->
+                <aside class="w-full flex flex-col gap-5 sticky top-6">
+
+                    <!-- لوحة التحكم العلوية للفلاتر النشطة -->
+                    <div
+                        class="bg-surface dark:bg-surface-dark p-5 rounded-2xl border border-card dark:border-border-dark shadow-sm space-y-4 transition-all duration-500">
+                        <div
+                            class="flex items-center justify-between border-b border-input dark:border-border-dark pb-3">
+                            <p class="text-sm font-black text-primaryHeading dark:text-dark-heading">تصفية الوظائف</p>
+                            <button id="clear-filters" type="button"
+                                class="text-xs font-bold text-button-hover dark:text-button hover:underline transition-all">
+                                مسح الكل
+                            </button>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-text-muted dark:text-text-muted-dark mb-2">الفلاتر المطبقة
+                                حالياً</p>
+                            <div id="job-tags" class="flex flex-wrap gap-2 min-h-6"></div>
+                        </div>
+                    </div>
+
+                    <!-- فلتر: لغة العمل -->
+                    <details
+                        class="group bg-surface dark:bg-surface-dark border border-card dark:border-border-dark rounded-2xl p-5 transition-all duration-300"
+                        open>
+                        <summary
+                            class="flex cursor-pointer list-none items-center justify-between font-bold text-primaryHeading dark:text-dark-heading text-sm select-none">
+                            <span>لغة العمل</span>
+                            <span
+                                class="text-primaryHeading dark:text-button font-black transition-transform duration-300 group-open:rotate-180 text-base">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </summary>
+                        <div
+                            class="mt-4 pt-4 border-t border-input dark:border-border-dark space-y-3 text-sm font-medium text-text-muted dark:text-text-muted-dark">
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="checkbox" data-filter="language" value="ar"
+                                    class="filter-control h-4 w-4 rounded border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button focus:ring-offset-0" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">العربية</span>
+                            </label>
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="checkbox" data-filter="language" value="en"
+                                    class="filter-control h-4 w-4 rounded border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button focus:ring-offset-0" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">الإنجليزية</span>
+                            </label>
+                        </div>
+                    </details>
+
+                    <!-- فلتر: تاريخ النشر -->
+                    <details
+                        class="group bg-surface dark:bg-surface-dark border border-card dark:border-border-dark rounded-2xl p-5 transition-all duration-300">
+                        <summary
+                            class="flex cursor-pointer list-none items-center justify-between font-bold text-primaryHeading dark:text-dark-heading text-sm select-none">
+                            <span>تاريخ النشر</span>
+                            <span
+                                class="text-primaryHeading dark:text-button font-black transition-transform duration-300 group-open:rotate-180 text-base">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </summary>
+                        <div
+                            class="mt-4 pt-4 border-t border-input dark:border-border-dark space-y-3 text-sm font-medium text-text-muted dark:text-text-muted-dark">
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="radio" name="pub" value="any" checked
+                                    class="filter-control h-4 w-4 border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">أي
+                                    تاريخ</span>
+                            </label>
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="radio" name="pub" value="1"
+                                    class="filter-control h-4 w-4 border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">آخر
+                                    24 ساعة</span>
+                            </label>
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="radio" name="pub" value="7"
+                                    class="filter-control h-4 w-4 border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">آخر
+                                    7 أيام</span>
+                            </label>
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="radio" name="pub" value="30"
+                                    class="filter-control h-4 w-4 border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">آخر
+                                    30 يوماً</span>
+                            </label>
+                        </div>
+                    </details>
+
+                    <!-- فلتر: المستوى التعليمي -->
+                    <details
+                        class="group bg-surface dark:bg-surface-dark border border-card dark:border-border-dark rounded-2xl p-5 transition-all duration-300">
+                        <summary
+                            class="flex cursor-pointer list-none items-center justify-between font-bold text-primaryHeading dark:text-dark-heading text-sm select-none">
+                            <span>المستوى التعليمي</span>
+                            <span
+                                class="text-primaryHeading dark:text-button font-black transition-transform duration-300 group-open:rotate-180 text-base">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </summary>
+                        <div
+                            class="mt-4 pt-4 border-t border-input dark:border-border-dark space-y-3 text-sm font-medium text-text-muted dark:text-text-muted-dark">
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="checkbox" data-filter="education" value="دبلوم"
+                                    class="filter-control h-4 w-4 rounded border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button focus:ring-offset-0" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">دبلوم</span>
+                            </label>
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="checkbox" data-filter="education" value="بكالوريوس"
+                                    class="filter-control h-4 w-4 rounded border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button focus:ring-offset-0" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">بكالوريوس</span>
+                            </label>
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="checkbox" data-filter="education" value="ماجستير"
+                                    class="filter-control h-4 w-4 rounded border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button focus:ring-offset-0" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">ماجستير</span>
+                            </label>
+                        </div>
+                    </details>
+
+                    <!-- فلتر: نوع الوظيفة -->
+                    <details
+                        class="group bg-surface dark:bg-surface-dark border border-card dark:border-border-dark rounded-2xl p-5 transition-all duration-300">
+                        <summary
+                            class="flex cursor-pointer list-none items-center justify-between font-bold text-primaryHeading dark:text-dark-heading text-sm select-none">
+                            <span>نوع الوظيفة</span>
+                            <span
+                                class="text-primaryHeading dark:text-button font-black transition-transform duration-300 group-open:rotate-180 text-base">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </summary>
+                        <div
+                            class="mt-4 pt-4 border-t border-input dark:border-border-dark space-y-3 text-sm font-medium text-text-muted dark:text-text-muted-dark">
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="checkbox" data-filter="jobType" value="دوام كامل"
+                                    class="filter-control h-4 w-4 rounded border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button focus:ring-offset-0" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">دوام
+                                    كامل</span>
+                            </label>
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="checkbox" data-filter="jobType" value="دوام جزئي"
+                                    class="filter-control h-4 w-4 rounded border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button focus:ring-offset-0" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">دوام
+                                    جزئي</span>
+                            </label>
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="checkbox" data-filter="jobType" value="عقد"
+                                    class="filter-control h-4 w-4 rounded border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button focus:ring-offset-0" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">عقد</span>
+                            </label>
+                        </div>
+                    </details>
+
+                    <!-- فلتر: المسافة الجغرافية -->
+                    <details
+                        class="group bg-surface dark:bg-surface-dark border border-card dark:border-border-dark rounded-2xl p-5 transition-all duration-300">
+                        <summary
+                            class="flex cursor-pointer list-none items-center justify-between font-bold text-primaryHeading dark:text-dark-heading text-sm select-none">
+                            <span>المسافة</span>
+                            <span
+                                class="text-primaryHeading dark:text-button font-black transition-transform duration-300 group-open:rotate-180 text-base">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </summary>
+                        <div
+                            class="mt-4 pt-4 border-t border-input dark:border-border-dark space-y-3 text-sm font-medium text-text-muted dark:text-text-muted-dark">
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="radio" name="dist" value="10"
+                                    class="filter-control h-4 w-4 border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">أقل
+                                    من 10 كم</span>
+                            </label>
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="radio" name="dist" value="50"
+                                    class="filter-control h-4 w-4 border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">أقل
+                                    من 50 كم</span>
+                            </label>
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="radio" name="dist" value="any" checked
+                                    class="filter-control h-4 w-4 border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">أي
+                                    مسافة</span>
+                            </label>
+                        </div>
+                    </details>
+
+                    <!-- فلتر: نطاق الراتب المالي -->
+                    <details
+                        class="group bg-surface dark:bg-surface-dark border border-card dark:border-border-dark rounded-2xl p-5 transition-all duration-300">
+                        <summary
+                            class="flex cursor-pointer list-none items-center justify-between font-bold text-primaryHeading dark:text-dark-heading text-sm select-none">
+                            <span>الراتب (شهرياً)</span>
+                            <span
+                                class="text-primaryHeading dark:text-button font-black transition-transform duration-300 group-open:rotate-180 text-base">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </summary>
+                        <div
+                            class="mt-4 pt-4 border-t border-input dark:border-border-dark space-y-4 text-sm font-medium text-text-muted dark:text-text-muted-dark">
+                            <div class="grid grid-cols-2 gap-2">
+                                <input id="salary-min" type="number" inputmode="numeric" min="0"
+                                    placeholder="الحد الأدنى"
+                                    class="w-full rounded-xl border border-card dark:border-border-dark bg-white dark:bg-input-dark px-3 py-2 text-xs md:text-sm text-primaryHeading dark:text-dark-heading placeholder:text-text-muted focus:border-button focus:ring-button outline-none" />
+                                <input id="salary-max" type="number" inputmode="numeric" min="0"
+                                    placeholder="الحد الأعلى"
+                                    class="w-full rounded-xl border border-card dark:border-border-dark bg-white dark:bg-input-dark px-3 py-2 text-xs md:text-sm text-primaryHeading dark:text-dark-heading placeholder:text-text-muted focus:border-button focus:ring-button outline-none" />
+                            </div>
+                            <button id="salary-apply" type="button"
+                                class="inline-flex w-full items-center justify-center rounded-xl bg-primaryHeading dark:bg-button px-4 py-2 text-xs md:text-sm font-bold text-white dark:text-button-text-dark hover:scale-[1.02] active:scale-95 transition-all shadow-md">
+                                تطبيق النطاق
+                            </button>
+                        </div>
+                    </details>
+
+                    <!-- فلتر: أنماط العمل المتاحة -->
+                    <details
+                        class="group bg-surface dark:bg-surface-dark border border-card dark:border-border-dark rounded-2xl p-5 transition-all duration-300">
+                        <summary
+                            class="flex cursor-pointer list-none items-center justify-between font-bold text-primaryHeading dark:text-dark-heading text-sm select-none">
+                            <span>أنماط العمل</span>
+                            <span
+                                class="text-primaryHeading dark:text-button font-black transition-transform duration-300 group-open:rotate-180 text-base">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </summary>
+                        <div
+                            class="mt-4 pt-4 border-t border-input dark:border-border-dark space-y-3 text-sm font-medium text-text-muted dark:text-text-muted-dark">
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="checkbox" data-filter="workMode" value="عن بُعد"
+                                    class="filter-control h-4 w-4 rounded border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button focus:ring-offset-0" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">عن
+                                    بُعد</span>
+                            </label>
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="checkbox" data-filter="workMode" value="حضوري"
+                                    class="filter-control h-4 w-4 rounded border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button focus:ring-offset-0" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">حضوري</span>
+                            </label>
+                            <label class="flex cursor-pointer items-center gap-3 group/item">
+                                <input type="checkbox" data-filter="workMode" value="هجين"
+                                    class="filter-control h-4 w-4 rounded border-card dark:border-border-dark accent-button bg-white dark:bg-input-dark text-button focus:ring-button focus:ring-offset-0" />
+                                <span
+                                    class="group-hover/item:text-primaryHeading dark:group-hover/item:text-dark-heading transition-colors">هجين</span>
+                            </label>
+                        </div>
+                    </details>
+                </aside>
+
+                <!-- حاوية عرض النتائج (شبكة الوظائف + الترقيم) -->
+                <section class="w-full min-w-0 space-y-6">
+                    <!-- شبكة البطاقات المخصصة لاستقبال كود الـ JavaScript -->
+                    <div id="jobs-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 transition-all duration-500">
+                        <!-- يتم بناؤها ديناميكياً بواسطة src/js/jobs.js -->
+                    </div>
+
+                    <!-- نظام ترقيم الصفحات المتوافق -->
+                    <nav id="jobs-pagination-wrap"
+                        class="mt-8 flex flex-wrap items-center justify-center gap-2 pt-6 border-t border-card dark:border-border-dark"
+                        aria-label="ترقيم الصفحات المتاحة">
+                        <ul id="jobs-pagination" class="inline-flex flex-wrap items-center justify-center gap-2"></ul>
+                    </nav>
+                </section>
+
+            </div>
+        </div>
+    </main>
+   <footer class="font-primary transition-all duration-700 bg-white dark:bg-[#0a1614] relative overflow-hidden">
+
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-button/50 to-transparent">
+    </div>
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-button/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-[1500px] mx-auto px-6 pt-24 pb-16">
+      <div class="grid lg:grid-cols-2 gap-16 items-center border-b border-primaryHeading/5 dark:border-white/5 pb-20">
+        <div>
+          <h2 class="text-5xl md:text-6xl font-black text-primaryHeading dark:text-white leading-tight mb-6">
+            انضم إلى مستقبل <br>
+            <span class="text-button inline-block relative">
+              التوظيف التقني
+              <svg class="absolute -bottom-2 left-0 w-full h-2 text-button/30" viewBox="0 0 100 10"
+                preserveAspectRatio="none">
+                <path d="M0 5 Q 25 0 50 5 T 100 5" fill="none" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </span>
+          </h2>
+          <p class="text-lg text-text-muted dark:text-text-muted-dark max-w-md font-medium opacity-80">
+            أكثر من 50,000 متخصص تقني يطورون مسارهم المهني عبر خطوة. هل أنت مستعد للخطوة القادمة؟
+          </p>
+        </div>
+
+        <div class="relative group">
+          <div
+            class="absolute inset-0 bg-button/20 blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-500">
+          </div>
+          <div
+            class="relative bg-[#F4FAF9] dark:bg-[#173630]/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-button/20 shadow-2xl">
+            <h3 class="text-xl font-black text-primaryHeading dark:text-white mb-4">اشترك في النشرة المهنية</h3>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input type="email" placeholder="بريدك الإلكتروني..."
+                class="flex-1 bg-white dark:bg-[#0a1614] border border-button/10 rounded-2xl px-6 py-4 text-sm focus:outline-none focus:border-button transition-all dark:text-white">
+              <button
+                class="bg-button text-[#173630] px-8 py-4 rounded-2xl font-black text-sm hover:shadow-[0_10px_25px_rgba(33,234,200,0.4)] transition-all active:scale-95">
+                انضم الآن
+              </button>
+            </div>
+            <p
+              class="text-[10px] text-text-muted dark:text-white/40 mt-4 text-center font-bold uppercase tracking-widest">
+              لا نقوم بإرسال رسائل مزعجة إطلاقاً</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 py-20" dir="rtl">
+
+        <div class="col-span-2 space-y-8">
+          <img src="./src/images/logo/logo.png" alt="logo" class="w-32 dark:brightness-125">
+          <p class="text-sm text-text-muted dark:text-text-muted-dark leading-relaxed font-bold">
+            منصة "خطوة" هي بوابتك الرقمية للوصول إلى الوظائف التقنية الأكثر طلباً في الخليج والوطن العربي. نحن نبني
+            الجسور بين الموهبة والفرصة.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+              title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+              title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+              title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+              title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+              title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+              title="Discord"><i class="fa-brands fa-discord"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-primaryHeading dark:text-white font-black mb-8">الشركة</h4>
+          <ul class="space-y-4 text-sm font-bold text-text-muted dark:text-text-muted-dark">
+            <li><a href="#" class="hover:text-button transition-colors">عن خطوة</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">فريق العمل</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">الوظائف المتاحة</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">الصحافة</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-primaryHeading dark:text-white font-black mb-8">الخدمات</h4>
+          <ul class="space-y-4 text-sm font-bold text-text-muted dark:text-text-muted-dark">
+            <li><a href="#" class="hover:text-button transition-colors">البحث عن وظيفة</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">بناء سيرة ذاتية</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">تحليل الملف الشخصي</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">لأصحاب الشركات</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-primaryHeading dark:text-white font-black mb-8">الدعم</h4>
+          <ul class="space-y-4 text-sm font-bold text-text-muted dark:text-text-muted-dark">
+            <li><a href="#" class="hover:text-button transition-colors">مركز المساعدة</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">تواصل معنا</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">الأسئلة الشائعة</a></li>
+            <li><a href="#" class="hover:text-button transition-colors">المجتمع</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-6">
+          <h4 class="text-primaryHeading dark:text-white font-black mb-8">تواصل سريع</h4>
+          <a href="https://wa.me/yournumber"
+            class="flex items-center gap-3 p-3 rounded-2xl bg-green-500/10 text-green-600 dark:text-green-400 font-black text-xs hover:bg-green-500 hover:text-white transition-all">
+            <i class="fa-brands fa-whatsapp text-lg"></i> واتساب الدعم
+          </a>
+          <a href="https://t.me/yourusername"
+            class="flex items-center gap-3 p-3 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 font-black text-xs hover:bg-blue-500 hover:text-white transition-all">
+            <i class="fa-brands fa-telegram text-lg"></i> قناة التليجرام
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="pt-10 border-t border-primaryHeading/5 dark:border-white/5 flex flex-col lg:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2 px-3 py-1 bg-button/10 rounded-full">
+            <span class="w-2 h-2 bg-button rounded-full animate-pulse"></span>
+            <span class="text-[10px] font-black text-button uppercase tracking-tighter">Status: All Systems
+              Operational</span>
+          </div>
+          <p class="text-[11px] font-bold text-text-muted dark:text-white/30 tracking-widest uppercase">© 2026 KHOTWAH
+            PLATFORM. MADE IN SAUDI ARABIA.</p>
+        </div>
+
+        <div class="flex gap-8 text-[11px] font-black text-text-muted dark:text-white/40 uppercase tracking-widest">
+          <a href="#" class="hover:text-button transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-button transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-button transition-colors">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="./src/js/post-job.js"></script>
+    <script src="./src/js/jobs.js"></script>
+
+    <script src="./src/js/script.js"></script>
+</body>
+
+</html>

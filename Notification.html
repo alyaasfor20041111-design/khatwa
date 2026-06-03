@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="ar" class="dark" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الإشعارات</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="icon" type="" href="./src/images/logo/icon.png" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet" />
+    <!-- icons font owesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="flex min-h-screen bg-background font-primary">
+
+        <aside id="sidebar"
+            class="fixed top-0 right-0 z-40 w-64 h-screen transition-transform translate-x-0 border-l border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#173630]"
+            aria-label="Sidebar">
+
+            <button onclick="toggleSidebar()"
+                class="absolute -left-3 top-10 bg-white dark:bg-[#20453E] border border-gray-100 dark:border-[#2D534C] rounded-full w-6 h-6 flex items-center justify-center text-gray-400 dark:text-[#21EAC8] hover:text-icon shadow-sm z-50 cursor-pointer">
+                <i id="toggleIcon" class="fa-solid fa-chevron-right text-[10px]"></i>
+            </button>
+
+            <div class="h-full px-4 py-6 overflow-y-auto flex flex-col justify-between">
+                <div>
+                    <div class="flex flex-col items-center justify-center mb-8">
+                        <div class="mb-5">
+                            <img src="./src/images/logo/logo.png" class="w-25" alt="شعار خطوة" />
+                        </div>
+                        <div class="w-full px-2">
+                            <div class="h-[1px] bg-gray-100 dark:bg-[#2D534C] w-full opacity-70"></div>
+                        </div>
+                    </div>
+
+                    <p class="text-secondary font-bold text-gray-400 dark:text-[#DEEDEB]/60 px-4 mb-4 uppercase">
+                        الرئيسية</p>
+
+                    <ul class="space-y-1 font-medium" id="sidebar-nav">
+                        <li>
+                            <a href="dashboard.html"
+                                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                                <div
+                                    class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                                    <i class="fa-solid fa-border-all text-sm"></i>
+                                </div>
+                                <span class="ms-3 text-sm">لوحة التحكم</span>
+                            </a>
+                        </li>
+                        <li>
+              <a href="post-jop.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-briefcase text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">نشر وظيفة</span>
+              </a>
+            </li>
+                        <li>
+                            <a href="Resume.html"
+                                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                                <div
+                                    class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                                    <i class="fa-solid fa-user text-sm"></i>
+                                </div>
+                                <span class="ms-3 text-sm">ملفي الشخصي</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Notification.html"
+                                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                                <div
+                                    class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                                    <i class="fa-solid fa-bell text-sm"></i>
+                                </div>
+                                <span class="ms-3 text-sm">الإشعارات</span>
+                                <span
+                                    class="ms-auto bg-red-500 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Messages.html"
+                                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                                <div
+                                    class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                                    <i class="fa-solid fa-comment-dots text-sm"></i>
+                                </div>
+                                <span class="ms-3 text-sm">الرسائل</span>
+                                <span
+                                    class="ms-auto bg-red-500 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">5</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Accountsetting.html"
+                                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                                <div
+                                    class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                                    <i class="fa-solid fa-sliders text-sm"></i>
+                                </div>
+                                <span class="ms-3 text-sm">إعدادات الحساب</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="activity.html"
+                                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                                <div
+                                    class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                                    <i class="fa-solid fa-chart-line text-sm"></i>
+                                </div>
+                                <span class="ms-3 text-sm">النشاط</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="space-y-1">
+                    <a href="./index.html"
+                        class="flex items-center px-4 py-3 text-red-500 rounded-xl hover:bg-red-50 dark:hover:bg-red-500/10 transition-all duration-200 group">
+                        <div class="w-6 flex justify-center text-red-400"><i
+                                class="fa-solid fa-arrow-right-from-bracket text-sm"></i></div>
+                        <span class="ms-3 text-sm font-medium">تسجيل الخروج</span>
+                    </a>
+                    <a href="#"
+                        class="flex items-center px-4 py-3 text-gray-400 dark:text-[#DEEDEB]/60 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-200 group">
+                        <div class="w-6 flex justify-center text-gray-300 dark:text-white/20"><i
+                                class="fa-solid fa-circle-question text-sm"></i></div>
+                        <span class="ms-3 text-sm font-medium">المساعدة</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <main id="mainContent"
+            class="sm:mr-64 w-full min-h-screen transition-all duration-300 bg-[#F8FBFB] dark:bg-[#173630]">
+            <header
+                class="border-b border-gray-100 dark:border-[#2D534C] py-4 px-4 md:px-6 lg:px-10 flex items-center justify-between sticky top-0 z-30 bg-white/80 dark:bg-[#20453E]/90 backdrop-blur-md transition-all">
+
+                <!-- القسم الأيمن: العناوين -->
+                <div class="flex flex-col text-right shrink-0">
+                    <h1
+                        class="text-[15px] lg:text-primary font-bold text-primaryHeading dark:text-button leading-tight">
+                        الإشعارات</h1>
+                    <p class="hidden xl:block text-[10px] text-gray-400 dark:text-[#DEEDEB]/50 mt-0.5 font-medium">تحديث
+                        معلوماتك سيمنحك الوصول لمحتوى أكثر صلة</p>
+                </div>
+
+                <!-- القسم الأوسط: البحث (محسن ليتناسب مع حجم iPad) -->
+                <div
+                    class="relative flex-1 mx-2 sm:mx-4 max-w-[120px] sm:max-w-[250px] md:max-w-[350px] lg:max-w-[400px] hidden md:block">
+                    <input type="text"
+                        class="bg-[#F4FAF9] dark:bg-[#1A3D36] border border-gray-100 dark:border-[#2D534C] text-gray-700 dark:text-[#DEEDEB] text-xs rounded-xl focus:ring-2 focus:ring-[#21EAC8]/10 focus:border-[#21EAC8] block w-full pr-9 pl-4 py-2 transition-all outline-none placeholder:text-gray-300 dark:placeholder:text-white/20 "
+                        placeholder="بحث">
+                    <span
+                        class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400 dark:text-[#21EAC8]/60">
+                        <i class="fa-solid fa-magnifying-glass text-[12px]"></i>
+                    </span>
+                </div>
+
+                <!-- القسم الأيسر: الأزرار والبروفايل -->
+                <div class="flex items-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 shrink-0">
+
+                    <!-- زر الوضع الليلي -->
+                    <button id="theme-toggle" type="button"
+                        class="flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 dark:bg-white/10 text-button border border-white/10 dark:border-[#2D534C] cursor-pointer transition-all active:scale-90 shadow-sm">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <!-- التنبيهات -->
+                    <button
+                        class="relative w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-gray-400 dark:text-[#DEEDEB]/60 hover:text-[#21EAC8] transition-all">
+                        <i class="fa-regular fa-bell text-lg sm:text-xl"></i>
+                        <span
+                            class="absolute top-0.5 right-0.5 bg-red-600 text-white text-[7px] sm:text-[8px] font-bold w-4 h-4 flex items-center justify-center rounded-full border-2 border-white dark:border-[#20453E]">
+                            30
+                        </span>
+                    </button>
+
+                    <!-- الملف الشخصي -->
+                    <div class="flex items-center gap-2 cursor-pointer group">
+                        <div class="hidden lg:flex flex-col text-right">
+                            <span
+                                class="text-xs font-bold text-[#2D534C] dark:text-[#DEEDEB] group-hover:text-[#21EAC8] transition-colors">أحمد
+                                العلي</span>
+                            <span class="text-[9px] text-gray-400 dark:text-[#DEEDEB]/40">ahmedalali@gmail.com</span>
+                        </div>
+                        <div
+                            class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl border border-gray-100 dark:border-[#2D534C] overflow-hidden transform transition-all group-hover:scale-105 shadow-sm hidden sm:block">
+                            <img src="./src/images/resume/profile.png" alt="User" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+
+            <div class="p-6 border-b border-gray-50 dark:border-[#2D534C] transition-colors">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-regular fa-bell text-xl text-primaryHeading dark:text-white"></i>
+                        <h2 class="text-lg font-bold text-primaryHeading dark:text-white">لديك <span class="text-icon"
+                                id="notif-count">3 تنبيهات</span> اليوم</h2>
+                    </div>
+                    <button
+                        class="text-gray-400 hover:text-gray-600 transition-colors dark:text-[#DEEDEB]/40 hover:text-gray-600 dark:hover:text-white transition-colors">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                </div>
+
+                <div id="filters-container" class="flex flex-wrap gap-3">
+                    <button data-filter="all"
+                        class="filter-btn active-tab px-6 py-2 rounded-xl  bg-button  hover:bg-button          text-button-title font-bold text-sm           cursor-pointer  transition-all duration-300">الكل</button>
+                    <button data-filter="new-job"
+                        class="filter-btn px-6 py-2 rounded-xl bg-input  hover:bg-button    text-button-title font-bold text-sm   cursor-pointer transition-all duration-300">وظيفة
+                        جديدة</button>
+                    <button data-filter="message"
+                        class="filter-btn px-6 py-2 rounded-xl bg-input  hover:bg-button    text-button-title font-bold text-sm   cursor-pointer transition-all duration-300">الرسائل</button>
+                    <button data-filter="apply-result"
+                        class="filter-btn px-6 py-2 rounded-xl bg-input  hover:bg-button    text-button-title font-bold text-sm   cursor-pointer transition-all duration-300">نتائج
+                        التقديم</button>
+                </div>
+            </div>
+
+            <div id="notifications-list" class="divide-y divide-gray-50 dark:divide-[#2D534C]">
+                <div class="notification-item flex items-start gap-4 p-6 hover:bg-gray-50 dark:hover:bg-[#214a42]/30 transition-all duration-300"
+                    data-category="message">
+
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            بدأت <span class="font-bold dark:text-white">Prime Works Ltd</span> بمتابعة ملفك الشخصي. قم
+                            بزيارة صفحتهم لمشاهدة أحدث الوظائف.
+                        </p>
+
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-red-50 dark:bg-red-500/10 text-red-500 border border-red-100 dark:border-red-500/20">
+                            رسالة
+                        </span>
+                    </div>
+
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3 text-gray-300 dark:text-[#DEEDEB]/30">
+                            <button class="hover:text-yellow-400 transition-colors">
+                                <i class="fa-regular fa-star"></i>
+                            </button>
+                            <button class="hover:text-icon transition-colors">
+                                <i class="fa-regular fa-envelope"></i>
+                            </button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">22:14 AM</span>
+                    </div>
+                </div>
+                <div class="notification-item flex items-start gap-4 p-6 bg-card/30 dark:bg-[#214a42]/20 hover:bg-card/50 dark:hover:bg-[#214a42]/40 transition-all duration-300"
+                    data-category="apply-result">
+
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            تم إرسال سيرتك الذاتية بنجاح لشركة <span class="font-bold dark:text-white">Tech Nova
+                                Inc.</span> سنتواصل معك قريباً عبر البريد.
+                        </p>
+
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-green-50 dark:bg-green-500/10 text-green-500 border border-green-100 dark:border-green-500/20">
+                            نتائج التقديم
+                        </span>
+                    </div>
+
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3">
+                            <button class="text-yellow-400 transition-transform hover:scale-110">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
+                            <button class="text-gray-400 dark:text-[#DEEDEB]/30 hover:text-icon transition-colors">
+                                <i class="fa-regular fa-envelope"></i>
+                            </button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">21:30 PM</span>
+                    </div>
+                </div>
+
+                <div class="notification-item flex items-start gap-4 p-6 hover:bg-gray-50 dark:hover:bg-[#214a42]/30 transition-all duration-300"
+                    data-category="message">
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            ملفك الشخصي مكتمل تقريباً! أضف بضع تفاصيل لزيادة ظهورك أمام الشركات بنسبة <span
+                                class="font-bold text-icon">50%</span>.
+                        </p>
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-red-50 dark:bg-red-500/10 text-red-500 border border-red-100 dark:border-red-500/20">رسالة</span>
+                    </div>
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3 text-gray-300 dark:text-[#DEEDEB]/30">
+                            <button class="hover:text-yellow-400 transition-colors"><i
+                                    class="fa-regular fa-star"></i></button>
+                            <button class="hover:text-icon transition-colors"><i
+                                    class="fa-regular fa-envelope"></i></button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">20:45 PM</span>
+                    </div>
+                </div>
+
+                <div class="notification-item flex items-start gap-4 p-6 hover:bg-gray-50 dark:hover:bg-[#214a42]/30 transition-all duration-300"
+                    data-category="apply-result">
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            خبر رائع! شركة <span class="font-bold dark:text-white">Global Solutions</span> ترغب في تحديد
+                            موعد مقابلة معك لوظيفة مصمم.
+                        </p>
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-green-50 dark:bg-green-500/10 text-green-500 border border-green-100 dark:border-green-500/20">نتائج
+                            التقديم</span>
+                    </div>
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3 text-gray-300 dark:text-[#DEEDEB]/30">
+                            <button class="hover:text-yellow-400 transition-colors"><i
+                                    class="fa-regular fa-star"></i></button>
+                            <button class="hover:text-icon transition-colors"><i
+                                    class="fa-regular fa-envelope"></i></button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">19:20 PM</span>
+                    </div>
+                </div>
+
+                <div class="notification-item flex items-start gap-4 p-6 hover:bg-gray-50 dark:hover:bg-[#214a42]/30 transition-all duration-300"
+                    data-category="new-job">
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            فرصة مثيرة! تم نشر وظيفة <span class="font-bold dark:text-white">'Digital Marketing
+                                Specialist'</span> في Bright Solutions Group.
+                        </p>
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-blue-50 dark:bg-blue-500/10 text-blue-500 border border-blue-100 dark:border-blue-500/20">وظيفة
+                            جديدة</span>
+                    </div>
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3 text-gray-300 dark:text-[#DEEDEB]/30">
+                            <button class="hover:text-yellow-400 transition-colors"><i
+                                    class="fa-regular fa-star"></i></button>
+                            <button class="hover:text-icon transition-colors"><i
+                                    class="fa-regular fa-envelope"></i></button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">18:15 PM</span>
+                    </div>
+                </div>
+
+                <div class="notification-item flex items-start gap-4 p-6 bg-card/30 dark:bg-[#214a42]/20 hover:bg-card/50 dark:hover:bg-[#214a42]/40 transition-all duration-300"
+                    data-category="message">
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            لديك عرض وظيفي مباشر من <span class="font-bold dark:text-white">Innova Tech</span>. يرجى
+                            مراجعة تفاصيل العرض في صندوق الوارد.
+                        </p>
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-red-50 dark:bg-red-500/10 text-red-500 border border-red-100 dark:border-red-500/20">رسالة</span>
+                    </div>
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3">
+                            <button class="text-yellow-400 hover:scale-110 transition-transform"><i
+                                    class="fa-solid fa-star"></i></button>
+                            <button class="text-gray-400 dark:text-[#DEEDEB]/30 hover:text-icon transition-colors"><i
+                                    class="fa-regular fa-envelope"></i></button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">17:40 PM</span>
+                    </div>
+                </div>
+
+                <div class="notification-item flex items-start gap-4 p-6 hover:bg-gray-50 dark:hover:bg-[#214a42]/30 transition-all duration-300"
+                    data-category="new-job">
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            بدأ التوظيف لوظيفة <span class="font-bold dark:text-white">'HR Specialist'</span> في مجموعة
+                            المجد التجارية. التقديم متاح لنهاية الأسبوع.
+                        </p>
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-blue-50 dark:bg-blue-500/10 text-blue-500 border border-blue-100 dark:border-blue-500/20">وظيفة
+                            جديدة</span>
+                    </div>
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3 text-gray-300 dark:text-[#DEEDEB]/30">
+                            <button class="hover:text-yellow-400 transition-colors"><i
+                                    class="fa-regular fa-star"></i></button>
+                            <button class="hover:text-icon transition-colors"><i
+                                    class="fa-regular fa-envelope"></i></button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">01:10 AM</span>
+                    </div>
+                </div>
+
+                <div class="notification-item flex items-start gap-4 p-6 hover:bg-gray-50 dark:hover:bg-[#214a42]/30 transition-all duration-300 transition-colors"
+                    data-category="apply-result">
+
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            نأسف، قررت شركة <span class="font-bold dark:text-white">Creative Agency</span> المضي قدماً
+                            مع مرشح آخر. نتمنى لك التوفيق.
+                        </p>
+
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-green-50 dark:bg-green-500/10 text-green-500 border border-green-100 dark:border-green-500/20">
+                            نتائج التقديم
+                        </span>
+                    </div>
+
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3 text-gray-300 dark:text-[#DEEDEB]/30">
+                            <button class="hover:text-yellow-400 transition-colors">
+                                <i class="fa-regular fa-star"></i>
+                            </button>
+                            <button class="hover:text-icon transition-colors">
+                                <i class="fa-regular fa-envelope"></i>
+                            </button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">16:10 PM</span>
+                    </div>
+                </div>
+
+                <div class="notification-item flex items-start gap-4 p-6 hover:bg-gray-50 dark:hover:bg-[#214a42]/30 transition-all duration-300 transition-colors"
+                    data-category="message">
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            تنبيه أمني: تم تسجيل الدخول لحسابك من متصفح جديد في <span
+                                class="font-bold dark:text-white">القاهرة، مصر</span>. هل كنت أنت؟
+                        </p>
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-red-50 dark:bg-red-500/10 text-red-500 border border-red-100 dark:border-red-500/20">رسالة</span>
+                    </div>
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3 text-gray-300 dark:text-[#DEEDEB]/30">
+                            <button class="hover:text-yellow-400 transition-colors"><i
+                                    class="fa-regular fa-star"></i></button>
+                            <button class="hover:text-icon transition-colors"><i
+                                    class="fa-regular fa-envelope"></i></button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">14:55 PM</span>
+                    </div>
+                </div>
+
+                <div class="notification-item flex items-start gap-4 p-6 hover:bg-gray-50 dark:hover:bg-[#214a42]/30 transition-all duration-300 transition-colors"
+                    data-category="new-job">
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            تعلن <span class="font-bold dark:text-white">CyberGuard Security</span> عن حاجتها لـ <span
+                                class="font-bold text-icon">'Cybersecurity Analyst'</span>. انضم لأقوى فريق أمني.
+                        </p>
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-blue-50 dark:bg-blue-500/10 text-blue-500 border border-blue-100 dark:border-blue-500/20">وظيفة
+                            جديدة</span>
+                    </div>
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3 text-gray-300 dark:text-[#DEEDEB]/30">
+                            <button class="hover:text-yellow-400 transition-colors"><i
+                                    class="fa-regular fa-star"></i></button>
+                            <button class="hover:text-icon transition-colors"><i
+                                    class="fa-regular fa-envelope"></i></button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">12:00 AM</span>
+                    </div>
+                </div>
+
+                <div class="notification-item flex items-start gap-4 p-6 hover:bg-gray-50 dark:hover:bg-[#214a42]/30 transition-all duration-300 transition-colors"
+                    data-category="apply-result">
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            شركة <span class="font-bold dark:text-white">NextGen Labs</span> أرسلت لك اختباراً تقنياً.
+                            لديك <span class="text-icon font-bold">48 ساعة</span> لإكماله. بالتوفيق!
+                        </p>
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-green-50 dark:bg-green-500/10 text-green-500 border border-green-100 dark:border-green-500/20">نتائج
+                            التقديم</span>
+                    </div>
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3 text-gray-300 dark:text-[#DEEDEB]/30">
+                            <button class="hover:text-yellow-400 transition-colors"><i
+                                    class="fa-regular fa-star"></i></button>
+                            <button class="hover:text-icon transition-colors"><i
+                                    class="fa-regular fa-envelope"></i></button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">12:30 PM</span>
+                    </div>
+                </div>
+
+                <div class="notification-item flex items-start gap-4 p-6 hover:bg-gray-50 dark:hover:bg-[#214a42]/30 transition-all duration-300 transition-colors"
+                    data-category="message">
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            نصيحة: تحديث مهاراتك في البرمجة يزيد من فرص توظيفك بنسبة <span
+                                class="text-icon font-bold">30%</span> خلال هذا الشهر.
+                        </p>
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-red-50 dark:bg-red-500/10 text-red-500 border border-red-100 dark:border-red-500/20">رسالة</span>
+                    </div>
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3 text-gray-300 dark:text-[#DEEDEB]/30">
+                            <button class="hover:text-yellow-400 transition-colors"><i
+                                    class="fa-regular fa-star"></i></button>
+                            <button class="hover:text-icon transition-colors"><i
+                                    class="fa-regular fa-envelope"></i></button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">11:15 AM</span>
+                    </div>
+                </div>
+
+                <div class="notification-item flex items-start gap-4 p-6 hover:bg-gray-50 dark:hover:bg-[#214a42]/30 transition-all duration-300 transition-colors"
+                    data-category="new-job">
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            شركة كبرى تطلب <span class="font-bold dark:text-white">'Full Stack Engineer'</span> للعمل
+                            <span class="text-icon">عن بعد</span> بنظام الدوام الكامل. لا تفوت الفرصة!
+                        </p>
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-blue-50 dark:bg-blue-500/10 text-blue-500 border border-blue-100 dark:border-blue-500/20">وظيفة
+                            جديدة</span>
+                    </div>
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3 text-gray-300 dark:text-[#DEEDEB]/30">
+                            <button class="hover:text-yellow-400 transition-colors"><i
+                                    class="fa-regular fa-star"></i></button>
+                            <button class="hover:text-icon transition-colors"><i
+                                    class="fa-regular fa-envelope"></i></button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">04:00 AM</span>
+                    </div>
+                </div>
+                <div class="notification-item flex items-start gap-4 p-6 bg-card/30 dark:bg-[#214a42]/20 hover:bg-card/50 dark:hover:bg-[#214a42]/40 transition-all duration-300"
+                    data-category="apply-result">
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            رائع! تم تأهلك للمقابلة النهائية مع المدير التنفيذي لشركة <span
+                                class="font-bold dark:text-white">Prime Works</span>.
+                        </p>
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-green-50 dark:bg-green-500/10 text-green-500 border border-green-100 dark:border-green-500/20">
+                            نتائج التقديم
+                        </span>
+                    </div>
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3">
+                            <button class="text-yellow-400 hover:scale-110 transition-transform"><i
+                                    class="fa-solid fa-star"></i></button>
+                            <button class="text-gray-400 dark:text-[#DEEDEB]/30 hover:text-icon transition-colors"><i
+                                    class="fa-regular fa-envelope"></i></button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">09:00 AM</span>
+                    </div>
+                </div>
+
+                <div class="notification-item flex items-start gap-4 p-6 hover:bg-gray-50 dark:hover:bg-[#214a42]/30 transition-all duration-300"
+                    data-category="message">
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            شكراً لزيارتك معرض التوظيف الافتراضي. تم إرسال كتيب الشركات المشاركة إلى بريدك.
+                        </p>
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-red-50 dark:bg-red-500/10 text-red-500 border border-red-100 dark:border-red-500/20">
+                            رسالة
+                        </span>
+                    </div>
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3 text-gray-300 dark:text-[#DEEDEB]/30">
+                            <button class="hover:text-yellow-400 transition-colors"><i
+                                    class="fa-regular fa-star"></i></button>
+                            <button class="hover:text-icon transition-colors"><i
+                                    class="fa-regular fa-envelope"></i></button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">07:45 AM</span>
+                    </div>
+                </div>
+
+                <div class="notification-item flex items-start gap-4 p-6 hover:bg-gray-50 dark:hover:bg-[#214a42]/30 transition-all duration-300"
+                    data-category="new-job">
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-[#2D534C] text-icon focus:ring-icon bg-transparent">
+                    <div class="flex-1">
+                        <p class="text-sm text-primaryHeading dark:text-[#DEEDEB] leading-relaxed mb-2">
+                            وظيفة <span class="font-bold dark:text-white">'Technical Project Manager'</span> شاغرة الآن
+                            في <span class="font-bold dark:text-white">Visionary Systems</span>. اطلع على المهام وقدم
+                            الآن.
+                        </p>
+                        <span
+                            class="inline-block px-3 py-1 rounded text-[10px] font-bold bg-blue-50 dark:bg-blue-500/10 text-blue-500 border border-blue-100 dark:border-blue-500/20">
+                            وظيفة جديدة
+                        </span>
+                    </div>
+                    <div class="flex flex-col items-end gap-4">
+                        <div class="flex gap-3 text-gray-300 dark:text-[#DEEDEB]/30">
+                            <button class="hover:text-yellow-400 transition-colors"><i
+                                    class="fa-regular fa-star"></i></button>
+                            <button class="hover:text-icon transition-colors"><i
+                                    class="fa-regular fa-envelope"></i></button>
+                        </div>
+                        <span class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40">05:15 AM</span>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+
+
+
+
+    </main>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="./src/js/Notification.js"></script>
+    <script src="./src/js/script.js"></script>
+</body>
+
+</html>

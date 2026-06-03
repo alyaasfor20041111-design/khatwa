@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en" class="dark" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عملية الدفع</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="icon" type="" href="./src/images/logo/icon.png" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet" />
+    <!-- icons font owesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="sticky top-0 left-0 w-full z-[100] font-primary">
+        <!-- الشريط العلوي (Top Bar) -->
+        <div
+            class="hidden md:flex bg-primaryHeading dark:bg-[#0f2420] px-12 py-1.5 justify-between items-center transition-all duration-200 border-b dark:border-white/5">
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2 group cursor-pointer">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-button opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-button"></span>
+                    </span>
+                    <span class="text-card dark:text-button text-[10px] font-bold tracking-widest uppercase">منصة
+                        التوظيف الأولى</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 text-[10px] font-bold text-card">
+                <a href="./policy.html" class="hover:text-button transition-colors dark:text-white/70">السياسة
+                    والخصوصية</a>
+                <span class="opacity-20">|</span>
+                <a href="#" class="hover:text-button transition-colors dark:text-white/70">صاحب عمل</a>
+                <span class="opacity-20">|</span>
+                <a href="./contact.html" class="hover:text-button transition-colors dark:text-white/70">التواصل معنا</a>
+                <span class="opacity-20">|</span>
+                <a href="./help-center.html" class="hover:text-button transition-colors dark:text-white/70">مركز
+                    المساعدة</a>
+            </div>
+        </div>
+
+        <!-- شريط التنقل الرئيسي (Navbar) -->
+        <nav
+            class="bg-card/70 dark:bg-[#122d28]/90 backdrop-blur-md border-b border-border/20 dark:border-white/5 px-6 md:px-12 py-3 transition-colors duration-500">
+            <div class="max-w-[1500px] mx-auto flex items-center justify-between">
+
+                <!-- اللوغو -->
+                <div class="flex items-center">
+                    <a href="/" class="transition-transform duration-300">
+                        <img src="./src/images/logo/logo.png" alt="لوغو خطوة" class="w-20 md:w-25 brightness-110" />
+                    </a>
+                </div>
+
+                <!-- الروابط للشاشات الكبيرة -->
+                <ul class="hidden lg:flex items-center gap-1">
+                    <li><a href="./index.html" class="px-6 py-2 text-button font-bold text-sm">الرئيسية</a></li>
+                    <li><a href="#"
+                            class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">البحث
+                            عن وظيفة</a></li>
+                    <li><a href="#"
+                            class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">الشركات</a>
+                    </li>
+                    <li><a href="./Resume.html"
+                            class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">إنشاء
+                            سيرة ذاتية</a></li>
+                    <li><a href="./perc.html"
+                            class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">
+                            الأسعار</a></li>
+                </ul>
+
+                <!-- الأزرار اليمنى -->
+                <div class="flex items-center gap-2 md:gap-6">
+                    <!-- زر الوضع الليلي -->
+                    <button id="theme-toggle" type="button"
+                        class="flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 dark:bg-white/10 text-button border border-white/10 cursor-pointer transition-all active:scale-90">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <div class="hidden md:flex items-center gap-4">
+                        <a href="./login.html" class="text-primaryHeading dark:text-white font-bold text-sm px-4">تسجيل
+                            الدخول</a>
+                        <a href="./signup.html"
+                            class="bg-button text-[#173630] px-4 py-2 rounded-xl font-bold text-sm active:scale-95 transition-all">إنشاء
+                            حساب</a>
+                    </div>
+
+                    <!-- زر القائمة للجوال -->
+                    <button id="mobile-menu-button"
+                        class="lg:hidden flex items-center justify-center w-8 h-8 text-primaryHeading dark:text-white cursor-pointer">
+                        <i class="fa-solid fa-bars-staggered text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sidebar القائمة الجانبية -->
+        <div id="sidebar-overlay"
+            class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[110] opacity-0 pointer-events-none transition-all duration-300">
+        </div>
+
+        <aside id="mobile-sidebar"
+            class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-[#0f2420] z-[120] translate-x-full transition-transform duration-300 ease-in-out shadow-2xl border-l dark:border-white/5">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center justify-between mb-8">
+                    <span class="text-primaryHeading dark:text-button font-bold">القائمة</span>
+                    <button id="close-sidebar"
+                        class="text-text-muted dark:text-white/60 hover:text-red-500 transition-colors cursor-pointer">
+                        <i class="fa-solid fa-xmark text-2xl"></i>
+                    </button>
+                </div>
+
+                <ul class="flex flex-col gap-4 mb-auto">
+                    <li><a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-button/10 text-button font-bold"><i
+                                class="fa-solid fa-house"></i> الرئيسية</a></li>
+                    <li><a href="#"
+                            class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i
+                                class="fa-solid fa-magnifying-glass"></i> البحث عن وظيفة</a></li>
+                    <li><a href="#"
+                            class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i
+                                class="fa-solid fa-building"></i> الشركات</a></li>
+                    <li><a href="./Resume.html"
+                            class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i
+                                class="fa-solid fa-file-invoice"></i> إنشاء سيرة ذاتية</a></li>
+                </ul>
+
+                <div class="flex flex-col gap-3 pt-6 border-t dark:border-white/10">
+                    <a href="./login.html"
+                        class="w-full py-3 text-center rounded-xl border border-border dark:border-white/10 text-primaryHeading dark:text-white font-bold">تسجيل
+                        الدخول</a>
+                    <a href="./signup.html"
+                        class="w-full py-3 text-center rounded-xl bg-button text-[#173630] font-bold">إنشاء
+                        حساب</a>
+                </div>
+            </div>
+        </aside>
+    </header>
+    <!-- الحاوية الرئيسية: نفس خلفية وخط صفحة الخصوصية -->
+    <main
+        class="min-h-screen bg-input dark:bg-bg-dark py-8 md:py-16 px-4 sm:px-6 lg:px-8 font-primary text-right selection:bg-button/30 transition-colors duration-500">
+        <div class="max-w-6xl mx-auto w-full space-y-8 md:space-y-12">
+
+            <!-- زر الرجوع بنفس تنسيق صفحة الخصوصية -->
+            <div class="flex justify-start pr-4">
+                <a href="./perc.html"
+                    class="group text-xl font-bold text-primaryHeading dark:text-button flex items-center gap-3 transition-all ">
+                    <span><i class="fa-solid fa-angles-right text-xl"></i></span>
+                    الرجوع للخلف
+                </a>
+            </div>
+
+            <!-- قسم الهيدر: تم استيحاؤه من "واجهة الثقة" في صفحة الخصوصية -->
+            <header class="text-center space-y-4 py-8">
+                <h2 class="text-3xl md:text-5xl font-black text-primaryHeading dark:text-dark-heading leading-tight">
+                    عمليات الدفع</h2>
+                <p class="text-lg md:text-xl font-medium text-text-muted dark:text-text-muted-dark opacity-80">أتمم
+                    عملية الشراء بأمان وسهولة</p>
+            </header>
+
+            <!-- شبكة المحتوى: (الفورم يميناً والبطاقة يساراً) كما في تصميمك الأصلي -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+                <!-- القسم الأيمن: الفورم بتنسيق صفحة الخصوصية الجديد -->
+                <div
+                    class="w-full bg-surface dark:bg-surface-dark p-8 md:p-10 rounded-[2.5rem] border border-card dark:border-border-dark shadow-sm transition-all duration-500">
+
+                    <!-- أيقونات الدفع بتنسيق البطاقات الصغيرة -->
+                    <div
+                        class="flex flex-wrap md:flex-nowrap justify-start lg:justify-start gap-3 md:gap-4 mb-10 overflow-x-auto no-scrollbar snap-x">
+
+                        <!-- بطاقة Google Play -->
+                        <div
+                            class="flex-1 min-w-[140px] md:min-w-0 bg-input dark:bg-input-dark border border-button/10 rounded-2xl py-3 px-6 flex items-center justify-center md:justify-start gap-3 font-bold whitespace-nowrap text-primaryHeading dark:text-white snap-center transition-all hover:border-button/40">
+                            <span class="text-sm md:text-base">Google</span>
+                            <i class="fa-brands fa-google-play text-button text-lg"></i>
+                        </div>
+
+                        <!-- بطاقة App Store -->
+                        <div
+                            class="flex-1 min-w-[140px] md:min-w-0 bg-input dark:bg-input-dark border border-button/10 rounded-2xl py-3 px-6 flex items-center justify-center md:justify-start gap-3 font-bold whitespace-nowrap text-primaryHeading dark:text-white snap-center transition-all hover:border-button/40">
+                            <span class="text-sm md:text-base">App Store</span>
+                            <i class="fa-brands fa-app-store-ios text-button text-lg"></i>
+                        </div>
+
+                        <!-- بطاقة PayPal -->
+                        <div
+                            class="flex-1 min-w-[140px] md:min-w-0 bg-input dark:bg-input-dark border border-button/10 rounded-2xl py-3 px-6 flex items-center justify-center md:justify-start gap-3 font-bold whitespace-nowrap text-primaryHeading dark:text-white snap-center transition-all hover:border-button/40">
+                            <span class="text-sm md:text-base">PayPal</span>
+                            <i class="fa-brands fa-paypal text-button text-lg"></i>
+                        </div>
+
+                    </div>
+
+                    <form class="space-y-8">
+                        <!-- حقول الإدخال: حافظت على فكرة الـ peer ولكن بلمسة صفحة الخصوصية -->
+                        <div class="relative z-0 w-full group">
+                            <input type="email" name="email" id="email"
+                                class="block py-3 px-0 w-full text-primaryHeading dark:text-white bg-transparent border-0 border-b-2 border-button/20 dark:border-white/10 appearance-none focus:outline-none focus:ring-0 focus:border-button peer"
+                                placeholder=" " required />
+                            <label for="email"
+                                class="absolute text-lg font-bold text-primaryHeading dark:text-white/60 duration-300 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-button peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">الايميل</label>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="relative z-0 w-full group">
+                                <input type="password" id="pass"
+                                    class="block py-3 px-0 w-full text-primaryHeading dark:text-white bg-transparent border-0 border-b-2 border-button/20 dark:border-white/10 appearance-none focus:outline-none focus:ring-0 focus:border-button peer"
+                                    placeholder=" " required />
+                                <label for="pass"
+                                    class="absolute text-lg font-bold text-primaryHeading dark:text-white/60 duration-300 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-button peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">كلمة
+                                    المرور</label>
+                            </div>
+                            <div class="relative z-0 w-full group">
+                                <input type="password" id="re_pass"
+                                    class="block py-3 px-0 w-full text-primaryHeading dark:text-white bg-transparent border-0 border-b-2 border-button/20 dark:border-white/10 appearance-none focus:outline-none focus:ring-0 focus:border-button peer"
+                                    placeholder=" " required />
+                                <label for="re_pass"
+                                    class="absolute text-lg font-bold text-primaryHeading dark:text-white/60 duration-300 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-button peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">تأكيد
+                                    كلمة المرور</label>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-8">
+                            <div class="relative z-0 w-full group">
+                                <input type="text" id="fname"
+                                    class="block py-3 px-0 w-full text-primaryHeading dark:text-white bg-transparent border-0 border-b-2 border-button/20 dark:border-white/10 appearance-none focus:outline-none focus:ring-0 focus:border-button peer"
+                                    placeholder=" " required />
+                                <label for="fname"
+                                    class="absolute text-lg font-bold text-primaryHeading dark:text-white/60 duration-300 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-button peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">الأسم
+                                    الأول</label>
+                            </div>
+                            <div class="relative z-0 w-full group">
+                                <input type="text" id="lname"
+                                    class="block py-3 px-0 w-full text-primaryHeading dark:text-white bg-transparent border-0 border-b-2 border-button/20 dark:border-white/10 appearance-none focus:outline-none focus:ring-0 focus:border-button peer"
+                                    placeholder=" " required />
+                                <label for="lname"
+                                    class="absolute text-lg font-bold text-primaryHeading dark:text-white/60 duration-300 top-3 -z-10 origin-[0] peer-focus:right-0 peer-focus:text-button peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">الأسم
+                                    الثاني</label>
+                            </div>
+                        </div>
+
+                        <button type="button"
+                            class="w-full py-4 bg-primaryHeading dark:bg-button text-white dark:text-button-text-dark rounded-2xl font-black text-xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-button/10 mt-6">
+                            ارسال البيانات
+                        </button>
+                    </form>
+                </div>
+
+                <!-- القسم الأيسر: بطاقة السعر بنفس ستايل "حقوق المستخدم" في صفحة الخصوصية -->
+                <div class="w-full flex justify-center lg:justify-end">
+                    <div
+                        class="w-full max-w-sm p-8 bg-surface dark:bg-card-dark border relative border-card dark:border-border-dark rounded-[2.5rem] shadow-xl hover:border-button/40 transition-all duration-500 group">
+
+                        <!-- شارة التميز -->
+                        <div class="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2">
+                            <div
+                                class="bg-button text-white dark:text-button-text-dark text-xs font-black px-6 py-2 rounded-full shadow-lg">
+                                الأكثر اختياراً
+                            </div>
+                        </div>
+
+                        <h5 class="mb-4 text-2xl font-black text-primaryHeading dark:text-dark-heading pt-4">الباقة
+                            القياسية</h5>
+                        <div class="flex items-baseline text-primaryHeading dark:text-white">
+                            <span class="text-6xl font-black tracking-tight text-button">$189</span>
+                            <span class="ms-2 font-bold text-text-muted dark:text-text-muted-dark">/شهرياً</span>
+                        </div>
+
+                        <ul role="list" class="grid grid-cols-1 gap-y-5 my-10">
+                            <!-- ميزة 1 -->
+                            <li class="flex items-center gap-3 group/item">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-button/10 flex items-center justify-center text-button group-hover/item:scale-110 transition-transform flex-shrink-0">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <span class="text-primaryHeading dark:text-white/80 font-bold text-sm md:text-base">5
+                                    صفحة وظائف نشطة</span>
+                            </li>
+
+                            <!-- ميزة 2 -->
+                            <li class="flex items-center gap-3 group/item">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-button/10 flex items-center justify-center text-button group-hover/item:scale-110 transition-transform flex-shrink-0">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <span class="text-primaryHeading dark:text-white/80 font-bold text-sm md:text-base">150
+                                    مشاهدة للمرشحين</span>
+                            </li>
+
+                            <!-- ميزة 3 -->
+                            <li class="flex items-center gap-3 group/item">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-button/10 flex items-center justify-center text-button group-hover/item:scale-110 transition-transform flex-shrink-0">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <span class="text-primaryHeading dark:text-white/80 font-bold text-sm md:text-base">دعم
+                                    فني VIP مباشر</span>
+                            </li>
+
+                            <!-- ميزة 4 -->
+                            <li class="flex items-center gap-3 group/item">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-button/10 flex items-center justify-center text-button group-hover/item:scale-110 transition-transform flex-shrink-0">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <span
+                                    class="text-primaryHeading dark:text-white/80 font-bold text-sm md:text-base">تحليلات
+                                    متقدمة للأداء</span>
+                            </li>
+
+
+                        </ul>
+
+                        <button type="button"
+                            class="w-full bg-button dark:bg-button text-white dark:text-button-text-dark text-xl font-black rounded-2xl py-4 hover:opacity-90 transition-all shadow-lg hover:shadow-button/30">
+                            اشترك الآن
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- النافذة المنبثقة (Modal) -->
+    <div id="overlay"
+        class="hidden fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div
+            class="bg-white dark:bg-card-dark p-8 rounded-[20px] text-center shadow-2xl w-full max-w-[350px] transform transition-all border dark:border-white/10">
+            <div class="mb-4 text-5xl">✔️</div>
+            <h3 class="mb-4 text-xl font-bold dark:text-white">تمت العملية بنجاح</h3>
+            <p class="text-body dark:text-white/60 mb-6">لقد تم استلام طلبك بنجاح</p>
+            <button onclick="closeAlert()"
+                class="bg-button-title text-white px-8 py-2.5 rounded-lg hover:bg-opacity-90 transition w-full font-bold">
+                موافق
+            </button>
+        </div>
+    </div>
+    <script>
+        function showAlert() {
+            document.getElementById("overlay").classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeAlert() {
+            document.getElementById("overlay").classList.add("hidden");
+            document.body.style.overflow = "auto";
+        }
+    </script>
+    <footer class="font-primary transition-all duration-700 bg-white dark:bg-[#0a1614] relative overflow-hidden">
+
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-button/50 to-transparent">
+        </div>
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-button/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="relative z-10 max-w-[1500px] mx-auto px-6 pt-24 pb-16">
+            <div
+                class="grid lg:grid-cols-2 gap-16 items-center border-b border-primaryHeading/5 dark:border-white/5 pb-20">
+                <div>
+                    <h2 class="text-5xl md:text-6xl font-black text-primaryHeading dark:text-white leading-tight mb-6">
+                        انضم إلى مستقبل <br>
+                        <span class="text-button inline-block relative">
+                            التوظيف التقني
+                            <svg class="absolute -bottom-2 left-0 w-full h-2 text-button/30" viewBox="0 0 100 10"
+                                preserveAspectRatio="none">
+                                <path d="M0 5 Q 25 0 50 5 T 100 5" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </span>
+                    </h2>
+                    <p class="text-lg text-text-muted dark:text-text-muted-dark max-w-md font-medium opacity-80">
+                        أكثر من 50,000 متخصص تقني يطورون مسارهم المهني عبر خطوة. هل أنت مستعد للخطوة القادمة؟
+                    </p>
+                </div>
+
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-button/20 blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="relative bg-[#F4FAF9] dark:bg-[#173630]/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-button/20 shadow-2xl">
+                        <h3 class="text-xl font-black text-primaryHeading dark:text-white mb-4">اشترك في النشرة المهنية
+                        </h3>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <input type="email" placeholder="بريدك الإلكتروني..."
+                                class="flex-1 bg-white dark:bg-[#0a1614] border border-button/10 rounded-2xl px-6 py-4 text-sm focus:outline-none focus:border-button transition-all dark:text-white">
+                            <button
+                                class="bg-button text-[#173630] px-8 py-4 rounded-2xl font-black text-sm hover:shadow-[0_10px_25px_rgba(33,234,200,0.4)] transition-all active:scale-95">
+                                انضم الآن
+                            </button>
+                        </div>
+                        <p
+                            class="text-[10px] text-text-muted dark:text-white/40 mt-4 text-center font-bold uppercase tracking-widest">
+                            لا نقوم بإرسال رسائل مزعجة إطلاقاً</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 py-20" dir="rtl">
+
+                <div class="col-span-2 space-y-8">
+                    <img src="./src/images/logo/logo.png" alt="logo" class="w-32 dark:brightness-125">
+                    <p class="text-sm text-text-muted dark:text-text-muted-dark leading-relaxed font-bold">
+                        منصة "خطوة" هي بوابتك الرقمية للوصول إلى الوظائف التقنية الأكثر طلباً في الخليج والوطن العربي.
+                        نحن نبني
+                        الجسور بين الموهبة والفرصة.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+                            title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+                            title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+                            title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+                            title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+                            title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-primaryHeading/5 dark:bg-white/5 flex items-center justify-center text-primaryHeading dark:text-white hover:bg-button hover:text-[#173630] transition-all"
+                            title="Discord"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-primaryHeading dark:text-white font-black mb-8">الشركة</h4>
+                    <ul class="space-y-4 text-sm font-bold text-text-muted dark:text-text-muted-dark">
+                        <li><a href="#" class="hover:text-button transition-colors">عن خطوة</a></li>
+                        <li><a href="#" class="hover:text-button transition-colors">فريق العمل</a></li>
+                        <li><a href="#" class="hover:text-button transition-colors">الوظائف المتاحة</a></li>
+                        <li><a href="#" class="hover:text-button transition-colors">الصحافة</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-primaryHeading dark:text-white font-black mb-8">الخدمات</h4>
+                    <ul class="space-y-4 text-sm font-bold text-text-muted dark:text-text-muted-dark">
+                        <li><a href="#" class="hover:text-button transition-colors">البحث عن وظيفة</a></li>
+                        <li><a href="#" class="hover:text-button transition-colors">بناء سيرة ذاتية</a></li>
+                        <li><a href="#" class="hover:text-button transition-colors">تحليل الملف الشخصي</a></li>
+                        <li><a href="#" class="hover:text-button transition-colors">لأصحاب الشركات</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-primaryHeading dark:text-white font-black mb-8">الدعم</h4>
+                    <ul class="space-y-4 text-sm font-bold text-text-muted dark:text-text-muted-dark">
+                        <li><a href="#" class="hover:text-button transition-colors">مركز المساعدة</a></li>
+                        <li><a href="#" class="hover:text-button transition-colors">تواصل معنا</a></li>
+                        <li><a href="#" class="hover:text-button transition-colors">الأسئلة الشائعة</a></li>
+                        <li><a href="#" class="hover:text-button transition-colors">المجتمع</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-6">
+                    <h4 class="text-primaryHeading dark:text-white font-black mb-8">تواصل سريع</h4>
+                    <a href="https://wa.me/yournumber"
+                        class="flex items-center gap-3 p-3 rounded-2xl bg-green-500/10 text-green-600 dark:text-green-400 font-black text-xs hover:bg-green-500 hover:text-white transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> واتساب الدعم
+                    </a>
+                    <a href="https://t.me/yourusername"
+                        class="flex items-center gap-3 p-3 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 font-black text-xs hover:bg-blue-500 hover:text-white transition-all">
+                        <i class="fa-brands fa-telegram text-lg"></i> قناة التليجرام
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="pt-10 border-t border-primaryHeading/5 dark:border-white/5 flex flex-col lg:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2 px-3 py-1 bg-button/10 rounded-full">
+                        <span class="w-2 h-2 bg-button rounded-full animate-pulse"></span>
+                        <span class="text-[10px] font-black text-button uppercase tracking-tighter">Status: All Systems
+                            Operational</span>
+                    </div>
+                    <p class="text-[11px] font-bold text-text-muted dark:text-white/30 tracking-widest uppercase">© 2026
+                        KHOTWAH
+                        PLATFORM. MADE IN SAUDI ARABIA.</p>
+                </div>
+
+                <div
+                    class="flex gap-8 text-[11px] font-black text-text-muted dark:text-white/40 uppercase tracking-widest">
+                    <a href="#" class="hover:text-button transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-button transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-button transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+
+    <script src="./src/js/script.js"></script>
+</body>
+
+</html>

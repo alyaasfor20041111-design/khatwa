@@ -1,0 +1,1130 @@
+<!doctype html>
+<html lang="en" class="dark" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>السيرة الذاتية</title>
+  <link rel="stylesheet" href="./src/output.css" />
+  <link rel="icon" type="" href="./src/images/logo/icon.png" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+    rel="stylesheet" />
+  <!-- icons font owesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="flex min-h-screen bg-background font-primary">
+    <aside id="sidebar"
+      class="fixed top-0 right-0 z-40 w-64 h-screen transition-transform translate-x-0 border-l border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#173630]"
+      aria-label="Sidebar">
+
+      <button onclick="toggleSidebar()"
+        class="absolute -left-3 top-10 bg-white dark:bg-[#20453E] border border-gray-100 dark:border-[#2D534C] rounded-full w-6 h-6 flex items-center justify-center text-gray-400 dark:text-[#21EAC8] hover:text-icon shadow-sm z-50 cursor-pointer">
+        <i id="toggleIcon" class="fa-solid fa-chevron-right text-[10px]"></i>
+      </button>
+
+      <div class="h-full px-4 py-6 overflow-y-auto flex flex-col justify-between">
+        <div>
+          <div class="flex flex-col items-center justify-center mb-8">
+            <div class="mb-5">
+              <img src="./src/images/logo/logo.png" class="w-25" alt="شعار خطوة" />
+            </div>
+            <div class="w-full px-2">
+              <div class="h-[1px] bg-gray-100 dark:bg-[#2D534C] w-full opacity-70"></div>
+            </div>
+          </div>
+
+          <p class="text-secondary font-bold text-gray-400 dark:text-[#DEEDEB]/60 px-4 mb-4 uppercase">الرئيسية</p>
+
+          <ul class="space-y-1 font-medium" id="sidebar-nav">
+            <li>
+              <a href="dashboard.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-border-all text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">لوحة التحكم</span>
+              </a>
+            </li>
+            <li>
+              <a href="post-jop.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-briefcase text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">نشر وظيفة</span>
+              </a>
+            </li>
+            <li>
+              <a href="Resume.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-user text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">ملفي الشخصي</span>
+              </a>
+            </li>
+            <li>
+              <a href="Notification.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-bell text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">الإشعارات</span>
+                <span
+                  class="ms-auto bg-red-500 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">3</span>
+              </a>
+            </li>
+            <li>
+              <a href="Messages.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-comment-dots text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">الرسائل</span>
+                <span
+                  class="ms-auto bg-red-500 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">5</span>
+              </a>
+            </li>
+            <li>
+              <a href="Accountsetting.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-sliders text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">إعدادات الحساب</span>
+              </a>
+            </li>
+            <li>
+              <a href="activity.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-chart-line text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">النشاط</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-1">
+          <a href="./index.html"
+            class="flex items-center px-4 py-3 text-red-500 rounded-xl hover:bg-red-50 dark:hover:bg-red-500/10 transition-all duration-200 group">
+            <div class="w-6 flex justify-center text-red-400"><i
+                class="fa-solid fa-arrow-right-from-bracket text-sm"></i></div>
+            <span class="ms-3 text-sm font-medium">تسجيل الخروج</span>
+          </a>
+          <a href="#"
+            class="flex items-center px-4 py-3 text-gray-400 dark:text-[#DEEDEB]/60 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-200 group">
+            <div class="w-6 flex justify-center text-gray-300 dark:text-white/20"><i
+                class="fa-solid fa-circle-question text-sm"></i></div>
+            <span class="ms-3 text-sm font-medium">المساعدة</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+    <main id="mainContent"
+      class="mr-0 sm:mr-64 transition-[margin] w-full min-h-screen  duration-300 ease-in-out bg-[#F8FBFB] dark:bg-[#173630]">
+      <header
+        class="border-b border-gray-100 dark:border-[#2D534C] py-4 px-4 md:px-6 lg:px-10 flex items-center justify-between sticky top-0 z-30 bg-white/80 dark:bg-[#20453E]/90 backdrop-blur-md transition-all">
+
+        <!-- القسم الأيمن: العناوين -->
+        <div class="flex flex-col text-right shrink-0">
+          <h1 class="text-[15px] lg:text-primary font-bold text-primaryHeading dark:text-button leading-tight">سيرتي
+            الذاتية</h1>
+          <p class="hidden xl:block text-[10px] text-gray-400 dark:text-[#DEEDEB]/50 mt-0.5 font-medium">تحديث معلوماتك
+            سيمنحك الوصول لمحتوى أكثر صلة</p>
+        </div>
+
+        <!-- القسم الأوسط: البحث (محسن ليتناسب مع حجم iPad) -->
+        <div
+          class="relative flex-1 mx-2 sm:mx-4 max-w-[120px] sm:max-w-[250px] md:max-w-[350px] lg:max-w-[400px] hidden md:block">
+          <input type="text"
+            class="bg-[#F4FAF9] dark:bg-[#1A3D36] border border-gray-100 dark:border-[#2D534C] text-gray-700 dark:text-[#DEEDEB] text-xs rounded-xl focus:ring-2 focus:ring-[#21EAC8]/10 focus:border-[#21EAC8] block w-full pr-9 pl-4 py-2 transition-all outline-none placeholder:text-gray-300 dark:placeholder:text-white/20 "
+            placeholder="بحث">
+          <span
+            class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400 dark:text-[#21EAC8]/60">
+            <i class="fa-solid fa-magnifying-glass text-[12px]"></i>
+          </span>
+        </div>
+
+        <!-- القسم الأيسر: الأزرار والبروفايل -->
+        <div class="flex items-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 shrink-0">
+
+          <!-- زر الوضع الليلي -->
+          <button id="theme-toggle" type="button"
+            class="flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 dark:bg-white/10 text-button border border-white/10 dark:border-[#2D534C] cursor-pointer transition-all active:scale-90 shadow-sm">
+            <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
+              </path>
+            </svg>
+          </button>
+
+          <!-- التنبيهات -->
+          <button
+            class="relative w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-gray-400 dark:text-[#DEEDEB]/60 hover:text-[#21EAC8] transition-all">
+            <i class="fa-regular fa-bell text-lg sm:text-xl"></i>
+            <span
+              class="absolute top-0.5 right-0.5 bg-red-600 text-white text-[7px] sm:text-[8px] font-bold w-4 h-4 flex items-center justify-center rounded-full border-2 border-white dark:border-[#20453E]">
+              30
+            </span>
+          </button>
+
+          <!-- الملف الشخصي -->
+          <div class="flex items-center gap-2 cursor-pointer group">
+            <div class="hidden lg:flex flex-col text-right">
+              <span
+                class="text-xs font-bold text-[#2D534C] dark:text-[#DEEDEB] group-hover:text-[#21EAC8] transition-colors">أحمد
+                العلي</span>
+              <span class="text-[9px] text-gray-400 dark:text-[#DEEDEB]/40">ahmedalali@gmail.com</span>
+            </div>
+            <div
+              class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl border border-gray-100 dark:border-[#2D534C] overflow-hidden transform transition-all group-hover:scale-105 shadow-sm hidden sm:block">
+              <img src="./src/images/resume/profile.png" alt="User" class="w-full h-full object-cover">
+            </div>
+          </div>
+
+        </div>
+      </header>
+      <div class=" p-4 sm:p-8 grid grid-cols-12 gap-6 lg:gap-8 bg-[#F8FBFB] dark:bg-[#173630]">
+        <div class="col-span-12 lg:col-span-8 space-y-6 ">
+          <div
+            class="border border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#1A3D36]/50 rounded-xl p-5 sm:p-6 shadow-sm">
+
+            <div class="flex flex-col-reverse sm:flex-row items-center sm:items-center gap-6 sm:gap-8">
+
+              <div class="flex-1 w-full">
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
+
+                  <div class="flex gap-3 w-full sm:w-auto justify-center sm:justify-start">
+                    <button onclick="showViewAlert()"
+                      class="flex-1 sm:flex-none px-6 py-2.5 bg-button text-white text-secondary font-bold rounded-xl cursor-pointer hover:bg-button-hover active:scale-95 transition-all duration-200">
+                      عرض السيرة
+                    </button>
+                    <button onclick="showDownloadAlert()"
+                      class="flex-1 sm:flex-none px-6 py-2.5 border border-gray-100 dark:border-[#2D534C] text-button-title dark:text-[#DEEDEB] text-secondary font-bold rounded-xl cursor-pointer hover:bg-gray-50 dark:hover:bg-[#1A3D36] active:scale-95 transition-all duration-200">
+                      تحميل PDF
+                    </button>
+                  </div>
+
+                  <div class="text-center sm:text-right">
+                    <h3 class="text-xl font-bold text-primaryHeading dark:text-white">
+                      أحمد العلي
+                    </h3>
+                    <p class="text-secondary text-gray-400 dark:text-[#DEEDEB]/60 mt-1 text-sm">
+                      مصمم واجهات (UI/UX) • طالب تقني
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="relative group cursor-pointer shrink-0"
+                onclick="document.getElementById('profileInput').click()">
+                <div
+                  class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl bg-gray-50 dark:bg-[#1A3D36] border-2 border-dashed border-gray-200 dark:border-[#2D534C] overflow-hidden transition-all group-hover:border-button relative z-10 flex items-center justify-center">
+                  <img id="profileDisplay" src=""
+                    class="absolute inset-0 w-full h-full object-cover object-center hidden z-10" />
+
+                  <i id="placeholderIcon"
+                    class="fa-regular fa-image text-gray-300 dark:text-[#2D534C] text-xl absolute inset-0 m-auto flex items-center justify-center"></i>
+                </div>
+
+                <div
+                  class="absolute -bottom-1 -right-1 bg-button text-white w-7 h-7 rounded-lg flex items-center justify-center shadow-lg border-2 border-white dark:border-[#1A3D36] text-[11px] z-30 transform transition-transform group-hover:scale-110">
+                  <i class="fa-solid fa-pen"></i>
+                </div>
+
+                <input type="file" id="profileInput" class="hidden" accept="image/*" onchange="previewImage(this)" />
+              </div>
+
+            </div>
+          </div>
+          <div
+            class="border border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#1A3D36]/50 rounded-xl p-6 shadow-sm text-right transition-colors">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="font-bold text-primaryHeading dark:text-white flex items-center gap-2">
+                <i class="fa-solid fa-address-card text-button text-sm"></i> المعلومات الشخصية
+              </h3>
+              <button id="personalEditIcon" onclick="enablePersonalEdit()"
+                class="hidden text-button hover:text-button-hover cursor-pointer transition duration-200">
+                <i class="fa-regular fa-pen-to-square text-lg"></i>
+              </button>
+            </div>
+
+            <div id="personalEmptyState" onclick="enablePersonalEdit()"
+              class="border-2 border-dashed border-gray-100 dark:border-[#2D534C] rounded-xl p-8 text-center group cursor-pointer hover:border-button transition-all">
+              <p class="text-xs text-gray-400 dark:text-[#DEEDEB]/40 mb-3 font-bold">أضف معلوماتك الشخصية الأساسية</p>
+              <button class="text-button text-sm font-bold flex items-center gap-2 mx-auto">
+                <i class="fa-solid fa-plus text-xs"></i> إضافة المعلومات
+              </button>
+            </div>
+
+            <div id="personalDisplayState" class="hidden grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 px-2">
+              <div>
+                <p class="text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 mb-1">الاسم الأول</p>
+                <p id="viewFirstName" class="text-sm font-bold text-primaryHeading dark:text-[#DEEDEB]"></p>
+              </div>
+              <div>
+                <p class="text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 mb-1">الكنية</p>
+                <p id="viewLastName" class="text-sm font-bold text-primaryHeading dark:text-[#DEEDEB]"></p>
+              </div>
+              <div>
+                <p class="text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 mb-1">البريد الإلكتروني</p>
+                <p id="viewEmail" class="text-sm font-bold text-primaryHeading dark:text-[#DEEDEB]"></p>
+              </div>
+              <div>
+                <p class="text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 mb-1">رقم الهاتف</p>
+                <p id="viewMobile" class="text-sm font-bold text-primaryHeading dark:text-[#DEEDEB]" dir="ltr"></p>
+              </div>
+              <div>
+                <p class="text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 mb-1">سنة الميلاد</p>
+                <p id="viewBirthYear" class="text-sm font-bold text-primaryHeading dark:text-[#DEEDEB]"></p>
+              </div>
+              <div>
+                <p class="text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 mb-1">المدينة</p>
+                <p id="viewCity" class="text-sm font-bold text-primaryHeading dark:text-[#DEEDEB]"></p>
+              </div>
+              <div>
+                <p class="text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 mb-1">الحالة الاجتماعية</p>
+                <p id="viewMarital" class="text-sm font-bold text-primaryHeading dark:text-[#DEEDEB]"></p>
+              </div>
+              <div>
+                <p class="text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 mb-1">الجنس</p>
+                <p id="viewGender" class="text-sm font-bold text-primaryHeading dark:text-[#DEEDEB]"></p>
+              </div>
+            </div>
+
+            <div id="personalEditState" class="hidden space-y-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+                <div class="relative group">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button transition-colors z-10">الاسم
+                    الأول</label>
+                  <input type="text" id="editFirstName"
+                    class="w-full border border-gray-200 dark:border-[#2D534C] bg-transparent rounded-xl px-4 py-3 text-sm font-bold text-primaryHeading dark:text-white outline-none focus:border-button focus:ring-1 focus:ring-button/10 transition-all" />
+                </div>
+
+                <div class="relative group">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button transition-colors z-10">الكنية</label>
+                  <input type="text" id="editLastName"
+                    class="w-full border border-gray-200 dark:border-[#2D534C] bg-transparent rounded-xl px-4 py-3 text-sm font-bold text-primaryHeading dark:text-white outline-none focus:border-button focus:ring-1 focus:ring-button/10 transition-all" />
+                </div>
+
+                <div class="relative group">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button transition-colors z-10">البريد
+                    الإلكتروني</label>
+                  <input type="email" id="editEmail"
+                    class="w-full border border-gray-200 dark:border-[#2D534C] bg-transparent rounded-xl px-4 py-3 text-sm font-bold text-primaryHeading dark:text-white outline-none focus:border-button focus:ring-1 focus:ring-button/10 transition-all" />
+                </div>
+
+                <div class="relative group">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button transition-colors z-10">رقم
+                    الهاتف</label>
+                  <input type="text" id="editMobile"
+                    class="w-full border border-gray-200 dark:border-[#2D534C] bg-transparent rounded-xl px-4 py-3 text-sm font-bold text-primaryHeading dark:text-white outline-none focus:border-button focus:ring-1 focus:ring-button/10 transition-all text-right" />
+                </div>
+
+                <div class="relative group">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button transition-colors z-10">سنة
+                    الميلاد</label>
+                  <input type="text" id="editBirthYear"
+                    class="w-full border border-gray-200 dark:border-[#2D534C] bg-transparent rounded-xl px-4 py-3 text-sm font-bold text-primaryHeading dark:text-white outline-none focus:border-button focus:ring-1 focus:ring-button/10 transition-all" />
+                </div>
+
+                <div class="relative group">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button transition-colors z-10">المدينة</label>
+                  <input type="text" id="editCity"
+                    class="w-full border border-gray-200 dark:border-[#2D534C] bg-transparent rounded-xl px-4 py-3 text-sm font-bold text-primaryHeading dark:text-white outline-none focus:border-button focus:ring-1 focus:ring-button/10 transition-all" />
+                </div>
+
+                <div class="space-y-3 p-1">
+                  <label class="text-[12px] font-bold text-primaryHeading dark:text-white block">الحالة
+                    الاجتماعية</label>
+                  <div class="flex gap-6">
+                    <label class="flex items-center gap-2 cursor-pointer group">
+                      <input type="radio" name="marital" value="متزوج"
+                        class="w-4 h-4  accent-button checked:accent-button" />
+                      <span class="text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60">متزوج</span>
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer group">
+                      <input type="radio" name="marital" value="أعزب" checked class="w-4 h-4 accent-button" />
+                      <span class="text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60">أعزب</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="space-y-3 p-1">
+                  <label class="text-[12px] font-bold text-primaryHeading dark:text-white block">الجنس</label>
+                  <div class="flex gap-6">
+                    <label class="flex items-center gap-2 cursor-pointer group">
+                      <input type="radio" name="gender" value="ذكر" checked class="w-4 h-4 accent-button" />
+                      <span class="text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60">ذكر</span>
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer group">
+                      <input type="radio" name="gender" value="أنثى" class="w-4 h-4 accent-button" />
+                      <span class="text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60">أنثى</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex justify-end gap-2 pt-4 border-t border-gray-50 dark:border-[#2D534C]">
+                <button onclick="cancelPersonalEdit()"
+                  class="text-gray-400 hover:text-gray-300 dark:text-[#DEEDEB]/40 cursor-pointer text-xs font-bold px-3 transition duration-200">إلغاء</button>
+                <button onclick="savePersonalData()"
+                  class="bg-button hover:bg-button-hover cursor-pointer text-white px-8 py-2.5 rounded-xl text-xs font-bold transition duration-200 shadow-sm">حفظ
+                  البيانات</button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="border border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#1A3D36]/50 rounded-xl p-6 shadow-sm transition-colors">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="font-bold text-primaryHeading dark:text-white flex items-center gap-2">
+                <i class="fa-solid fa-user text-button text-sm"></i> نبذة عني
+              </h3>
+              <button id="editIcon" onclick="enableBioEdit()"
+                class="hidden text-button hover:text-button-hover transition duration-200 cursor-pointer">
+                <i class="fa-regular fa-pen-to-square text-lg"></i>
+              </button>
+            </div>
+
+            <div id="emptyState" onclick="enableBioEdit()"
+              class="border-2 border-dashed border-gray-100 dark:border-[#2D534C] rounded-xl p-8 text-center group cursor-pointer hover:border-button transition-all">
+              <p class="text-xs text-gray-400 dark:text-[#DEEDEB]/40 mb-3 font-bold">
+                أضف شيئاً عن نفسك
+              </p>
+              <button class="text-button text-sm font-bold flex items-center gap-2 mx-auto">
+                <i class="fa-solid fa-plus text-xs"></i> إضافة نبذة
+              </button>
+            </div>
+
+            <div id="editState"
+              class="hidden relative border border-button rounded-xl px-4 py-5 min-h-[140px] bg-transparent">
+              <label
+                class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-button z-10">
+                تحدث عن نفسك
+              </label>
+              <textarea id="bioInput"
+                class="w-full h-full p-2 text-sm font-bold text-primaryHeading dark:text-white bg-transparent resize-none text-right min-h-[100px] outline-none focus:outline-none focus:ring-0 border-none"
+                placeholder="اكتب شيئاً عنك..." oninput="updateCharCount(this)" maxlength="512"></textarea>
+
+              <div class="flex justify-between items-center mt-4">
+                <div class="text-[10px] text-gray-300 dark:text-[#DEEDEB]/20 font-bold">
+                  <span id="charCount">0</span> / 512
+                </div>
+                <div class="flex gap-2">
+                  <button onclick="cancelEdit()"
+                    class="text-gray-400 dark:text-[#DEEDEB]/40 hover:text-gray-300 transition duration-200 cursor-pointer text-xs font-bold px-3">
+                    إلغاء
+                  </button>
+                  <button onclick="saveBio()"
+                    class="bg-button hover:bg-button-hover cursor-pointer text-white px-5 py-2 rounded-xl text-xs font-bold hover:opacity-90 transition-all duration-200 active:scale-95 shadow-sm shadow-button/20">
+                    حفظ النبذة
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div id="displayState"
+              class="hidden bg-gray-50/40 dark:bg-[#1A3D36] border border-gray-100 dark:border-[#2D534C] rounded-xl p-5">
+              <p id="displayText"
+                class="text-sm leading-relaxed text-gray-600 dark:text-[#DEEDEB]/80 font-bold text-right whitespace-pre-line">
+              </p>
+            </div>
+          </div>
+          <div
+            class="border border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#1A3D36]/50 rounded-xl p-6 shadow-sm transition-colors">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="font-bold text-primaryHeading dark:text-white flex items-center gap-2">
+                <i class="fa-solid fa-gear text-button text-sm"></i> المهارات المهنية
+              </h3>
+              <button id="skillsEditIcon" onclick="enableSkillsEdit()"
+                class="hidden text-button hover:text-button-hover transition duration-200 cursor-pointer">
+                <i class="fa-regular fa-pen-to-square text-lg"></i>
+              </button>
+            </div>
+
+            <div id="skillsEmptyState" onclick="enableSkillsEdit()"
+              class="border-2 border-dashed border-gray-100 dark:border-[#2D534C] rounded-xl p-8 text-center group cursor-pointer hover:border-button transition-all">
+              <p class="text-xs text-gray-400 dark:text-[#DEEDEB]/40 mb-3 font-bold">أضف مهاراتك التقنية والشخصية</p>
+              <button class="text-button text-sm font-bold flex items-center gap-2 mx-auto">
+                <i class="fa-solid fa-plus text-xs"></i> إضافة مهارة
+              </button>
+            </div>
+
+            <div id="skillsEditState" class="hidden space-y-4">
+              <div
+                class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button transition-all bg-white dark:bg-transparent">
+                <label
+                  class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button">
+                  مهاراتك (اكتب المهارة واضغط Enter)
+                </label>
+                <input type="text" id="skillInput" onkeydown="handleSkillEnter(event)"
+                  class="w-full text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 text-right focus:ring-0 bg-transparent placeholder-gray-300 dark:placeholder-gray-600"
+                  placeholder="مثلاً: UI/UX, Flutter, Python...">
+              </div>
+
+              <div id="skillsListPreview" class="flex flex-wrap flex-row gap-3 justify-start"></div>
+
+              <div class="flex justify-end gap-2 pt-2 border-t border-gray-50 dark:border-[#2D534C]">
+                <button onclick="cancelSkillsEdit()"
+                  class="text-gray-400 dark:text-[#DEEDEB]/40 hover:text-gray-300 text-xs font-bold px-3 cursor-pointer">إلغاء</button>
+                <button onclick="saveSkills()"
+                  class="bg-button hover:bg-button-hover text-white px-6 py-2 rounded-xl text-xs font-bold transition-all shadow-sm cursor-pointer shadow-button/20">
+                  حفظ المهارات
+                </button>
+              </div>
+            </div>
+
+            <div id="skillsDisplayState" class="hidden flex flex-wrap flex-row gap-3 justify-start"></div>
+          </div>
+          <div
+            class="border border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#1A3D36]/50 rounded-xl p-6 shadow-sm transition-colors">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="font-bold text-primaryHeading dark:text-white flex items-center gap-2">
+                <i class="fa-solid fa-briefcase text-button text-sm"></i>
+                الخبرة العمليّة
+              </h3>
+              <button id="expEditIcon" onclick="enableExpEdit()"
+                class="hidden text-button hover:text-button-hover transition duration-200 cursor-pointer">
+                <i class="fa-regular fa-pen-to-square text-lg"></i>
+              </button>
+            </div>
+
+            <div id="expEmptyState" onclick="enableExpEdit()"
+              class="border-2 border-dashed border-gray-100 dark:border-[#2D534C] rounded-xl p-8 text-center group cursor-pointer hover:border-button transition-all">
+              <p class="text-xs text-gray-400 dark:text-[#DEEDEB]/40 mb-3 font-bold">
+                أضف خبراتك المهنية السابقة
+              </p>
+              <button class="text-button text-sm font-bold flex items-center gap-2 mx-auto">
+                <i class="fa-solid fa-plus text-xs"></i> إضافة خبرة
+              </button>
+            </div>
+
+            <div id="expEditState" class="hidden space-y-4">
+              <div
+                class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button transition-all bg-white dark:bg-transparent">
+                <label
+                  class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button">المسمى
+                  الوظيفي</label>
+                <input type="text" id="jobTitle"
+                  class="w-full text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 text-right focus:ring-0 bg-transparent placeholder-gray-300 dark:placeholder-gray-600"
+                  placeholder="مثلاً: مصمم واجهات" />
+              </div>
+
+              <div
+                class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button transition-all bg-white dark:bg-transparent">
+                <label
+                  class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button">اسم
+                  الشركة</label>
+                <input type="text" id="companyName"
+                  class="w-full text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 text-right focus:ring-0 bg-transparent placeholder-gray-300 dark:placeholder-gray-600"
+                  placeholder="مثلاً: مايكروسوفت" />
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div
+                  class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button transition-all bg-white dark:bg-transparent">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button">تاريخ
+                    البدء</label>
+                  <input type="date" id="startDate"
+                    class="w-full text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 text-right bg-transparent focus:ring-0 [color-scheme:light] dark:[color-scheme:dark]" />
+                </div>
+                <div
+                  class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button transition-all bg-white dark:bg-transparent">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button">تاريخ
+                    الانتهاء</label>
+                  <input type="date" id="endDate"
+                    class="w-full text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 text-right bg-transparent focus:ring-0 [color-scheme:light] dark:[color-scheme:dark]" />
+                </div>
+              </div>
+
+              <div
+                class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button transition-all bg-white dark:bg-transparent">
+                <label
+                  class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button">الوصف</label>
+                <textarea id="expDesc"
+                  class="w-full h-24 text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 text-right resize-none focus:ring-0 bg-transparent placeholder-gray-300 dark:placeholder-gray-600"
+                  placeholder="تحدث عن إنجازاتك..."></textarea>
+              </div>
+
+              <div class="flex justify-end gap-2">
+                <button onclick="cancelExpEdit()"
+                  class="text-gray-400 dark:text-[#DEEDEB]/40 hover:text-gray-300 transition duration-200 text-xs font-bold px-3 cursor-pointer">
+                  إلغاء
+                </button>
+                <button onclick="saveExperience()"
+                  class="bg-button hover:bg-button-hover cursor-pointer text-white px-5 py-2 rounded-xl text-xs font-bold hover:opacity-90 transition-all duration-200 active:scale-95 shadow-sm shadow-button/20">
+                  حفظ الخبرة
+                </button>
+              </div>
+            </div>
+
+            <div id="expDisplayState"
+              class="hidden bg-gray-50/40 dark:bg-[#1A3D36] border border-gray-100 dark:border-[#2D534C] rounded-xl p-5">
+              <div class="flex flex-col gap-1 text-right">
+                <h4 id="displayJobTitle" class="text-sm font-bold text-primaryHeading dark:text-white"></h4>
+                <p id="displayCompanyInfo" class="text-xs text-gray-500 dark:text-[#DEEDEB]/60 font-bold"></p>
+                <p id="displayExpDesc" class="text-xs text-gray-400 dark:text-[#DEEDEB]/40 mt-2 leading-relaxed"></p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="border border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#1A3D36]/50 rounded-xl p-6 shadow-sm transition-colors">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="font-bold text-primaryHeading dark:text-white flex items-center gap-2">
+                <i class="fa-solid fa-graduation-cap text-button text-sm"></i>
+                التعليم
+              </h3>
+              <button id="eduEditIcon" onclick="enableEduEdit()"
+                class="hidden text-button hover:text-button-hover transition duration-200 cursor-pointer">
+                <i class="fa-regular fa-pen-to-square text-lg"></i>
+              </button>
+            </div>
+
+            <div id="eduEmptyState" onclick="enableEduEdit()"
+              class="border-2 border-dashed border-gray-100 dark:border-[#2D534C] rounded-xl p-8 text-center group cursor-pointer hover:border-button transition-all">
+              <p class="text-xs text-gray-400 dark:text-[#DEEDEB]/40 mb-3 font-bold">
+                أضف مؤهلاتك العلمية
+              </p>
+              <button class="text-button text-sm font-bold flex items-center gap-2 mx-auto">
+                <i class="fa-solid fa-plus text-xs"></i> إضافة تعليم
+              </button>
+            </div>
+
+            <div id="eduEditState" class="hidden space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div
+                  class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button transition-all bg-white dark:bg-transparent">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button">مجال
+                    الدراسة</label>
+                  <input type="text" id="eduField"
+                    class="w-full text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 text-right focus:ring-0 bg-transparent placeholder-gray-300 dark:placeholder-gray-600"
+                    placeholder="مثلاً: هندسة برمجيات" />
+                </div>
+                <div
+                  class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button transition-all bg-white dark:bg-transparent">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button">اسم
+                    الجامعة</label>
+                  <input type="text" id="eduUni"
+                    class="w-full text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 text-right focus:ring-0 bg-transparent placeholder-gray-300 dark:placeholder-gray-600"
+                    placeholder="مثلاً: جامعة الملك سعود" />
+                </div>
+              </div>
+
+              <div class="space-y-3 pt-1">
+                <p class="text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 text-right pr-2">
+                  الدرجة العلمية
+                </p>
+                <div class="flex flex-row flex-wrap gap-6 justify-start items-center">
+                  <label class="flex flex-row-reverse items-center gap-2 cursor-pointer group">
+                    <span
+                      class="text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60 group-hover:text-button transition-colors">دكتوراه</span>
+                    <input type="radio" name="degree" value="دكتوراه"
+                      class="w-4 h-4 accent-button focus:ring-0 border-gray-200 dark:border-[#2D534C] cursor-pointer" />
+                  </label>
+                  <label class="flex flex-row-reverse items-center gap-2 cursor-pointer group">
+                    <span
+                      class="text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60 group-hover:text-button transition-colors">ماجستير</span>
+                    <input type="radio" name="degree" value="ماجستير"
+                      class="w-4 h-4 accent-button focus:ring-0 border-gray-200 dark:border-[#2D534C] cursor-pointer" />
+                  </label>
+                  <label class="flex flex-row-reverse items-center gap-2 cursor-pointer group">
+                    <span
+                      class="text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60 group-hover:text-button transition-colors">بكالوريوس</span>
+                    <input type="radio" name="degree" value="بكالوريوس" checked
+                      class="w-4 h-4 accent-button focus:ring-0 border-gray-200 dark:border-[#2D534C] cursor-pointer" />
+                  </label>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div
+                  class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button transition-all bg-white dark:bg-transparent">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button">تاريخ
+                    البدء</label>
+                  <input type="date" id="eduStart"
+                    class="w-full text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 text-right bg-transparent focus:ring-0 [color-scheme:light] dark:[color-scheme:dark]" />
+                </div>
+                <div
+                  class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button transition-all bg-white dark:bg-transparent">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button">تاريخ
+                    التخرج</label>
+                  <input type="date" id="eduEnd"
+                    class="w-full text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 text-right bg-transparent focus:ring-0 [color-scheme:light] dark:[color-scheme:dark]" />
+                </div>
+              </div>
+
+              <div class="flex justify-end gap-2">
+                <button onclick="cancelEduEdit()"
+                  class="text-gray-400 dark:text-[#DEEDEB]/40 hover:text-gray-300 cursor-pointer transition duration-200 text-xs font-bold px-3">
+                  إلغاء
+                </button>
+                <button onclick="saveEducation()"
+                  class="bg-button hover:bg-button-hover cursor-pointer text-white px-5 py-2 rounded-xl text-xs font-bold transition-all duration-200 active:scale-95 shadow-sm shadow-button/20">
+                  حفظ التعليم
+                </button>
+              </div>
+            </div>
+
+            <div id="eduDisplayState"
+              class="hidden bg-gray-50/40 dark:bg-[#1A3D36] border border-gray-100 dark:border-[#2D534C] rounded-xl p-5 transition-colors">
+              <div class="flex flex-col gap-1 text-right">
+                <h4 id="displayEduField" class="text-sm font-bold text-primaryHeading dark:text-white"></h4>
+                <p id="displayEduInfo" class="text-xs text-gray-500 dark:text-[#DEEDEB]/60 font-bold"></p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="border border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#1A3D36]/50 rounded-xl p-6 shadow-sm transition-colors">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="font-bold text-primaryHeading dark:text-white flex items-center gap-2">
+                <i class="fa-solid fa-link text-button text-sm"></i> الروابط
+              </h3>
+              <button id="linksEditIcon" onclick="enableLinksEdit()"
+                class="hidden text-button hover:text-button-hover transition duration-200 cursor-pointer">
+                <i class="fa-regular fa-pen-to-square text-lg"></i>
+              </button>
+            </div>
+
+            <div id="linksEmptyState" onclick="enableLinksEdit()"
+              class="border-2 border-dashed border-gray-100 dark:border-[#2D534C] rounded-xl p-8 text-center group cursor-pointer hover:border-button transition-all">
+              <p class="text-xs text-gray-400 dark:text-[#DEEDEB]/40 mb-3 font-bold">
+                أضف روابط أعمالك وحساباتك الاجتماعية
+              </p>
+              <button class="text-button text-sm font-bold flex items-center gap-2 mx-auto">
+                <i class="fa-solid fa-plus text-xs"></i> إضافة رابط
+              </button>
+            </div>
+
+            <div id="linksEditState" class="hidden space-y-4">
+              <div
+                class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button transition-all bg-white dark:bg-transparent">
+                <label
+                  class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button">
+                  الصق الرابط ثم اضغط Enter
+                </label>
+                <input type="text" id="linkInput" onkeydown="handleLinkEnter(event)"
+                  class="w-full text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 text-right focus:ring-0 bg-transparent placeholder-gray-300 dark:placeholder-gray-600"
+                  placeholder="مثلاً: drive.google.com/..." />
+              </div>
+
+              <div id="linksListPreview" class="flex flex-wrap flex-row gap-3 justify-start"></div>
+
+              <div class="flex justify-end gap-2 pt-2">
+                <button onclick="cancelLinksEdit()"
+                  class="text-gray-400 dark:text-[#DEEDEB]/40 hover:text-gray-300 cursor-pointer text-xs font-bold px-3 transition-colors">
+                  إلغاء
+                </button>
+                <button onclick="saveLinks()"
+                  class="bg-button hover:bg-button-hover cursor-pointer text-white px-6 py-2 rounded-xl text-xs font-bold transition-all shadow-sm shadow-button/20 active:scale-95">
+                  حفظ الروابط
+                </button>
+              </div>
+            </div>
+
+            <div id="linksDisplayState" class="hidden">
+              <div id="linksContainer" class="flex flex-wrap flex-row gap-3 justify-start"></div>
+            </div>
+          </div>
+          <div
+            class="border border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#1A3D36]/50 rounded-xl p-6 shadow-sm transition-colors">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="font-bold text-primaryHeading dark:text-white flex items-center gap-2">
+                <i class="fa-solid fa-globe text-button text-sm"></i> اللغات
+              </h3>
+              <button id="langEditIcon" onclick="enableLangEdit()"
+                class="hidden text-button hover:text-button-hover transition duration-200 cursor-pointer">
+                <i class="fa-regular fa-pen-to-square text-lg"></i>
+              </button>
+            </div>
+
+            <div id="langEmptyState" onclick="enableLangEdit()"
+              class="border-2 border-dashed border-gray-100 dark:border-[#2D534C] rounded-xl p-8 text-center group cursor-pointer hover:border-button transition-all">
+              <p class="text-xs text-gray-400 dark:text-[#DEEDEB]/40 mb-3 font-bold">أضف اللغات التي تتقنها</p>
+              <button class="text-button text-sm font-bold flex items-center gap-2 mx-auto">
+                <i class="fa-solid fa-plus text-xs"></i> إضافة لغة
+              </button>
+            </div>
+
+            <div id="langEditState" class="hidden space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div
+                  class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button transition-all bg-white dark:bg-transparent">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button">
+                    اسم اللغة
+                  </label>
+                  <input type="text" id="langNameInput" onkeydown="handleLangEnter(event)"
+                    class="w-full text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 text-right focus:ring-0 bg-transparent placeholder-gray-300 dark:placeholder-gray-600"
+                    placeholder="مثلاً: العربية" />
+                </div>
+                <div
+                  class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button transition-all bg-white dark:bg-transparent">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button">
+                    مستوى الإتقان
+                  </label>
+                  <input type="text" id="langLevelInput" onkeydown="handleLangEnter(event)"
+                    class="w-full text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 text-right focus:ring-0 bg-transparent placeholder-gray-300 dark:placeholder-gray-600"
+                    placeholder="مثلاً: مبتدئ، طلق.." />
+                </div>
+              </div>
+
+              <div id="langListPreview" class="flex flex-wrap flex-row gap-3 pt-2 justify-start"></div>
+
+              <div class="flex justify-end gap-2 pt-4 border-t border-gray-50 dark:border-[#2D534C]">
+                <button onclick="cancelLangEdit()"
+                  class="text-gray-400 dark:text-[#DEEDEB]/40 hover:text-gray-300 cursor-pointer text-xs font-bold px-3 transition-colors">
+                  إلغاء
+                </button>
+                <button onclick="saveLanguages()"
+                  class="bg-button hover:bg-button-hover cursor-pointer text-white px-6 py-2 rounded-xl text-xs font-bold transition-all shadow-sm shadow-button/20 active:scale-95">
+                  حفظ اللغات
+                </button>
+              </div>
+            </div>
+
+            <div id="langDisplayState" class="hidden">
+              <div id="langContainer" class="flex flex-wrap flex-row gap-3 justify-start"></div>
+            </div>
+          </div>
+          <div
+            class="border border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#1A3D36]/50 rounded-xl p-6 shadow-sm transition-colors">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="font-bold text-primaryHeading dark:text-white flex items-center gap-2">
+                <i class="fa-solid fa-briefcase text-button text-sm"></i> تفضيلات الوظيفة
+              </h3>
+              <button id="prefEditIcon" onclick="enablePrefEdit()"
+                class="hidden text-button hover:text-button-hover cursor-pointer transition-colors">
+                <i class="fa-regular fa-pen-to-square text-lg"></i>
+              </button>
+            </div>
+
+            <div id="prefEmptyState" onclick="enablePrefEdit()"
+              class="border-2 border-dashed border-gray-100 dark:border-[#2D534C] rounded-xl p-8 text-center group cursor-pointer hover:border-button transition-all">
+              <p class="text-xs text-gray-400 dark:text-[#DEEDEB]/40 mb-3 font-bold">أضف تفضيلاتك الوظيفية</p>
+              <button class="text-button text-sm font-bold flex items-center gap-2 mx-auto">
+                <i class="fa-solid fa-plus text-xs"></i> تفضيلات الوظيفة
+              </button>
+            </div>
+
+            <div id="prefEditState" class="hidden space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div
+                  class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button bg-white dark:bg-transparent transition-all">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button">فئة
+                    الوظيفة</label>
+                  <input type="text" id="jobCategory" onkeydown="handlePrefEnter(event)"
+                    class="w-full text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 focus:ring-0 bg-transparent placeholder-gray-300 dark:placeholder-gray-600"
+                    placeholder="مثلاً: مطور" />
+                </div>
+                <div
+                  class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button bg-white dark:bg-transparent transition-all">
+                  <label
+                    class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40 group-focus-within:text-button">الحد
+                    الأدنى للراتب</label>
+                  <input type="text" id="minSalary" onkeydown="handlePrefEnter(event)"
+                    class="w-full text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 focus:ring-0 bg-transparent placeholder-gray-300 dark:placeholder-gray-600"
+                    placeholder="300$" />
+                </div>
+              </div>
+              <p class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/30 mr-2 -mt-2"><i
+                  class="fa-solid fa-circle-info ml-1"></i> المبلغ بالدولار / شهرياً</p>
+
+              <div id="jobTagsPreview" class="flex flex-wrap gap-2"></div>
+
+              <hr class="border-gray-50 dark:border-[#2D534C]">
+
+              <div class="grid grid-cols-2 gap-8 text-right">
+                <div>
+                  <h4 class="text-xs font-bold text-primaryHeading dark:text-white mb-3">نوع العقد المقبول</h4>
+                  <div class="space-y-2">
+                    <label
+                      class="flex items-center justify-start gap-2 text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60 cursor-pointer hover:text-button transition-colors">
+                      <input type="checkbox" name="contract" value="دوام كامل"
+                        class="rounded border-gray-300 dark:border-[#2D534C] text-button focus:ring-button bg-transparent">
+                      دوام كامل
+                    </label>
+                    <label
+                      class="flex items-center justify-start gap-2 text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60 cursor-pointer hover:text-button transition-colors">
+                      <input type="checkbox" name="contract" value="دوام جزئي"
+                        class="rounded border-gray-300 dark:border-[#2D534C] text-button focus:ring-button bg-transparent">
+                      دوام جزئي
+                    </label>
+                    <label
+                      class="flex items-center justify-start gap-2 text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60 cursor-pointer hover:text-button transition-colors">
+                      <input type="checkbox" name="contract" value="عن بعد"
+                        class="rounded border-gray-300 dark:border-[#2D534C] text-button focus:ring-button bg-transparent">
+                      عن بعد
+                    </label>
+                    <label
+                      class="flex items-center justify-start gap-2 text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60 cursor-pointer hover:text-button transition-colors">
+                      <input type="checkbox" name="contract" value="تدريب"
+                        class="rounded border-gray-300 dark:border-[#2D534C] text-button focus:ring-button bg-transparent">
+                      تدريب
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-primaryHeading dark:text-white mb-3">المستوى الوظيفي:</h4>
+                  <div class="space-y-2">
+                    <label
+                      class="flex items-center justify-start gap-2 text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60 cursor-pointer hover:text-button transition-colors">
+                      <input type="checkbox" name="seniority" value="مبتدئ"
+                        class="rounded border-gray-300 dark:border-[#2D534C] text-button focus:ring-button bg-transparent">
+                      مبتدئ
+                    </label>
+                    <label
+                      class="flex items-center justify-start gap-2 text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60 cursor-pointer hover:text-button transition-colors">
+                      <input type="checkbox" name="seniority" value="أخصائي"
+                        class="rounded border-gray-300 dark:border-[#2D534C] text-button focus:ring-button bg-transparent">
+                      أخصائي
+                    </label>
+                    <label
+                      class="flex items-center justify-start gap-2 text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60 cursor-pointer hover:text-button transition-colors">
+                      <input type="checkbox" name="seniority" value="مدير"
+                        class="rounded border-gray-300 dark:border-[#2D534C] text-button focus:ring-button bg-transparent">
+                      مدير
+                    </label>
+                    <label
+                      class="flex items-center justify-start gap-2 text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60 cursor-pointer hover:text-button transition-colors">
+                      <input type="checkbox" name="seniority" value="مدير تنفيذي"
+                        class="rounded border-gray-300 dark:border-[#2D534C] text-button focus:ring-button bg-transparent">
+                      مدير تنفيذي
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div id="optionsPreview" class="flex flex-wrap gap-2 pt-2 border-t border-gray-50 dark:border-[#2D534C]">
+              </div>
+
+              <div class="flex justify-end gap-2 pt-4">
+                <button onclick="cancelPrefEdit()"
+                  class="text-gray-400 dark:text-[#DEEDEB]/40 hover:text-gray-300 cursor-pointer text-xs font-bold px-3 transition-colors">إلغاء</button>
+                <button onclick="saveJobPrefs()"
+                  class="bg-button hover:bg-button-hover cursor-pointer text-white px-6 py-2 rounded-xl text-xs font-bold transition-all shadow-sm shadow-button/20 active:scale-95">حفظ
+                  التفضيلات</button>
+              </div>
+            </div>
+
+            <div id="prefDisplayState" class="hidden">
+              <div id="prefFinalContainer" class="flex flex-wrap gap-3"></div>
+            </div>
+          </div>
+          <div
+            class="border border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#1A3D36]/50 rounded-xl p-6 shadow-sm transition-colors">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="font-bold text-primaryHeading dark:text-white flex items-center gap-2">
+                <i class="fa-solid fa-wand-magic-sparkles text-button text-sm"></i> مميزات الوظيفة المفضلة
+              </h3>
+              <button id="benefitEditIcon" onclick="enableBenefitEdit()"
+                class="hidden text-button hover:text-button-hover cursor-pointer transition-colors">
+                <i class="fa-regular fa-pen-to-square text-lg"></i>
+              </button>
+            </div>
+
+            <div id="benefitEmptyState" onclick="enableBenefitEdit()"
+              class="border-2 border-dashed border-gray-100 dark:border-[#2D534C] rounded-xl p-8 text-center group cursor-pointer hover:border-button transition-all">
+              <p class="text-xs text-gray-400 dark:text-[#DEEDEB]/40 mb-3 font-bold">أضف المميزات التي تبحث عنها</p>
+              <button class="text-button text-sm font-bold flex items-center gap-2 mx-auto">
+                <i class="fa-solid fa-plus text-xs"></i> مميزات الوظيفة
+              </button>
+            </div>
+
+            <div id="benefitEditState" class="hidden space-y-5">
+              <div class="space-y-3 pr-2 text-right">
+                <label
+                  class="flex items-center justify-start gap-3 text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60 cursor-pointer group">
+                  <input type="checkbox" name="benefitOpt" value="فرصة ترقية" onchange="syncBenefits()"
+                    class="w-4 h-4 rounded text-button focus:ring-button border-gray-300 dark:border-[#2D534C] bg-transparent">
+                  <span class="group-hover:text-primaryHeading dark:group-hover:text-white transition-colors">فرصة ترقية
+                    (Promotion Opportunity)</span>
+                </label>
+                <label
+                  class="flex items-center justify-start gap-3 text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60 cursor-pointer group">
+                  <input type="checkbox" name="benefitOpt" value="مواصلات" onchange="syncBenefits()"
+                    class="w-4 h-4 rounded text-button focus:ring-button border-gray-300 dark:border-[#2D534C] bg-transparent">
+                  <span class="group-hover:text-primaryHeading dark:group-hover:text-white transition-colors">توفير
+                    مواصلات (Transportation Service)</span>
+                </label>
+                <label
+                  class="flex items-center justify-start gap-3 text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60 cursor-pointer group">
+                  <input type="checkbox" name="benefitOpt" value="ساعات عمل مرنة" onchange="syncBenefits()"
+                    class="w-4 h-4 rounded text-button focus:ring-button border-gray-300 dark:border-[#2D534C] bg-transparent">
+                  <span class="group-hover:text-primaryHeading dark:group-hover:text-white transition-colors">ساعات عمل
+                    مرنة (Flexible Hours)</span>
+                </label>
+                <label
+                  class="flex items-center justify-start gap-3 text-xs font-bold text-gray-500 dark:text-[#DEEDEB]/60 cursor-pointer group">
+                  <input type="checkbox" name="benefitOpt" value="تأمين" onchange="syncBenefits()"
+                    class="w-4 h-4 rounded text-button focus:ring-button border-gray-300 dark:border-[#2D534C] bg-transparent">
+                  <span class="group-hover:text-primaryHeading dark:group-hover:text-white transition-colors">تأمين
+                    (Insurance)</span>
+                </label>
+              </div>
+
+              <div
+                class="relative border border-gray-100 dark:border-[#2D534C] rounded-xl px-4 py-3 focus-within:border-button bg-white dark:bg-transparent transition-all">
+                <label
+                  class="absolute -top-2.5 right-4 px-2 bg-white dark:bg-[#214a42] text-[11px] font-bold text-gray-400 dark:text-[#DEEDEB]/40">أضف
+                  ميزة أخرى</label>
+                <input type="text" id="benefitInput" onkeydown="handleBenefitEnter(event)"
+                  class="w-full text-sm font-bold text-primaryHeading dark:text-white outline-none border-none p-1 text-right focus:ring-0 bg-transparent placeholder-gray-300 dark:placeholder-gray-600"
+                  placeholder="اكتب الميزة ثم اضغط Enter..." />
+              </div>
+
+              <div id="benefitListPreview" class="flex flex-wrap flex-row gap-3 justify-start min-h-[20px]"></div>
+
+              <div class="flex justify-end gap-2 pt-4 border-t border-gray-50 dark:border-[#2D534C]">
+                <button onclick="cancelBenefitEdit()"
+                  class="text-gray-400 dark:text-[#DEEDEB]/40 hover:text-gray-300 cursor-pointer text-xs font-bold px-3 transition-colors">إلغاء</button>
+                <button onclick="saveBenefits()"
+                  class="bg-button hover:bg-button-hover cursor-pointer text-white px-6 py-2 rounded-xl text-xs font-bold transition-all shadow-sm shadow-button/20 active:scale-95">حفظ
+                  المميزات</button>
+              </div>
+            </div>
+
+            <div id="benefitDisplayState" class="hidden">
+              <div id="benefitContainer" class="flex flex-wrap flex-row gap-3 justify-start"></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-span-12 lg:col-span-4 space-y-6">
+          <div
+            class="border border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#1A3D36]/50 rounded-2xl p-8 shadow-sm transition-colors">
+            <h3 class="text-sm font-bold text-primaryHeading dark:text-white text-center mb-6">جودة السيرة الذاتية</h3>
+
+            <div class="relative w-36 h-36 mx-auto flex items-center justify-center">
+              <svg class="w-full h-full transform -rotate-90">
+                <circle cx="72" cy="72" r="64" stroke="#f3f4f6" class="dark:stroke-[#214a42]" stroke-width="10"
+                  fill="transparent" />
+                <circle id="progressCircle" cx="72" cy="72" r="64" stroke="currentColor" stroke-width="10"
+                  fill="transparent" class="text-button transition-all duration-700 ease-out" stroke-dasharray="402"
+                  stroke-dashoffset="402" />
+              </svg>
+              <span id="progressText" class="absolute text-3xl font-bold text-primaryHeading dark:text-white">0%</span>
+            </div>
+
+            <div class="mt-8 space-y-3">
+              <p id="progressMessage"
+                class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40 text-center mb-4 leading-relaxed font-medium">
+                سيرتك الذاتية مكتملة بنسبة 35% لنقم بتحسينها!
+              </p>
+
+              <div id="checklistContainer" class="space-y-2">
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="border border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#1A3D36]/50 rounded-2xl p-6 text-center shadow-sm transition-colors">
+            <h3 class="text-sm font-bold text-primaryHeading dark:text-white mb-1">رفع سيرتك الذاتية</h3>
+            <p id="uploadStatus" class="text-[10px] text-gray-400 dark:text-[#DEEDEB]/40 mb-6">يمكنك إرفاق ملف سيرة
+              ذاتية منفصل هنا</p>
+
+            <input type="file" id="resumeInput" class="hidden" accept=".pdf" onchange="handleFileUpload(event)">
+
+            <div id="uploadPlaceholder" onclick="document.getElementById('resumeInput').click()"
+              class="border-2 border-dashed border-gray-100 dark:border-[#2D534C] rounded-2xl p-8 bg-input/30 dark:bg-[#214a42]/30 group hover:border-button transition-all cursor-pointer">
+              <div
+                class="w-12 h-12 bg-white dark:bg-[#214a42] rounded-xl shadow-sm flex items-center justify-center mx-auto mb-3 transition-colors">
+                <i class="fa-solid fa-cloud-arrow-up text-button text-xl"></i>
+              </div>
+              <p class="text-[10px] font-bold text-primaryHeading dark:text-white">اسحب الملف أو اختر من الجهاز</p>
+              <p class="text-[9px] text-gray-300 dark:text-gray-500 mt-1">PDF (الحد الأقصى 10MB)</p>
+            </div>
+
+            <div id="fileInfoDisplay"
+              class="hidden border border-button/20 rounded-2xl p-4 bg-button/5 dark:bg-button/10 relative text-right">
+              <button onclick="removeFile(event)"
+                class="absolute -top-2 -left-2 w-6 h-6 bg-red-500 text-white rounded-full text-[10px] flex items-center justify-center shadow-sm hover:bg-red-600 transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-file-pdf text-red-500 text-2xl"></i>
+                <div class="overflow-hidden">
+                  <p id="fileName" class="text-[11px] font-bold text-primaryHeading dark:text-white truncate"></p>
+                  <p id="fileSize" class="text-[9px] text-gray-400 dark:text-[#DEEDEB]/40">0 KB</p>
+                </div>
+              </div>
+            </div>
+
+            <button onclick="document.getElementById('resumeInput').click()"
+              class="w-full mt-4 py-3 border border-gray-100 dark:border-[#2D534C] text-button text-xs font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-[#214a42] transition-all">
+              استبدال الملف
+            </button>
+          </div>
+
+          <div
+            class="border border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#1A3D36]/50 rounded-2xl p-6 text-center shadow-sm transition-colors">
+            <h3 class="text-sm font-bold text-primaryHeading dark:text-white mb-4">رابط سيرتك الذاتية</h3>
+            <div
+              class="bg-gray-50 dark:bg-[#214a42] p-6 rounded-2xl inline-block mb-4 border border-gray-100 dark:border-[#2D534C] shadow-inner transition-colors">
+              <i class="fa-solid fa-qrcode text-6xl text-primaryHeading dark:text-white"></i>
+            </div>
+            <p id="resumeUrl" class="text-[11px] font-bold text-button mb-6">ALYA.com/u/LF-8752322</p>
+            <button onclick="copyResumeLink()"
+              class="w-full py-3 bg-white dark:bg-[#214a42] border border-gray-100 dark:border-[#2D534C] text-gray-600 dark:text-[#DEEDEB]/60 cursor-pointer text-xs font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-[#1A3D36] transition-all duration-200">
+              نسخ الرابط
+            </button>
+          </div>
+
+          <button id="finalSaveBtn" disabled onclick="handleFinalSubmit()"
+            class="w-full py-3 bg-gray-300 dark:bg-[#2D534C] text-white dark:text-gray-500 font-bold rounded-xl transition-all cursor-not-allowed opacity-60">
+            حفظ ومتابعة
+          </button>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+  <script src="./src/js/resume.js"></script>
+  <script src="./src/js/script.js"></script>
+</body>
+
+</html>

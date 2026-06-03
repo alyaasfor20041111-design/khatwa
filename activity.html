@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="ar" class="dark" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>النشاط</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="icon" type="" href="./src/images/logo/icon.png" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet" />
+    <!-- icons font owesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="flex min-h-screen bg-background font-primary">
+
+        <aside id="sidebar"
+            class="fixed top-0 right-0 z-40 w-64 h-screen transition-transform translate-x-0 border-l border-gray-100 dark:border-[#2D534C] bg-white dark:bg-[#173630]"
+            aria-label="Sidebar">
+
+            <button onclick="toggleSidebar()"
+                class="absolute -left-3 top-10 bg-white dark:bg-[#20453E] border border-gray-100 dark:border-[#2D534C] rounded-full w-6 h-6 flex items-center justify-center text-gray-400 dark:text-[#21EAC8] hover:text-icon shadow-sm z-50 cursor-pointer">
+                <i id="toggleIcon" class="fa-solid fa-chevron-right text-[10px]"></i>
+            </button>
+
+            <div class="h-full px-4 py-6 overflow-y-auto flex flex-col justify-between">
+                <div>
+                    <div class="flex flex-col items-center justify-center mb-8">
+                        <div class="mb-5">
+                            <img src="./src/images/logo/logo.png" class="w-25" alt="شعار خطوة" />
+                        </div>
+                        <div class="w-full px-2">
+                            <div class="h-[1px] bg-gray-100 dark:bg-[#2D534C] w-full opacity-70"></div>
+                        </div>
+                    </div>
+
+                    <p class="text-secondary font-bold text-gray-400 dark:text-[#DEEDEB]/60 px-4 mb-4 uppercase">
+                        الرئيسية</p>
+
+                    <ul class="space-y-1 font-medium" id="sidebar-nav">
+                        <li>
+                            <a href="dashboard.html"
+                                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                                <div
+                                    class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                                    <i class="fa-solid fa-border-all text-sm"></i>
+                                </div>
+                                <span class="ms-3 text-sm">لوحة التحكم</span>
+                            </a>
+                        </li>
+                        <li>
+              <a href="post-jop.html"
+                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                <div
+                  class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                  <i class="fa-solid fa-briefcase text-sm"></i>
+                </div>
+                <span class="ms-3 text-sm">نشر وظيفة</span>
+              </a>
+            </li>
+                        <li>
+                            <a href="Resume.html"
+                                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                                <div
+                                    class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                                    <i class="fa-solid fa-user text-sm"></i>
+                                </div>
+                                <span class="ms-3 text-sm">ملفي الشخصي</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Notification.html"
+                                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                                <div
+                                    class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                                    <i class="fa-solid fa-bell text-sm"></i>
+                                </div>
+                                <span class="ms-3 text-sm">الإشعارات</span>
+                                <span
+                                    class="ms-auto bg-red-500 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Messages.html"
+                                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                                <div
+                                    class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                                    <i class="fa-solid fa-comment-dots text-sm"></i>
+                                </div>
+                                <span class="ms-3 text-sm">الرسائل</span>
+                                <span
+                                    class="ms-auto bg-red-500 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">5</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Accountsetting.html"
+                                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                                <div
+                                    class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                                    <i class="fa-solid fa-sliders text-sm"></i>
+                                </div>
+                                <span class="ms-3 text-sm">إعدادات الحساب</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="activity.html"
+                                class="nav-item flex items-center px-4 py-3 font-bold text-button-title dark:text-[#DEEDEB] rounded-xl transition-all duration-200 group hover:bg-gray-50 dark:hover:bg-white/5">
+                                <div
+                                    class="icon-box w-6 flex justify-center text-gray-400 dark:text-[#21EAC8]/60 group-hover:text-button">
+                                    <i class="fa-solid fa-chart-line text-sm"></i>
+                                </div>
+                                <span class="ms-3 text-sm">النشاط</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="space-y-1">
+                    <a href="./index.html"
+                        class="flex items-center px-4 py-3 text-red-500 rounded-xl hover:bg-red-50 dark:hover:bg-red-500/10 transition-all duration-200 group">
+                        <div class="w-6 flex justify-center text-red-400"><i
+                                class="fa-solid fa-arrow-right-from-bracket text-sm"></i></div>
+                        <span class="ms-3 text-sm font-medium">تسجيل الخروج</span>
+                    </a>
+                    <a href="#"
+                        class="flex items-center px-4 py-3 text-gray-400 dark:text-[#DEEDEB]/60 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-200 group">
+                        <div class="w-6 flex justify-center text-gray-300 dark:text-white/20"><i
+                                class="fa-solid fa-circle-question text-sm"></i></div>
+                        <span class="ms-3 text-sm font-medium">المساعدة</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <main id="mainContent" class="sm:mr-64 w-full min-h-screen transition-all duration-300 bg-[#F8FBFB] dark:bg-[#173630]">
+            <header
+                class="border-b border-gray-100 dark:border-[#2D534C] py-4 px-4 md:px-6 lg:px-10 flex items-center justify-between sticky top-0 z-30 bg-white/80 dark:bg-[#20453E]/90 backdrop-blur-md transition-all">
+
+                <!-- القسم الأيمن: العناوين -->
+                <div class="flex flex-col text-right shrink-0">
+                    <h1
+                        class="text-[15px] lg:text-primary font-bold text-primaryHeading dark:text-button leading-tight">
+                        النشاط</h1>
+                    <p class="hidden xl:block text-[10px] text-gray-400 dark:text-[#DEEDEB]/50 mt-0.5 font-medium">تحديث
+                        معلوماتك سيمنحك الوصول لمحتوى أكثر صلة</p>
+                </div>
+
+                <!-- القسم الأوسط: البحث (محسن ليتناسب مع حجم iPad) -->
+                <div
+                    class="relative flex-1 mx-2 sm:mx-4 max-w-[120px] sm:max-w-[250px] md:max-w-[350px] lg:max-w-[400px] hidden md:block">
+                    <input type="text"
+                        class="bg-[#F4FAF9] dark:bg-[#1A3D36] border border-gray-100 dark:border-[#2D534C] text-gray-700 dark:text-[#DEEDEB] text-xs rounded-xl focus:ring-2 focus:ring-[#21EAC8]/10 focus:border-[#21EAC8] block w-full pr-9 pl-4 py-2 transition-all outline-none placeholder:text-gray-300 dark:placeholder:text-white/20 "
+                        placeholder="بحث">
+                    <span
+                        class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400 dark:text-[#21EAC8]/60">
+                        <i class="fa-solid fa-magnifying-glass text-[12px]"></i>
+                    </span>
+                </div>
+
+                <!-- القسم الأيسر: الأزرار والبروفايل -->
+                <div class="flex items-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 shrink-0">
+
+                    <!-- زر الوضع الليلي -->
+                    <button id="theme-toggle" type="button"
+                        class="flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 dark:bg-white/10 text-button border border-white/10 dark:border-[#2D534C] cursor-pointer transition-all active:scale-90 shadow-sm">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <!-- التنبيهات -->
+                    <button
+                        class="relative w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-gray-400 dark:text-[#DEEDEB]/60 hover:text-[#21EAC8] transition-all">
+                        <i class="fa-regular fa-bell text-lg sm:text-xl"></i>
+                        <span
+                            class="absolute top-0.5 right-0.5 bg-red-600 text-white text-[7px] sm:text-[8px] font-bold w-4 h-4 flex items-center justify-center rounded-full border-2 border-white dark:border-[#20453E]">
+                            30
+                        </span>
+                    </button>
+
+                    <!-- الملف الشخصي -->
+                    <div class="flex items-center gap-2 cursor-pointer group">
+                        <div class="hidden lg:flex flex-col text-right">
+                            <span
+                                class="text-xs font-bold text-[#2D534C] dark:text-[#DEEDEB] group-hover:text-[#21EAC8] transition-colors">أحمد
+                                العلي</span>
+                            <span class="text-[9px] text-gray-400 dark:text-[#DEEDEB]/40">ahmedalali@gmail.com</span>
+                        </div>
+                        <div
+                            class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl border border-gray-100 dark:border-[#2D534C] overflow-hidden transform transition-all group-hover:scale-105 shadow-sm hidden sm:block">
+                            <img src="./src/images/resume/profile.png" alt="User" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+            <!-- تم تعديل الـ padding ليكون متكيفاً p-4 للجوال و p-10 للشاشات الكبيرة -->
+            <div class="p-4 md:p-10 space-y-6 md:space-y-8 w-full max-w-full bg-[#F8FBFB] dark:bg-[#173630] overflow-hidden" dir="rtl">
+
+                <!-- نظام التبويبات (Tabs Navigation) -->
+                <!-- gap-4 للجوال و gap-8 للديسكتوب مع تفعيل التمرير الأفقي السلس -->
+                <!-- الحاوية الرئيسية -->
+                <div
+                    class="border-b border-gray-100 dark:border-[#2D534C]/30 flex items-center gap-4 md:gap-8 overflow-x-auto no-scrollbar scroll-smooth">
+
+                    <!-- زر حالة التقديم -->
+                    <button onclick="switchTab('apply-status', this)" id="tab-apply-status"
+                        class="tab-btn active-tab tab-button-custom py-3 md:py-4 text-[10px] sm:text-xs md:text-sm font-bold transition-all duration-200 relative cursor-pointer flex flex-col md:flex-row items-center gap-1 md:gap-2 shrink-0 whitespace-nowrap dark:text-[#DEEDEB]/40">
+                        <i class="fa-solid fa-clipboard-list text-lg md:text-xl mb-1 md:mb-0"></i>
+                        <span>حالة التقديم</span>
+                    </button>
+
+                    <!-- زر العروض الوظيفية -->
+                    <button onclick="switchTab('offered-job', this)" id="tab-offered-job"
+                        class="tab-btn inactive-tab tab-button-custom py-3 md:py-4 text-[10px] sm:text-xs md:text-sm font-bold transition-all duration-200 relative cursor-pointer text-gray-400 flex flex-col md:flex-row items-center gap-1 md:gap-2 shrink-0 whitespace-nowrap dark:text-[#DEEDEB]/40">
+                        <i class="fa-solid fa-file-invoice-dollar text-lg md:text-xl mb-1 md:mb-0"></i>
+                        <span>العروض الوظيفية</span>
+                    </button>
+
+                    <!-- زر الوظائف المحفوظة -->
+                    <button onclick="switchTab('saved-job', this)" id="tab-saved-job"
+                        class="tab-btn inactive-tab tab-button-custom py-3 md:py-4 text-[10px] sm:text-xs md:text-sm font-bold transition-all duration-200 relative cursor-pointer text-gray-400 flex flex-col md:flex-row items-center gap-1 md:gap-2 shrink-0 whitespace-nowrap">
+                        <i class="fa-solid fa-bookmark text-lg md:text-xl mb-1 md:mb-0"></i>
+                        <span>الوظائف المحفوظة</span>
+                    </button>
+
+                    <!-- زر الشركات المتابعة -->
+                    <button onclick="switchTab('followed-company', this)" id="tab-followed-company"
+                        class="tab-btn inactive-tab tab-button-custom py-3 md:py-4 text-[10px] sm:text-xs md:text-sm font-bold transition-all duration-200 relative cursor-pointer text-gray-400 flex flex-col md:flex-row items-center gap-1 md:gap-2 shrink-0 whitespace-nowrap">
+                        <i class="fa-solid fa-building text-lg md:text-xl mb-1 md:mb-0"></i>
+                        <span>الشركات المتابعة</span>
+                    </button>
+                </div>
+
+                <style>
+                    .no-scrollbar::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    .no-scrollbar {
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
+                    }
+
+                    /* لضمان أن الأيقونة تأخذ لون النص تلقائياً */
+                    .tab-btn i {
+                        display: inline-block;
+                        transition: transform 0.2s;
+                    }
+
+                    .tab-btn:hover i {
+                        transform: translateY(-2px);
+                        /* تأثير بسيط عند المرور */
+                    }
+                </style>
+
+                <!-- محتوى التبويبات -->
+                <div id="tab-content" class="space-y-6">
+
+                    <!-- قسم الفلترة السريعة -->
+                    <!-- التغيير: flex-col في الجوال ليصبح الترتيب تحت الفلاتر، و flex-row في الديسكتوب -->
+                    <div id="filter-bar"
+                        class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+
+                        <!-- أزرار الفلترة مع تمرير أفقي للجوال -->
+                        <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 no-scrollbar w-full sm:w-auto"
+                            id="filter-btns-container">
+                            <button onclick="filterCards('الكل', this)"
+                                class="filter-btn active-filter px-3 md:px-4 py-2 rounded-xl bg-button border border-gray-100 text-white text-[10px] md:text-xs font-bold shrink-0 transition-all cursor-pointer">الكل</button>
+                            <button onclick="filterCards('مقبول', this)"
+                                class="filter-btn px-3 md:px-4 py-2 rounded-xl bg-white border border-gray-100 text-gray-500 text-[10px] md:text-xs font-bold shrink-0 transition-all cursor-pointer hover:border-button/50">مقبول</button>
+                            <button onclick="filterCards('قيد المراجعة', this)"
+                                class="filter-btn px-3 md:px-4 py-2 rounded-xl bg-white border border-gray-100 text-gray-500 text-[10px] md:text-xs font-bold shrink-0 transition-all cursor-pointer hover:border-button/50">قيد
+                                المراجعة</button>
+                            <button onclick="filterCards('مرفوض', this)"
+                                class="filter-btn px-3 md:px-4 py-2 rounded-xl bg-white border border-gray-100 text-gray-500 text-[10px] md:text-xs font-bold shrink-0 transition-all cursor-pointer hover:border-button/50">مرفوض</button>
+                            <button onclick="filterCards('مقابلة', this)"
+                                class="filter-btn px-3 md:px-4 py-2 rounded-xl bg-white border border-gray-100 text-gray-500 text-[10px] md:text-xs font-bold shrink-0 transition-all cursor-pointer hover:border-button/50">مقابلة</button>
+                        </div>
+
+                        <!-- قسم الترتيب -->
+                        <div class="flex items-center gap-2 shrink-0 self-end sm:self-auto">
+                            <span class="text-[10px] md:text-[11px] text-gray-400 font-bold whitespace-nowrap">ترتيب
+                                حسب:</span>
+                            <select onchange="sortCards(this.value)"
+                                class="bg-white border border-gray-100 text-gray-600 text-[11px] rounded-lg focus:ring-button focus:border-button p-1.5 outline-none cursor-pointer">
+                                <option value="newest">الأحدث</option>
+                                <option value="oldest">الأقدم</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- قائمة البطاقات الديناميكية -->
+                    <div id="cards-container" class="grid grid-cols-1 gap-4 w-full">
+                        <!-- يتم تعبئتها بواسطة JS -->
+                    </div>
+                </div>
+            </div>
+
+
+
+
+    </div>
+
+
+
+
+    </main>
+    <div id="commentModal"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/50 backdrop-blur-sm transition-all duration-300 px-4 font-primary">
+        <div class="bg-white rounded-xl  w-full max-w-md overflow-hidden transform transition-all relative p-8">
+
+            <button onclick="closeModal()"
+                class="absolute left-6 top-6 text-gray-400 hover:text-gray-600 transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="text-center">
+                <h3 class="text-xl font-bold text-primaryHeading mb-6">اكتب تعليقك!</h3>
+
+                <div class="flex justify-center flex-row-reverse gap-1 mb-6" id="star-rating">
+                    <i class="fa-solid fa-star text-2xl text-gray-200 cursor-pointer star transition-all duration-200"
+                        data-value="5"></i>
+                    <i class="fa-solid fa-star text-2xl text-gray-200 cursor-pointer star transition-all duration-200"
+                        data-value="4"></i>
+                    <i class="fa-solid fa-star text-2xl text-gray-200 cursor-pointer star transition-all duration-200"
+                        data-value="3"></i>
+                    <i class="fa-solid fa-star text-2xl text-gray-200 cursor-pointer star transition-all duration-200"
+                        data-value="2"></i>
+                    <i class="fa-solid fa-star text-2xl text-gray-200 cursor-pointer star transition-all duration-200"
+                        data-value="1"></i>
+                </div>
+                <div class="mb-8">
+                    <textarea
+                        class="w-full bg-white border border-gray-100 rounded-2xl p-4 text-sm text-gray-600 focus:ring-2 focus:ring-button/10 focus:border-button outline-none transition-all placeholder:text-gray-300 resize-none text-right"
+                        rows="5" placeholder="اكتب تعليقك حول هذه الشركة..."></textarea>
+                </div>
+
+                <button onclick="closeModal(), sendComment()"
+                    class="w-full bg-button hover:bg-button-hover text-white font-bold py-3.5 rounded-xl transition-all duration-200 cursor-pointer">
+                    إرسال
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="successToast"
+        class="fixed top-10 left-1/2 -translate-x-1/2 z-[110] hidden opacity-0 transition-all duration-500 transform -translate-y-10">
+        <div class="bg-white border border-gray-50 shadow-2xl rounded-xl px-8 py-4 flex items-center gap-4">
+            <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center">
+                <i class="fa-solid fa-check text-green-500 text-lg animate-bounce"></i>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold text-primaryHeading">شكراً لك!</h4>
+                <p class="text-[11px] text-gray-400">لقد تم استلام تعليقك اللطيف بنجاح ✨</p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="./src/js/activity.js"></script>
+    <script src="./src/js/script.js"></script>
+</body>
+
+</html>
