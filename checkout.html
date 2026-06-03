@@ -25,136 +25,133 @@
 
 <body>
     <header class="sticky top-0 left-0 w-full z-[100] font-primary">
-        <!-- الشريط العلوي (Top Bar) -->
-        <div
-            class="hidden md:flex bg-primaryHeading dark:bg-[#0f2420] px-12 py-1.5 justify-between items-center transition-all duration-200 border-b dark:border-white/5">
-            <div class="flex items-center gap-6">
-                <div class="flex items-center gap-2 group cursor-pointer">
-                    <span class="relative flex h-2 w-2">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-button opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-button"></span>
-                    </span>
-                    <span class="text-card dark:text-button text-[10px] font-bold tracking-widest uppercase">منصة
-                        التوظيف الأولى</span>
-                </div>
-            </div>
-            <div class="flex items-center gap-4 text-[10px] font-bold text-card">
-                <a href="./policy.html" class="hover:text-button transition-colors dark:text-white/70">السياسة
-                    والخصوصية</a>
-                <span class="opacity-20">|</span>
-                <a href="#" class="hover:text-button transition-colors dark:text-white/70">صاحب عمل</a>
-                <span class="opacity-20">|</span>
-                <a href="./contact.html" class="hover:text-button transition-colors dark:text-white/70">التواصل معنا</a>
-                <span class="opacity-20">|</span>
-                <a href="./help-center.html" class="hover:text-button transition-colors dark:text-white/70">مركز
-                    المساعدة</a>
-            </div>
+    <!-- الشريط العلوي (Top Bar) -->
+    <div
+      class="hidden md:flex bg-primaryHeading dark:bg-[#0f2420] px-12 py-1.5 justify-between items-center transition-all duration-200 border-b dark:border-white/5">
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2 group cursor-pointer">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-button opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-button"></span>
+          </span>
+          <span class="text-card dark:text-button text-[10px] font-bold tracking-widest uppercase">منصة
+            التوظيف الأولى</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 text-[10px] font-bold text-card">
+        <a href="./policy.html" class="hover:text-button transition-colors dark:text-white/70">السياسة والخصوصية</a>
+        <span class="opacity-20">|</span>
+        <a href="#" class="hover:text-button transition-colors dark:text-white/70">صاحب عمل</a>
+        <span class="opacity-20">|</span>
+        <a href="./contact.html" class="hover:text-button transition-colors dark:text-white/70">التواصل معنا</a>
+        <span class="opacity-20">|</span>
+        <a href="./help-center.html" class="hover:text-button transition-colors dark:text-white/70">مركز المساعدة</a>
+      </div>
+    </div>
+
+    <!-- شريط التنقل الرئيسي (Navbar) -->
+    <nav
+      class="bg-card/70 dark:bg-[#122d28]/90 backdrop-blur-md border-b border-border/20 dark:border-white/5 px-6 md:px-12 py-3 transition-colors duration-500">
+      <div class="max-w-[1500px] mx-auto flex items-center justify-between">
+
+        <!-- اللوغو -->
+        <div class="flex items-center">
+          <a href="/" class="transition-transform duration-300">
+            <img src="./src/images/logo/logo.png" alt="لوغو خطوة" class="w-20 md:w-25 brightness-110" />
+          </a>
         </div>
 
-        <!-- شريط التنقل الرئيسي (Navbar) -->
-        <nav
-            class="bg-card/70 dark:bg-[#122d28]/90 backdrop-blur-md border-b border-border/20 dark:border-white/5 px-6 md:px-12 py-3 transition-colors duration-500">
-            <div class="max-w-[1500px] mx-auto flex items-center justify-between">
+        <!-- الروابط للشاشات الكبيرة -->
+        <ul class="hidden lg:flex items-center gap-1">
+          <li><a href="./index.html" class="px-6 py-2 text-button font-bold text-sm">الرئيسية</a></li>
+          <li><a href="./jop-search.html"
+              class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">البحث
+              عن وظيفة</a></li>
+          <li><a href="./company-profile.html"
+              class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">الشركات</a>
+          </li>
+          <li><a href="./Resume.html"
+              class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">إنشاء
+              سيرة ذاتية</a></li>
+          <li><a href="./perc.html"
+              class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">
+              الأسعار</a></li>
+        </ul>
 
-                <!-- اللوغو -->
-                <div class="flex items-center">
-                    <a href="/" class="transition-transform duration-300">
-                        <img src="./src/images/logo/logo.png" alt="لوغو خطوة" class="w-20 md:w-25 brightness-110" />
-                    </a>
-                </div>
+        <!-- الأزرار اليمنى -->
+        <div class="flex items-center gap-2 md:gap-6">
+          <!-- زر الوضع الليلي -->
+          <button id="theme-toggle" type="button"
+            class="flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 dark:bg-white/10 text-button border border-white/10 cursor-pointer transition-all active:scale-90">
+            <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
+              </path>
+            </svg>
+          </button>
 
-                <!-- الروابط للشاشات الكبيرة -->
-                <ul class="hidden lg:flex items-center gap-1">
-                    <li><a href="./index.html" class="px-6 py-2 text-button font-bold text-sm">الرئيسية</a></li>
-                    <li><a href="#"
-                            class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">البحث
-                            عن وظيفة</a></li>
-                    <li><a href="#"
-                            class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">الشركات</a>
-                    </li>
-                    <li><a href="./Resume.html"
-                            class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">إنشاء
-                            سيرة ذاتية</a></li>
-                    <li><a href="./perc.html"
-                            class="px-6 py-2 text-primaryHeading dark:text-white/90 hover:text-button font-bold text-sm">
-                            الأسعار</a></li>
-                </ul>
+          <div class="hidden md:flex items-center gap-4">
+            <a href="./login.html" class="text-primaryHeading dark:text-white font-bold text-sm px-4">تسجيل
+              الدخول</a>
+            <a href="./signup.html"
+              class="bg-button text-[#173630] px-4 py-2 rounded-xl font-bold text-sm active:scale-95 transition-all">إنشاء
+              حساب</a>
+          </div>
 
-                <!-- الأزرار اليمنى -->
-                <div class="flex items-center gap-2 md:gap-6">
-                    <!-- زر الوضع الليلي -->
-                    <button id="theme-toggle" type="button"
-                        class="flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 dark:bg-white/10 text-button border border-white/10 cursor-pointer transition-all active:scale-90">
-                        <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                        </svg>
-                        <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor"
-                            viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
-                            </path>
-                        </svg>
-                    </button>
+          <!-- زر القائمة للجوال -->
+          <button id="mobile-menu-button"
+            class="lg:hidden flex items-center justify-center w-8 h-8 text-primaryHeading dark:text-white cursor-pointer">
+            <i class="fa-solid fa-bars-staggered text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
 
-                    <div class="hidden md:flex items-center gap-4">
-                        <a href="./login.html" class="text-primaryHeading dark:text-white font-bold text-sm px-4">تسجيل
-                            الدخول</a>
-                        <a href="./signup.html"
-                            class="bg-button text-[#173630] px-4 py-2 rounded-xl font-bold text-sm active:scale-95 transition-all">إنشاء
-                            حساب</a>
-                    </div>
+    <!-- Sidebar القائمة الجانبية -->
+    <div id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[110] opacity-0 pointer-events-none transition-all duration-300">
+    </div>
 
-                    <!-- زر القائمة للجوال -->
-                    <button id="mobile-menu-button"
-                        class="lg:hidden flex items-center justify-center w-8 h-8 text-primaryHeading dark:text-white cursor-pointer">
-                        <i class="fa-solid fa-bars-staggered text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Sidebar القائمة الجانبية -->
-        <div id="sidebar-overlay"
-            class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[110] opacity-0 pointer-events-none transition-all duration-300">
+    <aside id="mobile-sidebar"
+      class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-[#0f2420] z-[120] translate-x-full transition-transform duration-300 ease-in-out shadow-2xl border-l dark:border-white/5">
+      <div class="p-6 flex flex-col h-full">
+        <div class="flex items-center justify-between mb-8">
+          <span class="text-primaryHeading dark:text-button font-bold">القائمة</span>
+          <button id="close-sidebar"
+            class="text-text-muted dark:text-white/60 hover:text-red-500 transition-colors cursor-pointer">
+            <i class="fa-solid fa-xmark text-2xl"></i>
+          </button>
         </div>
 
-        <aside id="mobile-sidebar"
-            class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-[#0f2420] z-[120] translate-x-full transition-transform duration-300 ease-in-out shadow-2xl border-l dark:border-white/5">
-            <div class="p-6 flex flex-col h-full">
-                <div class="flex items-center justify-between mb-8">
-                    <span class="text-primaryHeading dark:text-button font-bold">القائمة</span>
-                    <button id="close-sidebar"
-                        class="text-text-muted dark:text-white/60 hover:text-red-500 transition-colors cursor-pointer">
-                        <i class="fa-solid fa-xmark text-2xl"></i>
-                    </button>
-                </div>
+        <ul class="flex flex-col gap-4 mb-auto">
+          <li><a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-button/10 text-button font-bold"><i
+                class="fa-solid fa-house"></i> الرئيسية</a></li>
+          <li><a href="./job-search.html"
+              class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i
+                class="fa-solid fa-magnifying-glass"></i> البحث عن وظيفة</a></li>
+          <li><a href="#"
+              class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i
+                class="fa-solid fa-building"></i> الشركات</a></li>
+          <li><a href="./Resume.html"
+              class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i
+                class="fa-solid fa-file-invoice"></i> إنشاء سيرة ذاتية</a></li>
+          <li><a href="./pricing.html"
+              class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i class="fas fa-tags"></i> الأسعار</a></li>
+        </ul>
 
-                <ul class="flex flex-col gap-4 mb-auto">
-                    <li><a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-button/10 text-button font-bold"><i
-                                class="fa-solid fa-house"></i> الرئيسية</a></li>
-                    <li><a href="#"
-                            class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i
-                                class="fa-solid fa-magnifying-glass"></i> البحث عن وظيفة</a></li>
-                    <li><a href="#"
-                            class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i
-                                class="fa-solid fa-building"></i> الشركات</a></li>
-                    <li><a href="./Resume.html"
-                            class="flex items-center gap-3 p-3 rounded-lg text-primaryHeading dark:text-white/80 hover:bg-input dark:hover:bg-white/5 transition-all font-bold"><i
-                                class="fa-solid fa-file-invoice"></i> إنشاء سيرة ذاتية</a></li>
-                </ul>
-
-                <div class="flex flex-col gap-3 pt-6 border-t dark:border-white/10">
-                    <a href="./login.html"
-                        class="w-full py-3 text-center rounded-xl border border-border dark:border-white/10 text-primaryHeading dark:text-white font-bold">تسجيل
-                        الدخول</a>
-                    <a href="./signup.html"
-                        class="w-full py-3 text-center rounded-xl bg-button text-[#173630] font-bold">إنشاء
-                        حساب</a>
-                </div>
-            </div>
-        </aside>
-    </header>
+        <div class="flex flex-col gap-3 pt-6 border-t dark:border-white/10">
+          <a href="./login.html"
+            class="w-full py-3 text-center rounded-xl border border-border dark:border-white/10 text-primaryHeading dark:text-white font-bold">تسجيل
+            الدخول</a>
+          <a href="./signup.html" class="w-full py-3 text-center rounded-xl bg-button text-[#173630] font-bold">إنشاء
+            حساب</a>
+        </div>
+      </div>
+    </aside>
+  </header>
     <!-- الحاوية الرئيسية: نفس خلفية وخط صفحة الخصوصية -->
     <main
         class="min-h-screen bg-input dark:bg-bg-dark py-8 md:py-16 px-4 sm:px-6 lg:px-8 font-primary text-right selection:bg-button/30 transition-colors duration-500">
