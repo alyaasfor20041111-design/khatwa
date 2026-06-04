@@ -70,17 +70,26 @@
   };
 
   /** @param {HTMLButtonElement} btn @param {boolean} active */
-  function setSortButtonVisual(btn, active) {
-    btn.classList.toggle("bg-[var(--color-button)]", active);
-    btn.classList.toggle("text-[var(--color-button-title)]", active);
-    btn.classList.toggle("shadow-sm", active);
-    btn.classList.toggle("hover:bg-[var(--color-button-hover)]", active);
-    btn.classList.toggle("hover:bg-[var(--color-input)]", !active);
-    btn.classList.toggle("bg-white", !active);
-    btn.classList.toggle("border", !active);
-    btn.classList.toggle("border-gray-200", !active);
-    btn.classList.toggle("text-slate-600", !active);
-  }
+function setSortButtonVisual(btn, active) {
+  // تفعيل الحالة (يبقى كما هو)
+  btn.classList.toggle("bg-[var(--color-button)]", active);
+  btn.classList.toggle("text-[var(--color-button-title)]", active);
+  btn.classList.toggle("border-transparent", active);
+  
+  // حالة عدم التفعيل
+  btn.classList.toggle("bg-transparent", !active);
+  btn.classList.toggle("border", !active);
+  btn.classList.toggle("border-gray-200", !active);
+  btn.classList.toggle("dark:border-border-dark", !active);
+  btn.classList.toggle("text-slate-600", !active);
+  btn.classList.toggle("dark:text-text-muted-dark", !active);
+  
+  // تحديث لون الـ Hover ليكون متناسقاً
+  // في الوضع الفاتح: hover:bg-slate-100 أو var(--color-input)
+  // في الوضع الداكن: hover:bg-white/5 (أبيض شفاف 5%) يعطي تباين خفيف جداً وأنيق
+  btn.classList.toggle("hover:bg-slate-100", !active);
+  btn.classList.toggle("dark:hover:bg-white/5", !active); 
+}
 
   function stars(r) {
     return `<span class="inline-flex items-center gap-1 text-sm font-bold tabular-nums text-amber-700" dir="ltr"><span class="text-amber-500" aria-hidden="true">★</span>${r.toFixed(1)}</span>`;
