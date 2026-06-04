@@ -412,23 +412,23 @@ function renderCards() {
   }
 
   container.innerHTML = data
-    .map(
-      (item) => `
-        <div class="bg-white border border-gray-100 rounded-xl overflow-hidden transition-all group">
+   .map(
+    (item) => `
+        <div class="bg-white dark:bg-[#1A3D36]/50 border border-gray-100 dark:border-[#2D534C] rounded-xl overflow-hidden transition-all group">
             <div onclick="toggleAccordion('card-${item.id}')" class="p-5 flex items-center justify-between cursor-pointer">
                 <div class="flex items-center gap-5">
-                    <div class="w-16 h-16 bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
+                    <div class="w-16 h-16 bg-white dark:bg-[#1A3D36] border border-gray-100 dark:border-[#2D534C] rounded-xl overflow-hidden shadow-sm">
                         <img src="${item.img}" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-300" alt="${item.company}">
                     </div>
                     <div class="flex flex-col gap-1">
-                        <span class="text-[11px] text-gray-400 font-bold uppercase tracking-wider">${item.company}</span>
-                        <h4 class="text-base font-bold text-gray-800">${item.role}</h4>
+                        <span class="text-[11px] text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider">${item.company}</span>
+                        <h4 class="text-base font-bold text-gray-800 dark:text-white">${item.role}</h4>
                         <div class="mt-1">
                             <span class="px-3 py-1 rounded-lg text-[10px] font-bold border ${item.statusClasses}">${item.status}</span>
                         </div>
                     </div>
                 </div>
-                <div class="text-gray-300 group-hover:text-gray-500 transition-transform duration-300" id="arrow-card-${item.id}">
+                <div class="text-gray-300 dark:text-[#2D534C] group-hover:text-gray-500 dark:group-hover:text-gray-300 transition-transform duration-300" id="arrow-card-${item.id}">
                     <i class="fa-solid fa-chevron-down text-sm"></i>
                 </div>
             </div>
@@ -436,22 +436,22 @@ function renderCards() {
             ${
               item.timeline
                 ? `
-            <div id="content-card-${item.id}" class="hidden border-t border-gray-50 bg-input p-5 space-y-3">
+            <div id="content-card-${item.id}" class="hidden border-t border-gray-50 dark:border-[#2D534C] dark:bg-[#122b26] p-5 space-y-3">
                 <div class="flex items-center gap-4">
-                    <i class="fa-regular fa-circle-check text-gray-300 text-sm"></i>
-                    <div class="flex-1 flex items-center justify-between bg-white p-3 rounded-xl border-r-4 border-r-button ">
-                        <span class="text-xs font-bold text-gray-700">تمت المقابلة التقنية</span>
-                        <span class="text-[10px] text-gray-400">منذ 3 أيام</span>
+                    <i class="fa-regular fa-circle-check text-gray-300 dark:text-[#2D534C] text-sm"></i>
+                    <div class="flex-1 flex items-center justify-between bg-white dark:bg-[#1A3D36] p-3 rounded-xl border-r-4 border-r-button">
+                        <span class="text-xs font-bold text-gray-700 dark:text-white">تمت المقابلة التقنية</span>
+                        <span class="text-[10px] text-gray-400 dark:text-gray-400">منذ 3 أيام</span>
                     </div>
                 </div>
                 <div class="flex items-center gap-4">
                     <i class="fa-solid fa-circle-check text-button text-sm"></i>
-                    <div class="flex-1 flex flex-col gap-1 bg-white p-3 rounded-xl border-r-4 border-r-green-500 ">
+                    <div class="flex-1 flex flex-col gap-1 bg-white dark:bg-[#1A3D36] p-3 rounded-xl border-r-4 border-r-green-500">
                         <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-gray-800">تم القبول النهائي</span>
-                            <span class="text-[10px] text-gray-400">الآن</span>
+                            <span class="text-xs font-bold text-gray-800 dark:text-white">تم القبول النهائي</span>
+                            <span class="text-[10px] text-gray-400 dark:text-gray-400">الآن</span>
                         </div>
-                        <p class="text-[10px] text-gray-500">تم قبول طلبك بنجاح، فريقنا سيتواصل معك.</p>
+                        <p class="text-[10px] text-gray-500 dark:text-gray-300">تم قبول طلبك بنجاح، فريقنا سيتواصل معك.</p>
                     </div>
                 </div>
             </div>`
@@ -459,7 +459,7 @@ function renderCards() {
             }
         </div>
     `,
-    )
+)
     .join("");
 }
 
