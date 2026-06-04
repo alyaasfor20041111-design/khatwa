@@ -305,3 +305,17 @@ body {
     mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
 }
+/* تخصيص مظهر شريط التمرير للقوائم */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1; /* لون الرمادي */
+  border-radius: 20px;
+}
+.dark .overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: #475569; /* لون رمادي داكن للوضع المظلم */
+}
