@@ -1796,6 +1796,9 @@
   .h-screen {
     height: 100vh;
   }
+  .max-h-\[calc\(100vh-150px\)\] {
+    max-height: calc(100vh - 150px);
+  }
   .max-h-full {
     max-height: 100%;
   }
@@ -3868,6 +3871,9 @@
       color: heading !important;
     }
   }
+  .pr-1 {
+    padding-right: calc(var(--spacing) * 1);
+  }
   .pr-2 {
     padding-right: calc(var(--spacing) * 2);
   }
@@ -3903,6 +3909,9 @@
   }
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);
+  }
+  .pb-5 {
+    padding-bottom: calc(var(--spacing) * 5);
   }
   .pb-8 {
     padding-bottom: calc(var(--spacing) * 8);
@@ -5849,6 +5858,13 @@
       }
     }
   }
+  .hover\:bg-slate-100 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-slate-100);
+      }
+    }
+  }
   .hover\:bg-surface {
     &:hover {
       @media (hover: hover) {
@@ -5860,6 +5876,16 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-white);
+      }
+    }
+  }
+  .hover\:bg-white\/5 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #fff 5%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-white) 5%, transparent);
+        }
       }
     }
   }
@@ -6960,6 +6986,11 @@
       border-radius: 2.5rem;
     }
   }
+  .md\:rounded-\[2rem\] {
+    @media (width >= 48rem) {
+      border-radius: 2rem;
+    }
+  }
   .md\:rounded-\[3\.5rem\] {
     @media (width >= 48rem) {
       border-radius: 3.5rem;
@@ -7101,6 +7132,11 @@
   .md\:pe-32 {
     @media (width >= 48rem) {
       padding-inline-end: calc(var(--spacing) * 32);
+    }
+  }
+  .md\:pb-8 {
+    @media (width >= 48rem) {
+      padding-bottom: calc(var(--spacing) * 8);
     }
   }
   .md\:pb-16 {
@@ -7757,6 +7793,11 @@
   .dark\:bg-\[\#3df2d1\] {
     &:where(.dark, .dark *) {
       background-color: #3df2d1;
+    }
+  }
+  .dark\:bg-\[\#122b26\] {
+    &:where(.dark, .dark *) {
+      background-color: #122b26;
     }
   }
   .dark\:bg-\[\#122d28\]\/90 {
@@ -8603,6 +8644,15 @@
       }
     }
   }
+  .dark\:group-hover\:text-gray-300 {
+    &:where(.dark, .dark *) {
+      &:is(:where(.group):hover *) {
+        @media (hover: hover) {
+          color: var(--color-gray-300);
+        }
+      }
+    }
+  }
   .dark\:group-hover\:text-orange-400 {
     &:where(.dark, .dark *) {
       &:is(:where(.group):hover *) {
@@ -9298,6 +9348,19 @@ html, body {
 .wavy-clip img {
   mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+}
+.overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 20px;
+}
+.dark .overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: #475569;
 }
 @layer base {
   .tooltip-arrow,.tooltip-arrow:before {
